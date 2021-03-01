@@ -17,3 +17,15 @@ Crear seeders:
   php artisan make:seeder PromocionTableSeeder
   php artisan make:seeder ListaDeFavoritosTableSeeder
   php artisan make:seeder AdministradorTableSeeder
+
+Crear clases de Eloquent ORM:
+  php artisan make:model Producto
+  php artisan make:model Promocion
+  php artisan make:model Pedido
+  php artisan make:model LineaPedido
+  php artisan make:model Cliente
+  php artisan make:model Administrador
+  php artisan make:model ListaDeFavoritos
+  php artisan make:model Cesta
+  
+  *Si hacemos "php artisan make:model Product -m se crean las migraciones"*
