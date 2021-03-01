@@ -1,3 +1,7 @@
+Iniciar Laravel: composer create-project laravel/laravel=6.8.* miproyecto --prefer-dist
+
+Para servir: php artisan serve
+
 Hay que realizar las siguientes migraciones desde la linea de comandos una vez el servidor esté up:
   php artisan make:migration create_producto_table --create=producto
   php artisan make:migration create_promocion_table --create=promocion
