@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->integer('phone');
             $table->string('role');
+            $table->primary('id');
         });
     }
 

@@ -18,6 +18,9 @@ class CreateFavoriteListsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('description');
+            $table->integer('userId');
+            $table->primary('id');
+            $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -29,6 +32,7 @@ class CreateFavoriteListsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('favorite_lists');
+        //$table->dropForeign('userId');
     }
 }
 
