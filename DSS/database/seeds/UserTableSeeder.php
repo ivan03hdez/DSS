@@ -24,7 +24,7 @@ class UserTableSeeder extends Seeder
                 $role = 'user';
             }
 
-            $phone = 600000000 . $i;
+            $phone = 'phonenumber' . $i;
 
             DB::table('users')->insert([
                 'name' => "Username$i",
