@@ -20,6 +20,6 @@ Crear seeders:
   *Si hacemos "php artisan make:model Product -m se crean las migraciones"*
   
 **DIAGRAMA DE CLASES**
-![diagrama clases]("https://user-images.githubusercontent.com/60882313/109677826-5360a000-7b7a-11eb-9a88-963f739bb88e.png")
+![diagrama clases]("https://user-images.githubusercontent.com/60882313/109678115-9b7fc280-7b7a-11eb-970e-57695f96ee68.png")
 
 
