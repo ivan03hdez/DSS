@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call( UserTableSeeder ::class );
         $this->command->info('User table seeded!' );
-
+/*
         $this->call( ProductTableSeeder ::class );
         $this->command->info('Product table seeded!' );
 
@@ -31,5 +31,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call( ShoppingCartTableSeeder ::class );
         $this->command->info('ShoppingCart table seeded!' );
+*/
     }
 }
