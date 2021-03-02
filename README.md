@@ -12,10 +12,13 @@ Creación de clases model y migraciones:
   php artisan make:model ShoppingCart -m
 
 Crear seeders:
-  php artisan make:seeder ProductoTableSeeder
-  php artisan make:seeder PromocionTableSeeder
-  php artisan make:seeder ListaDeFavoritosTableSeeder
-  php artisan make:seeder AdministradorTableSeeder
+  php artisan make:seeder ProductTableSeeder
+  php artisan make:seeder PromotionTableSeeder
+  php artisan make:seeder FavoriteListTableSeeder
+  php artisan make:seeder UserTableSeeder
+  php artisan make:seeder OrderTableSeeder
+  php artisan make:seeder OrderLineTableSeeder
+  php artisan make:seeder ShoppingCartTableSeeder
   
   *Si hacemos "php artisan make:model Product -m se crean las migraciones"*
   
