@@ -14,11 +14,11 @@ class DatabaseSeeder extends Seeder
         $this->call( UserTableSeeder ::class );
         $this->command->info('User table seeded!' );
 /*
-        $this->call( ProductTableSeeder ::class );
-        $this->command->info('Product table seeded!' );
-
         $this->call( PromotionTableSeeder ::class );
         $this->command->info('Promotion table seeded!' );
+
+        $this->call( ProductTableSeeder ::class );
+        $this->command->info('Product table seeded!' );
 
         $this->call( FavoriteListTableSeeder ::class );
         $this->command->info('FavoriteList table seeded!' );
