@@ -16,6 +16,8 @@ class CreateFavoriteListsTable extends Migration
         Schema::create('favorite_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('name');
+            $table->string('description');
         });
     }
 
@@ -29,3 +31,4 @@ class CreateFavoriteListsTable extends Migration
         Schema::dropIfExists('favorite_lists');
     }
 }
+
