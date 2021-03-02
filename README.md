@@ -29,4 +29,5 @@ Crear clases de Eloquent ORM:
   *Si hacemos "php artisan make:model Product -m se crean las migraciones"*
   
 **DIAGRAMA DE CLASES**
-![diagrama clases](https://user-images.githubusercontent.com/58994866/109631406-327e5780-7b46-11eb-85b4-53571c0f9e44.PNG)
+![diagrama clases](https://user-images.githubusercontent.com/58994866/109667926-f01e4000-7b70-11eb-9a33-d3b5e493de50.PNG)
+
