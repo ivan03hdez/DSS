@@ -27,3 +27,4 @@ Crear clases de Eloquent ORM:
   php artisan make:model Cesta
   
   *Si hacemos "php artisan make:model Product -m se crean las migraciones"*
+![image](https://user-images.githubusercontent.com/61051448/109631211-0367e600-7b46-11eb-8902-8795e535258e.png)
