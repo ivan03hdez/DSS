@@ -1,5 +1,9 @@
 Iniciar Laravel: composer create-project laravel/laravel=6.8.* miproyecto --prefer-dist
 
+git init
+git remote add origin https...
+git pull origin ramaATraer
+
 Para servir: php artisan serve
 
 Creación de clases model y migraciones:
@@ -12,7 +16,7 @@ Creación de clases model y migraciones:
   php artisan make:model ShoppingCart -m
 
 Insertar las migraciones en la BBDD:
-
+  php artisan migrate:install
 
 Crear seeders:
   php artisan make:seeder ProductTableSeeder
