@@ -19,8 +19,8 @@ class CreatePromotionsTable extends Migration
             $table->integer('discount');
             $table->bigInteger('product_id')->unsigned()->index();
             $table->foreign('product_id')
-                >references('id')
-                ->on('products')->onDelete('set null');
+                ->references('id')
+                ->on('products');
         });
     }
 
