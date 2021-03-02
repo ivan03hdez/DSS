@@ -7,8 +7,10 @@ git pull origin ramaATraer
 Para servir: php artisan serve
 
 Migración:
-  php artisan make:migration create_favorite_lists_users_table --create=favoriteLists_users
-
+  php artisan make:migration create_favorite_lists_users_table --create=favorite_lists_users
+  
+Para migraciones de la tabla auxiliar de Many2Many:
+  php artisan make:migration create
 Creación de clases model y migraciones:
   php artisan make:model Product -m
   php artisan make:model Order -m
