@@ -1,3 +1,4 @@
+<img width="946" alt="Captura de pantalla 2021-03-02 a las 17 10 37" src="https://user-images.githubusercontent.com/60882313/109677826-5360a000-7b7a-11eb-9a88-963f739bb88e.png">
 Iniciar Laravel: composer create-project laravel/laravel=6.8.* miproyecto --prefer-dist
 
 Para servir: php artisan serve
