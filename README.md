@@ -8,6 +8,9 @@ Para servir: php artisan serve
 
 Migración:
   php artisan make:migration create_favorite_lists_users_table --create=favorite_lists_users
+ 
+Runear Migraciones:
+  php artisan migrate:fresh
   
 Para migraciones de la tabla auxiliar de Many2Many:
   php artisan make:migration create
