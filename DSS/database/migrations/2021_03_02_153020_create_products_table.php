@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('color');
             $table->string('model');
             $table->bigInteger('promotion_id')->unsigned()->index();
-            $table->foreign('promotion_id')->references('id')->on('promotions');
+            $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('cascade');
         });
     }
 
@@ -35,6 +35,11 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
+        
+       /* Schema::table('products', function (Blueprint $table) {
+            $table->dropForeign('products_promotion_id_foreign');
+            $table->dropColumn('promotion_id');
+          });*/
         Schema::dropIfExists('products');
     }
 }

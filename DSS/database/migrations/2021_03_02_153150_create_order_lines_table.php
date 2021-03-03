@@ -16,9 +16,15 @@ class CreateOrderLinesTable extends Migration
         Schema::create('order_lines', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('price');//precio de la compra, no precio actual del producto
+            $table->bigInteger('product_id')->unsigned()->index();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->bigInteger('order_id')->unsigned()->index();
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->integer('price');//precio del artículo en el momento de la compra, no precio actual del producto
             $table->integer('quantity');
             $table->integer('Description');
+
+            
         });
     }
 

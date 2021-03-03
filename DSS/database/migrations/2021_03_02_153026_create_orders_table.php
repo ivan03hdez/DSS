@@ -16,6 +16,8 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('totalPrice');
         });
     }
@@ -27,6 +29,10 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        /*Schema::table('products', function (Blueprint $table) {
+            $table->dropForeign('products_promotion_id_foreign');
+            $table->dropColumn('promotion_id');
+        });*/
         Schema::dropIfExists('orders');
     }
 }

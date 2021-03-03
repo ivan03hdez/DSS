@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrderLine extends Model
 {
-    //
+    public function line() {
+        return $this->belongsTo('App\Product');
+    }
+    
 }
