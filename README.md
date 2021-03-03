@@ -12,6 +12,11 @@ Migración:
 Runear Migraciones:
   php artisan migrate:fresh
   
+Runear Migraciones y seeders:
+  php artisan migrate:fresh --seed
+  
+php artisan migrate:fresh --seed --> lo que hace es ejecutar los metodos down de todas las migraciones (eliminar las tablas) y despues los métodos up (creación tablas). Despúes ejecuta el fichero DatabaseSeeder
+  
 Para migraciones de la tabla auxiliar de Many2Many:
   php artisan make:migration create
 Creación de clases model y migraciones:
