@@ -40,8 +40,9 @@ Insertar las semillas en la BBDD:
   
 SQL:
 -------------------------------------------------------------------------------------------
-  Product(id, name, price, promotionPrice, description, stock, color, orderId)
+  Product(id, name, price, promotionPrice, description, stock, color, orderId,promotionId)
     CP(id)
+    CAj(promotionId) --> Promotion
 -------------------------------------------------------------------------------------------
   OrderLine(id, orderLine, price, quantity, description, productId, orderId)
     CP(id, orderLine, orderId)
@@ -63,9 +64,8 @@ SQL:
     CP(id)
     CAj(userId)
 -------------------------------------------------------------------------------------------
-  Promotion(id, discount, productId)
+  Promotion(id, discount)
     CP(id)
-    CAj(productId)
 -------------------------------------------------------------------------------------------
   FavoriteList(id, name, description, userId)
     CP(id)
