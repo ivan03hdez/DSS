@@ -12,15 +12,18 @@ Migración:
 Runear Migraciones:
   php artisan migrate:fresh
   
-Runear Migraciones y seeders:
+Runear **Migraciones y seeder**s:
   php artisan migrate:fresh --seed
+ 
+Runear **pruebas unitarias**:
+  .\vendor\bin\phpunit
   
-php artisan migrate:fresh --seed --> lo que hace es ejecutar los metodos down de todas las migraciones (eliminar las tablas) y despues los métodos up (creación tablas). Despúes ejecuta el fichero DatabaseSeeder
+**php artisan migrate:fresh --seed** --> lo que hace es ejecutar los metodos down de todas las migraciones (eliminar las tablas) y despues los métodos up (creación tablas). Despúes ejecuta el fichero DatabaseSeeder
   
 Para migraciones de la tabla auxiliar de Many2Many:
   php artisan make:migration create
 
-Assert para las DatabaseTest:
+**Assert para las DatabaseTest**:
     $this->assertDatabaseHas($table, array $data);	Assert that a table in the database contains the given data.
     $this->assertDatabaseMissing($table, array $data);	Assert that a table in the database does not contain the given data.
     $this->assertDeleted($table, array $data);	Assert that the given record has been deleted.
