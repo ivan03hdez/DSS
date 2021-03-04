@@ -19,6 +19,13 @@ php artisan migrate:fresh --seed --> lo que hace es ejecutar los metodos down de
   
 Para migraciones de la tabla auxiliar de Many2Many:
   php artisan make:migration create
+
+Assert para las DatabaseTest:
+    $this->assertDatabaseHas($table, array $data);	Assert that a table in the database contains the given data.
+    $this->assertDatabaseMissing($table, array $data);	Assert that a table in the database does not contain the given data.
+    $this->assertDeleted($table, array $data);	Assert that the given record has been deleted.
+    $this->assertSoftDeleted($table, array $data);	Assert that the given record has been soft deleted.
+
 Creación de clases model y migraciones:
   php artisan make:model Product -m
   php artisan make:model Order -m
