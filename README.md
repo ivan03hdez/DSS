@@ -53,6 +53,8 @@ Crear seeders:
 Insertar las semillas en la BBDD:
   php artisan db:seed
   
+**IMPORTATE** --> composer dump-autoload --> para actualizar posibles seeders nuevos y evitar el erroe de "Target class class_name does not exists"
+  
 SQL:
 -------------------------------------------------------------------------------------------
   Product(id, name, price, promotionPrice, description, stock, color, orderId,promotionId)
