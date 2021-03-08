@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call( ProductTableSeeder ::class );
         $this->command->info('Product table seeded!' );
-/*
+
         $this->call( FavoriteListTableSeeder ::class );
         $this->command->info('FavoriteList table seeded!' );
 
@@ -31,6 +31,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call( ShoppingCartTableSeeder ::class );
         $this->command->info('ShoppingCart table seeded!' );
-*/
+
     }
 }

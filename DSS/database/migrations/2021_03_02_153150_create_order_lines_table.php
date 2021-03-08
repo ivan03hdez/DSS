@@ -22,7 +22,7 @@ class CreateOrderLinesTable extends Migration
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->integer('price');//precio del artículo en el momento de la compra, no precio actual del producto
             $table->integer('quantity');
-            $table->integer('Description');
+            $table->string('description');
 
             
         });

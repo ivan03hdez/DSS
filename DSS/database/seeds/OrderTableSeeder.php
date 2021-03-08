@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class FavoriteListTableSeeder extends Seeder
+class OrderTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,24 +11,20 @@ class FavoriteListTableSeeder extends Seeder
      */
     public function run()
     {
-        
-        DB::table('favorite_lists')->delete();
+        //
+        DB::table('orders')->delete();
         $users = DB::table('users')->get();
         $i = 1;
         foreach($users as $user)
         {
             if($user->role == 'user')
             {
-                $name = "FavList$i";
-                $description = "Description$i";
-                DB::table('favorite_lists')->insert([
-                    'name' => ($name),
-                    'description' => ($description),
+                DB::table('orders')->insert([
+                    'totalPrice' => ($i),
                     'user_id' => ($user->id)
                 ]);
                 $i++;
             }
         }
-        
     }
 }
