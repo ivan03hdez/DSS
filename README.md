@@ -100,7 +100,8 @@ SQL:
 
   
 **DIAGRAMA DE CLASES**
-![diagrama clases](https://user-images.githubusercontent.com/58994866/109697035-08e91e80-7b8e-11eb-9f76-700bd1c0a692.PNG)
+![diagrama clases](https://user-images.githubusercontent.com/58994866/110305304-ea0ae200-7ffc-11eb-9178-492cdbe5e369.PNG)
+
 
 
 
