@@ -14,7 +14,8 @@ class CreateProductsShoppingCartsTable extends Migration
     public function up()
     {
         Schema::create('products_shopping_carts', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            
+            //$table->bigIncrements('id');
             $table->timestamps();
 
             $table->bigInteger('product_id')->unsigned()->index();
@@ -22,6 +23,8 @@ class CreateProductsShoppingCartsTable extends Migration
 
             $table->bigInteger('shopping_cart_id')->unsigned()->index();
             $table->foreign('shopping_cart_id')->references('id')->on('shopping_carts')->onDelete('cascade');
+
+            $table->primary(['product_id','shopping_cart_id']);
         });
     }
 

@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use App\User;
+use App\Promotion;
 use DB;
 
 class PromotionDatabaseTest extends TestCase{
