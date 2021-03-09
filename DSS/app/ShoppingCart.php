@@ -17,6 +17,6 @@ class ShoppingCart extends Model
         return $this->belongsTo('App\User');
     }
     public function carts() {
-        return $this->belongsToMany('App\Products');
+        return $this->belongsToMany('App\Product');
     }
 }

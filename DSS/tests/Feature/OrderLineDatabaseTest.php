@@ -20,8 +20,6 @@ class OrderLineDatabaseTest extends TestCase
     public function testExample()
     {
         $olid = array();
-        $oid = array();
-        $pid = array();
 
         for($i = 1; $i < 3; $i++)
         {
@@ -38,8 +36,6 @@ class OrderLineDatabaseTest extends TestCase
             $orderline->save();
 
             array_push($olid, $orderline->id);
-            array_push($oid, $order->id);
-            array_push($pid, $product->id);
 
             //Test Create
             $this->assertDataBaseHas('order_lines', ['id' => $olid[$i-1], 'description' => "OrderLineTest$i"]);
