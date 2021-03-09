@@ -61,8 +61,7 @@ class ProductDatabaseTest extends TestCase{
         
         /////DELETE/////
         $product->delete();
-        $MaxPrice = Product::max('price');
-        $this->assertDeleted('products', ['name' => 'productoPrueba', 'image'=> '/home/ivan/dss/productImage.png']);
+        $this->assertDatabaseMissing('products', ['name' => 'productoPrueba', 'image'=> '/home/ivan/dss/productImage.png']);
 
     }
 }
