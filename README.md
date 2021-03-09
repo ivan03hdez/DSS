@@ -16,7 +16,7 @@ Runear **Migraciones y seeder**s:
   php artisan migrate:fresh --seed
  
 Runear **pruebas unitarias**:
-  .\vendor\bin\phpunit
+  ./vendor/bin/phpunit
   
 **php artisan migrate:fresh --seed** --> lo que hace es ejecutar los metodos down de todas las migraciones (eliminar las tablas) y despues los métodos up (creación tablas). Despúes ejecuta el fichero DatabaseSeeder
   
