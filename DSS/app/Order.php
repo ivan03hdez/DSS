@@ -11,6 +11,6 @@ class Order extends Model
         return $this->belongsTo('App\User');
     }
     public function lineas() {
-        return $this->hashMany('App\OrderLine');
+        return $this->hasMany('App\OrderLine');
     }
 }
