@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('color');
             $table->string('model');
             $table->bigInteger('promotion_id')->unsigned()->index();
-            $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('cascade');
+            $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('cascade')->nullable();
             $table->string('image');
         });
     }
