@@ -100,6 +100,14 @@ SQL:
     CAj(favId)
 -------------------------------------------------------------------------------------------
 
+Profesor, clase:
+  composer install
+  .env
+  .env.example
+  cp .env.example .env
+  php artisan key:generate
+
+
   
 **DIAGRAMA DE CLASES**
 ![diagrama clases](https://user-images.githubusercontent.com/58994866/110305304-ea0ae200-7ffc-11eb-9178-492cdbe5e369.PNG)
