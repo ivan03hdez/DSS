@@ -38,14 +38,5 @@ class OrderLineTableSeeder extends Seeder
                 'order_id' => ($or[$i]->id)
             ]);
         }
-        /*
-        
-
-            $table->integer('price');
-            $table->integer('quantity');
-            $table->integer('Description');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
-        */
     }
 }
