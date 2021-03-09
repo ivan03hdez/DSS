@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrderLine extends Model
 {
+    protected $fillable = ['price', 'quantity', 'description'];
     public function order() {
         return $this->belongsTo('App\Order');
     }

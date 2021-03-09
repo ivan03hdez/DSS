@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Order;
 use App\Product;
+use App\OrderLine;
 use DB;
 
 class OrderLineDatabaseTest extends TestCase
@@ -24,67 +25,40 @@ class OrderLineDatabaseTest extends TestCase
 
         for($i = 1; $i < 3; $i++)
         {
-            $orderline = new OrderLine();
-            $order = new Order();
-            $product = new Product();
-
-            $User->name = "OrdeLineTest$i";
-            $User->email = "OrdeLineTest$i";
-            $User->password = "OrdeLineTest$i";
-            $User->phone = "OrdeLineTest$i";
-            $User->address = "OrdeLineTest$i";
-            $User->role = "user";
-            $User->image = "FavListTest$i";
-            $User->save();
             
-            $FavList->name = "FavListTest$i";
-            $FavList->description = "FavListTest$i";
-            $FavList->user_id = $User->id;
-            //$phone->user()->associate($user);
-            $FavList->user()->associate($User);
-            $FavList->save();
+            $orderline = new OrderLine(['price' => $i, 'quantity' => $i, 'description' => "OrderLineTest$i"]);
+            $order = new Order(['totalPrice' => $i]);
+            $product = new Product(['name' => "OrderLineTest$i", 'price' => $i, 'promotionPrice' => $i, 'description' => "OrderLineTest$i",
+                                    'stock' => $i, 'color' => "OrderLineTest$i", 'model' => "OrderLineTest$i", 'image' => "ImageForeign$i"]);
+            
+            $order->save();
+            $product->save();
+            $orderline->order()->associate($order);
+            $orderline->product()->associate($product);
+            $orderline->save();
 
-            array_push($uid, $User->id);
-            array_push($flid, $FavList->id);
+            array_push($olid, $orderline->id);
+            array_push($oid, $order->id);
+            array_push($pid, $product->id);
 
             //Test Create
-            $this->assertDataBaseHas('favorite_lists', ['id' => $flid[$i-1], 'name' => "FavListTest$i"]);
+            $this->assertDataBaseHas('order_lines', ['id' => $olid[$i-1], 'description' => "OrderLineTest$i"]);
             
             //Test Update
-            $FavList->name = "FavListTestMod$i";
-            $FavList->save();
-            $this->assertDataBaseHas('favorite_lists', ['id' => $flid[$i-1], 'name' => "FavListTestMod$i"]);
+            $orderline->description = "OrderLineTestMod$i";
+            $orderline->save();
+            $this->assertDataBaseHas('order_lines', ['id' => $olid[$i-1], 'description' => "OrderLineTestMod$i"]);
 
             //Probar foreign key
-            $this->assertEquals("FavListTestPhone$i" , $FavList->user->phone);
-            
+                //Order
+            $this->assertEquals($i , $orderline->order->totalPrice);
+                //product
+            $this->assertEquals("ImageForeign$i" , $orderline->product->image);
+
             //Test Delete
             
-            $FavList->delete();
-            $this->assertDatabaseMissing('favorite_lists', ['id' => $flid[$i-1], 'name' => "FavListTestMod$i"]);
+            $orderline->delete();
+            $this->assertDatabaseMissing('order_lines', ['id' => $olid[$i-1], 'description' => "OrderLineTestMod$i"]);
         }
     }
-    /*
-    OrderLine
-        $table->integer('price')
-        $table->integer('quantity');
-        $table->string('description');
-        $table->foreign('product_id) ('products')
-        $table->foreign('order_id') ('orders')
-
-    Order
-        $table->integer('totalPrice');
-        $table->foreign('user_id') ('users');
-    Product
-        $table->string('name');
-        $table->integer('price');
-        $table->integer('promotionPrice');
-        $table->string('description');
-        $table->integer('stock');
-        $table->string('color');
-        $table->string('model');
-        $table->bigInteger('promotion_id')->unsigned()->index();
-        $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('cascade')->nullable();
-        $table->string('image');
-    */
 }
