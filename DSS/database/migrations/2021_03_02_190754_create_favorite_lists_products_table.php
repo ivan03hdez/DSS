@@ -13,7 +13,7 @@ class CreateFavoriteListsProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('favorite_lists_products', function (Blueprint $table) {
+        Schema::create('favorite_list_product', function (Blueprint $table) {
             $table->timestamps();
         
             $table->bigInteger('product_id')->unsigned()->index();
