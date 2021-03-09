@@ -1,12 +1,11 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use App\Promotion;
 use App\Product;
-use DB;
 
 class PromotionDatabaseTest extends TestCase{
     /**
@@ -31,7 +30,7 @@ class PromotionDatabaseTest extends TestCase{
 
 
         $promotion->delete();
-        $this->assertDeleted('promotions', ['discount' => 55]);
+        $this->assertDatabaseMissing('promotions', ['discount' => 55]);
         
     }
 }
