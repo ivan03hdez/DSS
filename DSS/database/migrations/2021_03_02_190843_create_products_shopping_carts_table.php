@@ -13,9 +13,7 @@ class CreateProductsShoppingCartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products_shopping_carts', function (Blueprint $table) {
-            
-            //$table->bigIncrements('id');
+        Schema::create('product_shopping_cart', function (Blueprint $table) {
             $table->timestamps();
 
             $table->bigInteger('product_id')->unsigned()->index();

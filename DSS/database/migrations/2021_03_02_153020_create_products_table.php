@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('stock');
             $table->string('color');
             $table->string('model');
-            $table->bigInteger('promotion_id')->unsigned()->index();
+            $table->bigInteger('promotion_id')->unsigned()->index()->nullable();
             $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('cascade');
             $table->string('image');
         });

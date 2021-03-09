@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $fillable = ['name', 'price', 'promotionPrice','color','model','stock','description','image'];
+
     public function lines() {
         return $this->hasMany('App\OrderLine');
     }

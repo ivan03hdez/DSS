@@ -17,7 +17,7 @@ class CreateShoppingCartsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('total');
-            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
