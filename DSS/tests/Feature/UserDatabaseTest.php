@@ -15,8 +15,8 @@ class UserDataBaseTest extends TestCase
      */
     public function testBasicTest()
     {
+        ///CRUD///
         $user = new User(['name' => 'ivan','email' => 'ivan@gmail.com','password' => 'pw1','role' =>'user','address' => 'ivanStreet','image' => 'imagen1','phone' => '605968475']);
-        //$user->addres = 'ivanStreet';
         $user->save();
         $this->assertEquals('ivan',$user->name);
         $this->assertDatabaseHas('users',['name' => 'ivan']);
