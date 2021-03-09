@@ -71,9 +71,8 @@ SQL:
     CP(id)
     CAj(promotionId) --> Promotion
 -------------------------------------------------------------------------------------------
-  OrderLine(id, orderLine, price, quantity, description, productId, orderId)
+  OrderLine(orderLine, price, quantity, description, productId, orderId)
     CP(id, orderLine, orderId)
-    id --> bigIncrements
     CAj(productId) --> Product
     CAj(orderId) --> order
     VNN(productId)
