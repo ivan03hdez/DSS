@@ -15,11 +15,14 @@ class PromotionDatabaseTest extends TestCase{
      */
     public function testBasicTest()
     {
-        $promotions = DB::table('promotions')->get();
-        $i = 0;
-        foreach ($promotions as $promotion) {
-            $this->assertEquals(10+ $i,$promotion->discount);
-            $i++;
-        }
+        $promotion = new Promotion();
+        $promotion->discount = 45;
+        $promotion->save();
+        $this->assertDatabaseHas('promotions', ['discount' => 45]);
+        $promotion->discount = 55;
+        $promotion->save();
+        $this->assertDatabaseHas('promotions', ['discount' => 55]);
+        $promotion->delete();
+        $this->assertDeleted('promotions', ['discount' => 55]);
     }
 }

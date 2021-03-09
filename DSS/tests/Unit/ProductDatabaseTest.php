@@ -15,17 +15,6 @@ class ProductDatabaseTest extends TestCase{
      * @return void
      */
     public function testBasicTest(){
-        /*$products = DB::table('products')->get();
-        $i = 0;
-        foreach ($products as $product) {
-            echo "$product->promotion_id";
-            $this->assertEquals("producto$i",$product->name);
-            $this->assertEquals("color$i",$product->color);
-            ///para comprobar que la clave ajena de producto esta bien hecha, comprobamos que desde cada producto se pueden llegar a su descuento mediante la tabla promociones
-            $discounts = DB::table('promotions')->where('id', '=',$product->promotion_id)->get('discount');
-            $this->assertEquals(10 +$i,$discounts[0]->discount);
-            $i++;
-        }*/
         $promotion = new Promotion();
         $promotion->discount = 25;
         $promotion->save();
@@ -41,18 +30,21 @@ class ProductDatabaseTest extends TestCase{
         $product->promotion()->attach($promotion->id);
         $product->save();
 
-        
-        
 
-
+        //////CREATE////
         echo $product->promotion_id->discount;
-        $this->assertDatabaseHas('products', ['name' => 'productoPrueba', 'image'=> '/home/ivan/dss/productImage.png']);
+        $this->assertDatabaseHas('products', ['name' => 'productoPrueba', 'image'=> '/home/ivan/dss/productImage.png','price' => 35]);
         $MaxPrice = Product::max('price');
         $this->assertEquals(35,$MaxPrice);
-
-
+        /////UPDATE//////
+        $product->price = 45;
+        echo "$product->id\n";
+        $product->save();
+        $this->assertDatabaseHas('products', ['name' => 'productoPrueba', 'image'=> '/home/ivan/dss/productImage.png','price' => 45]);
+        /////DELETE/////
         $product->delete();
         $MaxPrice = Product::max('price');
         $this->assertEquals(24,$MaxPrice);
+        $this->assertDeleted('products', ['name' => 'productoPrueba', 'image'=> '/home/ivan/dss/productImage.png']);
     }
 }
