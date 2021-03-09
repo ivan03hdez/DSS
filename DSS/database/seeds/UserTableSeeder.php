@@ -32,7 +32,8 @@ class UserTableSeeder extends Seeder
                 'password' => "pass$i", 
                 'address' => "address$i",
                 'phone' => intval($phone, 10),
-                'role' => $role
+                'role' => $role,
+                'image' => "image$i"
             ]);
         }
     }

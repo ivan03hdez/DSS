@@ -22,7 +22,8 @@ class ProductTableSeeder extends Seeder
                 'stock' => (10 + $i),
                 'color' => "color$i",
                 'model' => "model$i",
-                'promotion_id' => $i +1 ///las ids empiezan por 1 y el bucle por 0
+                'promotion_id' => $i +1, ///las ids empiezan por 1 y el bucle por 0
+                'image' => "image$i"
             ]);
         }
     }

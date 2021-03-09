@@ -14,7 +14,6 @@ class CreateFavoriteListsProductsTable extends Migration
     public function up()
     {
         Schema::create('favorite_lists_products', function (Blueprint $table) {
-            $table->bigIncrements('id');
             $table->timestamps();
         
             $table->bigInteger('product_id')->unsigned()->index();
@@ -22,6 +21,10 @@ class CreateFavoriteListsProductsTable extends Migration
 
             $table->bigInteger('favorite_list_id')->unsigned()->index();
             $table->foreign('favorite_list_id')->references('id')->on('favorite_lists')->onDelete('cascade');
+
+            $table->primary(['product_id','favorite_list_id']);
+
+            
         });
     }
 
