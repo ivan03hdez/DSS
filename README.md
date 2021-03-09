@@ -22,6 +22,10 @@ Runear **pruebas unitarias**:
   
 Para migraciones de la tabla auxiliar de Many2Many:
   php artisan make:migration create
+  
+Crear Tests:
+  php artisan make:test OrderLineDatabaseTest           --> esto lo manda al directorio Feature
+  php artisan make:test OrderLineDatabaseTest --unit    --> esto lo manda al directorio Unit
 
 **Assert para las DatabaseTest**:
     $this->assertDatabaseHas($table, array $data);	Assert that a table in the database contains the given data.
