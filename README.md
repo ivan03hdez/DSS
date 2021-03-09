@@ -49,7 +49,13 @@ Crear seeders:
   php artisan make:seeder OrderTableSeeder
   php artisan make:seeder OrderLineTableSeeder
   php artisan make:seeder ShoppingCartTableSeeder
- 
+  
+  php artisan make:seeder ProductShoppingCartTableSeeder
+  php artisan make:seeder Product_ShoppingCartTableSeeder
+  php artisan make:seeder FavoriteListProductTableSeeder
+  php artisan make:seeder FavoriteList_ProductTableSeeder
+  
+  
 Insertar las semillas en la BBDD:
   php artisan db:seed
   
