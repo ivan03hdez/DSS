@@ -14,7 +14,7 @@ class ProductDatabaseTest extends TestCase{
      *
      * @return void
      */
-    public function testBasicTest(){
+    public function testBasicTest(){ 
         /*$products = DB::table('products')->get();
         $i = 0;
         foreach ($products as $product) {
@@ -26,6 +26,7 @@ class ProductDatabaseTest extends TestCase{
             $this->assertEquals(10 +$i,$discounts[0]->discount);
             $i++;
         }*/
+        
         $promotion = new Promotion();
         $promotion->discount = 25;
         $promotion->save();

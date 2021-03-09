@@ -13,6 +13,7 @@ class PromotionDatabaseTest extends TestCase{
      *
      * @return void
      */
+    
     public function testBasicTest()
     {
         $promotions = DB::table('promotions')->get();
@@ -22,4 +23,5 @@ class PromotionDatabaseTest extends TestCase{
             $i++;
         }
     }
+    
 }
