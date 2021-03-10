@@ -8,7 +8,6 @@ use Tests\TestCase;
 use App\Order;
 use App\Product;
 use App\OrderLine;
-use DB;
 
 class OrderLineDatabaseTest extends TestCase
 {
@@ -53,8 +52,11 @@ class OrderLineDatabaseTest extends TestCase
 
             //Test Delete
             
-            $orderline->delete();
+            $order->delete();
             $this->assertDatabaseMissing('order_lines', ['id' => $olid[$i-1], 'description' => "OrderLineTestMod$i"]);
+            $product->delete();
+            $this->assertDatabaseMissing('products', ['id' => $product->id, 'description' => "OrderLineTest$i"]);
+
         }
     }
 }

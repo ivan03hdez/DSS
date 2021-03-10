@@ -50,6 +50,7 @@ class ProductDatabaseTest extends TestCase{
         $lista2 = new FavoriteList(['name' => 'favs2','description' => 'prueba2']);
         $lista2->save();
         $product->favLists()->attach([$lista->id,$lista2->id]);//attach() hay que pasarle las IDs
+        $product->save();
         $this->assertEquals('mis favoritos',$product->favLists[0]->name);
         $this->assertEquals('favs2',$product->favLists[1]->name);
 
@@ -57,11 +58,16 @@ class ProductDatabaseTest extends TestCase{
         $cart = new ShoppingCart(['total'=>150]);
         $cart->save();
         $product->carts()->attach($cart);
+        $product->save();
         $this->assertEquals(150,$product->carts[0]->total);
         
         /////DELETE/////
         $product->delete();
         $this->assertDatabaseMissing('products', ['name' => 'productoPrueba', 'image'=> '/home/ivan/dss/productImage.png']);
+        $promotion->delete();
+        $lista->delete();
+        $lista2->delete();
+        $cart->delete();
 
     }
 }

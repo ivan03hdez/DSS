@@ -8,7 +8,6 @@ use Tests\TestCase;
 use App\Order;
 use App\User;
 use App\OrderLine;
-use DB;
 
 class OrderDatabaseTest extends TestCase
 {
@@ -60,6 +59,7 @@ class OrderDatabaseTest extends TestCase
             //Test Delete
             
             $order->delete();
+            $user->delete();
             $this->assertDatabaseMissing('orders', ['id' => $oid[$i-1], 'totalPrice' => 99]);
         }
     }

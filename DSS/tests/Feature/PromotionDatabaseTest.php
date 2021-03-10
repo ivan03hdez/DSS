@@ -28,7 +28,7 @@ class PromotionDatabaseTest extends TestCase{
         $promotion->products()->saveMany([$producto1]);
         $this->assertEquals('Producto1Promocion1',$promotion->products[0]->name);//$promotion->products es una collection de este tipo ['name':'nombre1...]
 
-
+        $producto1->delete();
         $promotion->delete();
         $this->assertDatabaseMissing('promotions', ['discount' => 55]);
         

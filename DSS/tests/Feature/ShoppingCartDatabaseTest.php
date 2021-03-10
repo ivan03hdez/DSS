@@ -8,7 +8,6 @@ use Tests\TestCase;
 use App\ShoppingCart;
 use App\Product;
 use App\User;
-use DB;
 
 class ShoppingCartDatabaseTest extends TestCase
 {
@@ -27,12 +26,12 @@ class ShoppingCartDatabaseTest extends TestCase
             $shopcart = new ShoppingCart(['total' => $i]);
             $user = new User(['name' => "ShoppingCartTest$i", 'email' => "ShoppingCartTest$i", 'password' => "ShoppingCartTest$i",
                              'address' => "ShoppingCartTest$i", 'phone' => "ShoppingCartTest$i", 'role' => "user", 
-                             'image' => "ImageForeignSC$i"]); //claje ajena ***
-            $productA = new Product(['name' => "OrderLineTestA$i", 'price' => $i, 'promotionPrice' => $i, 'description' => "OrderLineTestA$i",
-                                    'stock' => $i, 'color' => "OrderLineTestA$i", 'model' => "OrderLineTestA$i", 'image' => "ImageForeignA$i"]);
+                             'image' => "ImageForeignSC$i"]); //clave ajena ***
+            $productA = new Product(['name' => "shopCartTest$i", 'price' => $i, 'promotionPrice' => $i, 'description' => "shopCartTest$i",
+                                    'stock' => $i, 'color' => "shopCartTest$i", 'model' => "shopCartTest$i", 'image' => "ImageForeignA$i"]);
             //M2M
-            $productB = new Product(['name' => "OrderLineTestB$i", 'price' => $i, 'promotionPrice' => $i, 'description' => "OrderLineTestB$i",
-                                    'stock' => $i, 'color' => "OrderLineTestB$i", 'model' => "OrderLineTestB$i", 'image' => "ImageForeignB$i"]);
+            $productB = new Product(['name' => "shopCartTest$i", 'price' => $i, 'promotionPrice' => $i, 'description' => "shopCartTest$i",
+                                    'stock' => $i, 'color' => "shopCartTest$i", 'model' => "shopCartTest$i", 'image' => "ImageForeignB$i"]);
 
             $user->save();
             $productA->save();
@@ -59,10 +58,13 @@ class ShoppingCartDatabaseTest extends TestCase
             $this->assertEquals("ImageForeignA$i" , $shopcart->carts[0]->image);
             $this->assertEquals("ImageForeignB$i" , $shopcart->carts[1]->image);
 
-            //Test Delete
+            //Test Delete All instances
             
-            $shopcart->delete();
+            $user->delete(); ///con el onDelete('cascade') se borraria el carrito asociado al usuario y sus relaciones en la tabla (M2M) product_shopping_cart
+            $productA->delete();
+            $productB->delete();
             $this->assertDatabaseMissing('shopping_carts', ['id' => $scid[$i-1], 'total' => 99]);
+            $this->assertDatabaseMissing('product_shopping_cart', ['shopping_cart_id' => $scid[$i-1]]);
         }
     }
 }
