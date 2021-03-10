@@ -7,6 +7,7 @@ use Tests\TestCase;
 use App\User;
 use App\FavoriteList;
 use App\ShoppingCart;
+use App\Order;
 
 class UserDataBaseTest extends TestCase
 {
@@ -27,13 +28,14 @@ class UserDataBaseTest extends TestCase
         $this->assertEquals('Diego',$user->name);
         $this->assertDatabaseHas('users',['name' => 'Diego', 'email' => 'ivan@gmail.com']);
 
-        /////CLAVES AJENAS/////
+        /////////////////////////CLAVES AJENAS////////////////////////
         ///favList
         $lista = new FavoriteList(['name' => 'mis favoritos','description' => 'lista favs de prueba']);
         $lista->save();
         $lista2 = new FavoriteList(['name' => 'favs2','description' => 'prueba2']);
         $lista2->save();
         $user->favLists()->saveMany([$lista,$lista2]);
+        $user->save();
         $this->assertEquals('mis favoritos',$user->favLists[0]->name);
         $this->assertEquals('favs2',$user->favLists[1]->name);
         ///shoppingCart
@@ -41,8 +43,20 @@ class UserDataBaseTest extends TestCase
         $cart->save();
         $user->cart()->save($cart);// 1 a 1 en el que no tiene clave ajena se usa save()
         $this->assertEquals(150,$user->cart->total);
-
+        ///user
+        $order1 = new Order(['totalPrice' => 10]);
+        $order1->save();
+        $order2 = new Order(['totalPrice' => 20]);
+        $order2->save();
+        $order3 = new Order(['totalPrice' => 30]);
+        $order3->save();
+        $user->orders()->saveMany([$order1,$order2,$order3]);
+        $user->save();
+        $this->assertEquals(10,$user->orders[0]->totalPrice);
+        $this->assertEquals(20,$user->orders[1]->totalPrice);
+        $this->assertEquals(30,$user->orders[2]->totalPrice);
         //DELETE//
+        $user->orders()->delete(); /// o añadir onDelete('cascade') en la propiedad user_id de la tabla orders)
         $user->delete();
         $this->assertDatabaseMissing('users',['name' => 'Diego']);
     }

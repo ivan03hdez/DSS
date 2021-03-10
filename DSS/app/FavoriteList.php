@@ -14,7 +14,7 @@ class FavoriteList extends Model
     protected $fillable =['name','description'];
 
     public function products() {
-        return $this->belongsToMany('App\Products');
+        return $this->belongsToMany('App\Product');
     }
     public function user() {
         return $this->belongsTo('App\User');
