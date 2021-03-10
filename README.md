@@ -1,4 +1,5 @@
-Iniciar Laravel: composer create-project laravel/laravel=6.8.* miproyecto --prefer-dist
+<strong>Iniciar Laravel:</strong>
+composer create-project laravel/laravel=6.8.* miproyecto --prefer-dist
 
 git init
 git remote add origin https...
