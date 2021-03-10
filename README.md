@@ -1,4 +1,7 @@
-<strong>Iniciar Laravel:</strong>
+**Cuando queremos borrar una fila de una tabla, solo podremos borrarla cuando no tengan claves ajenas que la referencien o cuando tengamos la política de borrar en cascada.
+Si esto no ocurre tendremos que borrar o modificar las claves ajenas que le referencien para poder borrar el objeto principal.**
+
+**Iniciar Laravel:**
 composer create-project laravel/laravel=6.8.* miproyecto --prefer-dist
 
 git init
