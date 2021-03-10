@@ -1,7 +1,8 @@
-**Cuando queremos borrar una fila de una tabla, solo podremos borrarla cuando no tengan claves ajenas que la referencien o cuando tengamos la política de borrar en cascada.
+<strong>Claves Ajenas y Borrados en Cascada</strong>
+Cuando queremos borrar una fila de una tabla, solo podremos borrarla cuando no tengan claves ajenas que la referencien o cuando tengamos la política de borrar en cascada.
 Si esto no ocurre tendremos que borrar o modificar las claves ajenas que le referencien para poder borrar el objeto principal.**
 
-**Iniciar Laravel:**
+<strong>Iniciar Laravel:</strong>
 composer create-project laravel/laravel=6.8.* miproyecto --prefer-dist
 
 git init
@@ -10,10 +11,10 @@ git pull origin ramaATraer
 
 Para servir: php artisan serve
 
-Migración:
+<strong>Migración:</strong>
   php artisan make:migration create_favorite_lists_users_table --create=favorite_lists_users
  
-Runear Migraciones:
+<strong>Runear Migraciones:</strong>
   php artisan migrate:fresh
   
 Runear **Migraciones y seeder**s:
