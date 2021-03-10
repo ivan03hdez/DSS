@@ -2,6 +2,8 @@
 Cuando queremos borrar una fila de una tabla, solo podremos borrarla cuando no tengan claves ajenas que la referencien o cuando tengamos la política de borrar en cascada.
 Si esto no ocurre tendremos que borrar o modificar las claves ajenas que le referencien para poder borrar el objeto principal.**
 
+**IMPORTATE** --> composer dump-autoload --> para actualizar posibles seeders nuevos y evitar el erroe de "Target class class_name does not exists"
+
 <strong>Iniciar Laravel:</strong>
 composer create-project laravel/laravel=6.8.* miproyecto --prefer-dist
 
@@ -17,22 +19,19 @@ Para servir: php artisan serve
 <strong>Runear Migraciones:</strong>
   php artisan migrate:fresh
   
-Runear **Migraciones y seeder**s:
+**Runear Migraciones y seeders**:
   php artisan migrate:fresh --seed
  
-Runear **pruebas unitarias**:
+**Runear pruebas unitarias**:
   ./vendor/bin/phpunit
   
 **php artisan migrate:fresh --seed** --> lo que hace es ejecutar los metodos down de todas las migraciones (eliminar las tablas) y despues los métodos up (creación tablas). Despúes ejecuta el fichero DatabaseSeeder
-  
-Para migraciones de la tabla auxiliar de Many2Many:
-  php artisan make:migration create
   
 Crear Tests:
   php artisan make:test OrderLineDatabaseTest           --> esto lo manda al directorio Feature
   php artisan make:test OrderLineDatabaseTest --unit    --> esto lo manda al directorio Unit
 
-**Assert para las DatabaseTest**:
+**Assert para las DatabaseTest:**
     $this->assertDatabaseHas($table, array $data);	Assert that a table in the database contains the given data.
     $this->assertDatabaseMissing($table, array $data);	Assert that a table in the database does not contain the given data.
     $this->assertDeleted($table, array $data);	Assert that the given record has been deleted.
@@ -49,27 +48,10 @@ Creación de clases model y migraciones:
 
 Insertar las migraciones en la BBDD:
   php artisan migrate:install
-
-Crear seeders:
-  php artisan make:seeder ProductTableSeeder
-  php artisan make:seeder PromotionTableSeeder
-  php artisan make:seeder FavoriteListTableSeeder
-  php artisan make:seeder UserTableSeeder
-  php artisan make:seeder OrderTableSeeder
-  php artisan make:seeder OrderLineTableSeeder
-  php artisan make:seeder ShoppingCartTableSeeder
-  
-  php artisan make:seeder ProductShoppingCartTableSeeder
-  php artisan make:seeder Product_ShoppingCartTableSeeder
-  php artisan make:seeder FavoriteListProductTableSeeder
-  php artisan make:seeder FavoriteList_ProductTableSeeder
-  
   
 Insertar las semillas en la BBDD:
   php artisan db:seed
-  
-**IMPORTATE** --> composer dump-autoload --> para actualizar posibles seeders nuevos y evitar el erroe de "Target class class_name does not exists"
-  
+
 SQL:
 -------------------------------------------------------------------------------------------
   Product(id, name, price, promotionPrice, description, stock, color, orderId,promotionId)
@@ -114,15 +96,6 @@ SQL:
     CAj(favId)
 -------------------------------------------------------------------------------------------
 
-Profesor, clase:
-  composer install
-  .env
-  .env.example
-  cp .env.example .env
-  php artisan key:generate
-
-
-  
 **DIAGRAMA DE CLASES**
 ![diagrama clases](https://user-images.githubusercontent.com/58994866/110305304-ea0ae200-7ffc-11eb-9178-492cdbe5e369.PNG)
 
