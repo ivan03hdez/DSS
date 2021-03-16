@@ -14,7 +14,7 @@
   <tbody>
     @foreach($products as $product)
     <tr>
-      <th scope="row">{{$product->id}}</th>
+      <th scope="row"><a href="{{action('ProductController@get',$product->id)}}">{{$product->id}}</a></th>
       <td>{{$product->name}}</td>
       <td>{{$product->model}}</td>
       <td>{{$product->description}}</td>
