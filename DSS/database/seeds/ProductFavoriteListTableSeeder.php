@@ -9,7 +9,7 @@ class ProductFavoriteListTableSeeder extends Seeder{
      * @return void
      */
     public function run(){
-        DB::table('favorite_lists_products')->delete();
+        DB::table('favorite_list_product')->delete();
         $products = DB::table('products')->get();
         $favlists = DB::table('favorite_lists')->get();
         $pr = array();
@@ -26,7 +26,7 @@ class ProductFavoriteListTableSeeder extends Seeder{
         $tam = min(count($pr), count($fl));
         for($i = 0; $i < $tam; $i++)
         {
-            DB::table('favorite_lists_products')->insert([
+            DB::table('favorite_list_product')->insert([
                 'product_id' => ($pr[$i]->id),
                 'favorite_list_id' => ($fl[$i]->id)
             ]);
