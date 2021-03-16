@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('/layouts/masterLayout');
+    return view('/layouts/admin');
 });
 Route::get('/products', 'ProductController@list');
+Route::get('/products/{id}', 'ProductController@get');
 Route::get('/users', 'UserControllr@list');
