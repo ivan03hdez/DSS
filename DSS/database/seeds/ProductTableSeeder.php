@@ -25,6 +25,7 @@ class ProductTableSeeder extends Seeder
                 'promotion_id' => $i +1, ///las ids empiezan por 1 y el bucle por 0
                 'image' => "image$i",
                 'type' => "altavoz$i",
+
             ]);
         }
     }
