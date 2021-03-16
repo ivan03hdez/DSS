@@ -1,6 +1,6 @@
-@extends('layouts.masterLayout')
+@extends('layouts.admin')
 @section('title','Lista con todos los productos')
-@section('content)
+@section('content')
 <h1>Products</h1>
 <table class="table table-striped">
   <thead>
@@ -14,7 +14,7 @@
   <tbody>
     @foreach($products as $product)
     <tr>
-      <th scope="row">product->id</th>
+      <th scope="row">{{$product->id}}</th>
       <td>{{$product->name}}</td>
       <td>{{$product->model}}</td>
       <td>{{$product->description}}</td>
