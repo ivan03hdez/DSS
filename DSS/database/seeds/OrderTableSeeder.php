@@ -21,7 +21,8 @@ class OrderTableSeeder extends Seeder
             {
                 DB::table('orders')->insert([
                     'totalPrice' => ($i),
-                    'user_id' => ($user->id)
+                    'user_id' => ($user->id),
+                    'paymentMethod' => 'paypal'
                 ]);
                 $i++;
             }
