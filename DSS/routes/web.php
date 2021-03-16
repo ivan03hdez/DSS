@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/layouts/masterLayout');
 });
+Route::get('/products', 'ProductController@list');
+Route::get('/users', 'UserControllr@list');
