@@ -20,4 +20,4 @@ Route::get('/users', 'UserControllr@list');
 
 
 
-Route::get('/', function(){return view('exampleView');});
+Route::get('/e', function () {return view('/exampleView');});
