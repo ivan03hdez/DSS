@@ -17,3 +17,7 @@ Route::get('/', function () {
 Route::get('/products', 'ProductController@list');
 Route::get('/products/{id}', 'ProductController@get');
 Route::get('/users', 'UserControllr@list');
+
+
+
+Route::get('/e', function () {return view('/exampleView');});
