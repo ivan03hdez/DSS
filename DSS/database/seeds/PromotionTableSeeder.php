@@ -15,7 +15,9 @@ class PromotionTableSeeder extends Seeder
         
         for($i = 0; $i < 10; $i++){
             DB::table('promotions')->insert([
-                'discount' => (10 + $i)
+                'discount' => (10 + $i),
+                'beginDate' => '12-03-2021',
+                'endDate' => '12-05-2021'
             ]);
         }
     }

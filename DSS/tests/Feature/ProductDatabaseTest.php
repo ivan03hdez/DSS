@@ -20,6 +20,8 @@ class ProductDatabaseTest extends TestCase{
         //PROBANDO CLAVE AJENA A PROMOCION/////
         $promotion = new Promotion();
         $promotion->discount = 25;
+        $promotion->beginDate ='12-03-2021';
+        $promotion->endDate = '12-05-2021';
         $promotion->save();
         $product = new Product();
         $product->name = 'productoPrueba';
