@@ -97,7 +97,7 @@ SQL:
 -------------------------------------------------------------------------------------------
 
 **DIAGRAMA DE CLASES**
-![diagrama clases](https://user-images.githubusercontent.com/58994866/111335129-6c864800-8674-11eb-9df8-bb01ab6d3bc3.PNG)
+![diagrama clases](https://user-images.githubusercontent.com/58994866/112124040-3724b180-8bc2-11eb-86b8-07487a18ff90.PNG)
 
 
 
