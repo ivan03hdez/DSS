@@ -39,4 +39,6 @@ Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
 Route::get('/shoppingCarts', 'ShoppingCartController@list');
 ////////////////////////////////////////////////////////////////
 
+Route::get('/e', 'exampleController@get');
+
 Route::get('/e', function () {return view('/exampleView');});
