@@ -2,8 +2,8 @@
 @section('title','Lista con todos los productos')
 @section('content')
 <h1>Products</h1>
-<table class="table table-striped">
-  <thead>
+<table class="table table-hover table-responsive">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">Nº</th>
       <th scope="col">Name</th>

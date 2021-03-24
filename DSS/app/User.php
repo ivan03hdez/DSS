@@ -40,7 +40,7 @@ class User extends Authenticatable
         return $this->hasOne('App\ShoppingCart');
     }
     public function favLists() {
-        return $this->hasMany('App\favoriteList');
+        return $this->hasMany('App\FavoriteList');
     }
     public function orders() {
         return $this->hasMany('App\Order');

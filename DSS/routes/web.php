@@ -22,6 +22,7 @@ Route::get('/products/{id}', 'ProductController@get');
 Route::get('/users', 'UserController@list');
 Route::get('/users/{id}', 'UserController@get');
 
+
 Route::get('/promotions', 'PromotionController@list');
 Route::get('/promotions/{id}', 'PromotionController@get');
 
@@ -37,6 +38,5 @@ Route::get('/favoriteLists', 'FavoriteListController@list');
 Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
 Route::get('/shoppingCarts', 'ShoppingCartController@list');
 ////////////////////////////////////////////////////////////////
-
 
 Route::get('/e', function () {return view('/exampleView');});

@@ -16,7 +16,7 @@ class ProductTableSeeder extends Seeder
         for($i = 0; $i < 10; $i++){
             DB::table('products')->insert([
                 'name' => "producto$i",
-                'price' => (15 + $i0),
+                'price' => (15 + $i),
                 'promotionPrice' => (15 + $i), 
                 'description' => "description$i",
                 'stock' => (10 + $i),

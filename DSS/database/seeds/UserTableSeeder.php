@@ -14,7 +14,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->delete();
         // Añadimos una entrada a esta tabla
         
-        for($i = 0; $i < 10; $i++){
+        for($i = 0; $i < 20; $i++){
             if ($i == 0)
             {
                 $role = 'admin';
