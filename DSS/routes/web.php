@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('/layouts/admin');
 });
+
 /////////////Rutas que usara el administrador//////
 Route::get('/products', 'ProductController@list');
 Route::get('/products/{id}', 'ProductController@get');
@@ -36,7 +37,5 @@ Route::get('/favoriteLists', 'FavoriteListController@list');
 Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
 Route::get('/shoppingCarts', 'ShoppingCartController@list');
 ////////////////////////////////////////////////////////////////
-
-
 
 Route::get('/e', function () {return view('/exampleView');});
