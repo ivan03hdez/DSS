@@ -22,6 +22,7 @@ Route::get('/products/{id}', 'ProductController@get');
 Route::get('/users', 'UserController@list');
 Route::get('/users/{id}', 'UserController@get');
 
+
 Route::get('/promotions', 'PromotionController@list');
 Route::get('/promotions/{id}', 'PromotionController@get');
 
