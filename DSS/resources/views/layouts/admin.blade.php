@@ -9,24 +9,6 @@
 
     <title>@yield('title')</title>
   </head>
-  
-<div class="container">
-
-    
-        <!-- sidebar content -->
-        <div id="sidebar" class="col-md-4">
-        <nav id="sidebar-nav">
-        <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">Fly to the Moon</a></li>
-            <li><a href="#">Dig to China</a></li>
-            <li><a href="#">Swim Across the Sea</a></li>
-        </ul>
-    </nav>
-        </div>
-
-       
-
-
   <body>
     <div class="container">
         @yield('content')
