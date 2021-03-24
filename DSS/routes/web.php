@@ -21,8 +21,7 @@ Route::get('/products/{id}', 'ProductController@get');
 
 Route::get('/users', 'UserController@list');
 Route::get('/users/{id}', 'UserController@get');
-<<<<<<< HEAD
-=======
+
 
 Route::get('/promotions', 'PromotionController@list');
 Route::get('/promotions/{id}', 'PromotionController@get');
@@ -39,23 +38,5 @@ Route::get('/favoriteLists', 'FavoriteListController@list');
 Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
 Route::get('/shoppingCarts', 'ShoppingCartController@list');
 ////////////////////////////////////////////////////////////////
->>>>>>> cdfb4fbdeffb887a28b0cd52448ab3f627a472ea
-
-Route::get('/promotions', 'PromotionController@list');
-Route::get('/promotions/{id}', 'PromotionController@get');
-
-Route::get('/orders/{id}', 'OrderController@get');
-Route::get('/orders', 'OrderController@list');
-
-Route::get('/orderLines/{id}', 'OrderLineController@get');
-Route::get('/orderLines', 'OrderLineController@list');
-
-Route::get('/favoriteLists/{id}', 'FavoriteListController@get');
-Route::get('/favoriteLists', 'FavoriteListController@list');
-
-Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
-Route::get('/shoppingCarts', 'ShoppingCartController@list');
-////////////////////////////////////////////////////////////////
-
 
 Route::get('/e', function () {return view('/exampleView');});
