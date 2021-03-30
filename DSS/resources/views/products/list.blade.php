@@ -5,10 +5,11 @@
 <table class="table table-hover table-responsive">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Nº</th>
-      <th scope="col">Name</th>
-      <th scope="col">Model</th>
-      <th scope="col">Description</th>
+      <th scope="col">@sortablelink('id')</th>
+      <th scope="col">@sortablelink('name')</th>
+      <th scope="col">@sortablelink('model')</th>
+      <th scope="col">@sortablelink('description')</th>
+      <th scope="col">Discount</th>
     </tr>
   </thead>
   <tbody>
@@ -18,8 +19,10 @@
       <td>{{$product->name}}</td>
       <td>{{$product->model}}</td>
       <td>{{$product->description}}</td>
+      <td><a href="{{action('PromotionController@get',$product->promotion->id)}}">{{$product->promotion->discount}}%</a></td>
     </tr>
     @endforeach
   </tbody>
 </table>
+{{$products->appends(request()->except(['page','_token']))->links()}}
 @endsection

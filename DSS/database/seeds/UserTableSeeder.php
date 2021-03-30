@@ -14,7 +14,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->delete();
         // Añadimos una entrada a esta tabla
         
-        for($i = 0; $i < 20; $i++){
+        for($i = 0; $i < 40; $i++){
             if ($i == 0)
             {
                 $role = 'admin';
@@ -31,7 +31,7 @@ class UserTableSeeder extends Seeder
                 'email' => "email$i@domain.com",
                 'password' => "pass$i", 
                 'address' => "address$i",
-                'phone' => intval($phone, 10),
+                'phone' => $phone,
                 'role' => $role,
                 'image' => "image$i"
             ]);

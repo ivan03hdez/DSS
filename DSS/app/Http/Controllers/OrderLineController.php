@@ -7,7 +7,7 @@ use App\OrderLine;
 
 class OrderLineController extends Controller{
     public function list(){
-        $orderLines = OrderLine::all();
+        $orderLines = OrderLine::sortable(['id'=> 'asc'])->paginate(10);
         return view('orderLines.list')->with('orderLines',$orderLines);///si estuviera en una carpeta views/products/list.blade.php seria view('product.list')
     }
     public function get($id){

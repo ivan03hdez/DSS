@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Product extends Model
 {
+    use Sortable;
+    protected $sortable = ['promotion_id','id','name', 'price', 'promotionPrice','color','model','stock','description','image'];
     protected $fillable = ['name', 'price', 'promotionPrice','color','model','stock','description','image'];
 
     public function lines() {

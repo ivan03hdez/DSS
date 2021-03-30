@@ -7,7 +7,7 @@ use App\Promotion;
 
 class PromotionController extends Controller{
     public function list(){
-        $promotions = Promotion::all();
+        $promotions = Promotion::sortable(['id'=> 'asc'])->paginate(10);
         return view('promotions.list')->with('promotions',$promotions);///si estuviera en una carpeta views/products/list.blade.php seria view('promotions.list')
     }
     public function get($id){

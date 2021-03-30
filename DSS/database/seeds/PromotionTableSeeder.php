@@ -13,7 +13,7 @@ class PromotionTableSeeder extends Seeder
     {
         DB::table('promotions')->delete();
         
-        for($i = 0; $i < 10; $i++){
+        for($i = 0; $i < 40; $i++){
             DB::table('promotions')->insert([
                 'discount' => (10 + $i),
                 'beginDate' => '12-03-2021',

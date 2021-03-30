@@ -29,14 +29,16 @@ class OrderLineTableSeeder extends Seeder
         $tam = min(count($pr), count($or));
         for($i = 0; $i < $tam; $i++)
         {
-            $description = "Description$i";
-            DB::table('order_lines')->insert([
-                'price' => ($i),
-                'quantity' => ($i),
-                'description' => ($description),
-                'product_id' => ($pr[$i]->id),
-                'order_id' => ($or[$i]->id)
-            ]);
+            for($j = 0; $j < 4; $j++){
+                $description = "Description$i$j";
+                DB::table('order_lines')->insert([
+                    'price' => ($i + $j),
+                    'quantity' => ($i + $j),
+                    'description' => ($description),
+                    'product_id' => ($pr[$i]->id),
+                    'order_id' => ($or[$i]->id)
+                ]);
+            }
         }
     }
 }

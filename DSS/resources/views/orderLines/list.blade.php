@@ -5,11 +5,11 @@
 <table class="table table-hover table-responsive">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
-      <th scope="col">Description</th>
-      <th scope="col">Order</th>
+      <th scope="col">@sortablelink('id')</th>
+      <th scope="col">@sortablelink('quantity')</th>
+      <th scope="col">@sortablelink('price')</th>
+      <th scope="col">@sortablelink('description')</th>
+      <th scope="col">@sortablelink('order_id','Order ID')</th>
     </tr>
   </thead>
   <tbody>
@@ -21,7 +21,8 @@
       <td>{{$orderLine->description}}</td>
       <td><a href="{{action('OrderController@get',$orderLine->order->id)}}">{{$orderLine->order}}</a></td>
     </tr>
-    @endforeach
+    @endforeach 
   </tbody>
 </table>
+{{$orderLines->appends(request()->except(['page','_token']))->links()}}
 @endsection

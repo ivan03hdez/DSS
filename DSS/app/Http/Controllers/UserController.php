@@ -7,7 +7,7 @@ use App\User;
 
 class UserController extends Controller{
     public function list(){
-        $users = user::all();
+        $users = user::sortable(['id'=> 'asc'])->paginate(10);
         return view('users.list')->with('users',$users);///si estuviera en una carpeta views/products/list.blade.php seria view('product.list')
     }
     public function get($id){
