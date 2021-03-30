@@ -15,27 +15,60 @@
     <title>@yield('title')</title>
   </head>   
   <body>
-    @section('content')
-    <div class="container" class="content-example">
-        @section('sidebar')
-        <!-- SIDEBAR **************************** -->
-
-            <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            @section('sidebar-element')
-            <a href="#">@yield('sidebar-yield')</a>
-            @show
-            </div>
-
-            <!-- Use any element to open the sidenav -->
-             
-      @show
-        <!-- SIDEBAR **************************** -->
-        
-    </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span> 
-    @show
+    
    
+    <div class="container-fluid">
+      <div class="row">
+      
+        <div id="header01" class="col-12" style="background-color:grey;">  <!-- HEADER -->
+            
+            <div class="col-12 align-header"> 
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()"  ><div class="menu">&#9776; Dashboard</div></span> 
+              <div class="logo rounded mx-auto d-block" >
+                <img src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title="">
+              </div>
+              <div class="col-2 admin-outer-container" style="background-color:yellow;"> 
+                @section('add')
+                <div class="col-4 admin-container add" style="background-color:yellow;">
+                  <button type="button" class="btn btn-success btn-add"> Add + </button>
+                </div>  
+                @show
+                <div class="col-4 admin-container admin-image" style="background-color:red;">
+                </div>
+                <div class="col-4 admin-container admin-name" style="background-color:green;">
+                </div>
+              </div>
+            </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-12" style="background-color:green;" id="body01">
+body 
+        </div>
+        @section('sidebar')
+        <div class="col-sm-4" >  <!-- SIDEBAR -->
+          
+          <!-- SIDEBAR **************************** -->
+
+              <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
+              @section('sidebar-element')
+              <a href="#">@yield('sidebar-yield')</a>
+              @show
+              </div>
+
+              <!-- Use any element to open the sidenav -->
+              
+          
+          <!-- SIDEBAR **************************** -->
+        </div>
+        @show
+      </div>
+      <div class="row">
+        <div class="col-lg" style="background-color:red;" id="footer01">Footer</div>
+      </div>
+    </div>
 
 
 

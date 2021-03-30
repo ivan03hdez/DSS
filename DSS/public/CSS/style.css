@@ -6,10 +6,58 @@ body {
    background-color: greenyellow;
  }
  */
-
+/*
  .content-example{
-    text-align: center;
+    text-align: end;
  }
+ */
+
+
+ .logo {
+  width: 100px;
+  height: 106px;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+} 
+.logo img {
+  
+  width: 90%;
+  height: auto;
+  border-radius: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:hidden;
+  vertical-align: middle;
+}
+.span {
+  vertical-align: bottom;
+}
+.menu{
+  padding-top: 15%;
+  padding-bottom: 10%;
+  font-size: 120%;
+  font-weight: bold;
+}
+.align-header{
+  display: inline-flex;
+}
+.add{
+
+}
+.admin-outer-container{
+  display: inline-flex;
+}
+.admin-container{
+  width: 100%;
+  height: 100%;
+}
+
+.admin-image{
+
+}
+.admin-name{
+
+}
 /* SIDEBAR ************ */
 .sidenav {
    height: 100%; /* 100% Full-height */
@@ -18,7 +66,7 @@ body {
    z-index: 1; /* Stay on top */
    top: 0; /* Stay at the top */
    left: 0;
-   background-color: #111; /* Black*/
+   background-color: #f1f1f1 ; /* Black*/
    overflow-x: hidden; /* Disable horizontal scroll */
    padding-top: 60px; /* Place content 60px from the top */
    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -36,7 +84,7 @@ body {
  
  /* When you mouse over the navigation links, change their color */
  .sidenav a:hover {
-   color: #f1f1f1;
+   color: #000000;
  }
  
  /* Position and style the close button (top right corner) */
