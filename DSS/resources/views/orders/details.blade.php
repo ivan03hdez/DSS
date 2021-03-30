@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title','Información del pedido')
 @section('content')
-<h1>Informacion del pedido</h1>
+<h1>Informacion del pedido {{$order->id}}</h1>
 <table class="table table-borderless">
   <thead width=80%>
     <tr>

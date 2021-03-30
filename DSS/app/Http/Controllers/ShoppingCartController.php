@@ -7,7 +7,7 @@ use App\ShoppingCart;
 
 class ShoppingCartController extends Controller{
     public function list(){
-        $shoppingCarts = ShoppingCart::all();
+        $shoppingCarts = ShoppingCart::sortable(['id'=> 'asc'])->paginate(10);
         return view('promotions.list')->with('shoppingCarts',$shoppingCarts);///si estuviera en una carpeta views/products/list.blade.php seria view('promotions.list')
     }
     public function get($id){

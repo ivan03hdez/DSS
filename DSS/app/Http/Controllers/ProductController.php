@@ -7,7 +7,7 @@ use App\Product;
 
 class ProductController extends Controller{
     public function list(){
-        $products = Product::all();
+        $products = Product::sortable(['id'=> 'asc'])->paginate(10);
         return view('products.list')->with('products',$products);///si estuviera en una carpeta views/products/list.blade.php seria view('product.list')
     }
     public function get($id){

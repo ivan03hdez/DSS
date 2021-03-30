@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title','Información de la promocion')
 @section('content')
-<h1>Información de la promocion y productos afectados</h1>
+<h1>Información de la promocion {{$promotion->id}} y productos afectados</h1>
 <table class="table table-borderless">
   <thead>
     <tr>

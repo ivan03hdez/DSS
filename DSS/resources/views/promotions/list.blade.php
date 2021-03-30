@@ -5,10 +5,10 @@
 <table class="table table-hover table-responsive">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">discount</th>
-      <th scope="col">beginDate</th>
-      <th scope="col">endDate</th>
+      <th scope="col">@sortablelink('id')</th>
+      <th scope="col">@sortablelink('discount')</th>
+      <th scope="col">@sortablelink('beginDate')</th>
+      <th scope="col">@sortablelink('endDate')</th>
     </tr>
   </thead>
   <tbody>
@@ -22,4 +22,5 @@
     @endforeach
   </tbody>
 </table>
+{{$promotions->appends(request()->except(['page','_token']))->links()}}
 @endsection

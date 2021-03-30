@@ -7,7 +7,11 @@ use App\Order;
 
 class OrderController extends Controller{
     public function list(){
-        $orders = Order::all();
+        $orders = Order::sortable(['id'=> 'asc'])->paginate(10);
+        return view('orders.list')->with('orders',$orders);///si estuviera en una carpeta views/products/list.blade.php seria view('product.list')
+    }
+    public function filter($userId){
+        $orders = Order::where('user_id',$userId)->paginate(10);
         return view('orders.list')->with('orders',$orders);///si estuviera en una carpeta views/products/list.blade.php seria view('product.list')
     }
     public function get($id){

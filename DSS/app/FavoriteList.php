@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class FavoriteList extends Model
 {
+    use Sortable;
+    public $sortable = ['name','description','id','user_id'];
     /**
      * The attributes that are mass assignable.
      *

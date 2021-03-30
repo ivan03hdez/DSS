@@ -18,4 +18,5 @@
     @endforeach
   </tbody>
 </table>
+{{$shoppingCarts->appends(request()->except(['page','_token']))->links()}}
 @endsection

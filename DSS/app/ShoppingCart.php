@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class ShoppingCart extends Model
 {
+    use Sortable;
+    protected $sortable = ['id','total','user_id'];
     /**
      * The attributes that are mass assignable.
      *
