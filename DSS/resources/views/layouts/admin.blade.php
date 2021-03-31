@@ -43,8 +43,9 @@
         
       </div>
       <div class="row">
-        <div class="col-12" style="background-color:green;" id="body01">
-body 
+        <div class="col-12" style="background-color:white;" id="body01">
+        @section('content') 
+        @show 
         </div>
         @section('sidebar')
         <div class="col-sm-4" >  <!-- SIDEBAR -->
@@ -68,6 +69,7 @@ body
       <div class="row">
         <div class="col-lg" style="background-color:red;" id="footer01">Footer</div>
       </div>
+      
     </div>
 
 

@@ -2,7 +2,8 @@
 @section('title','Información del usuario')
 @section('content')
 <h1>Información de {{$user->name}}</h1>
-<table class="table table-hover table-responsive">
+<div class="table-responsive">
+<table class="table table-hover text">
   <thead class="thead-dark">
     <tr>
       <th scope="col">id</th>
@@ -29,13 +30,18 @@
   </tbody>
 </table>
 <h4>Información de los pedidos de {{$user->name}}</h1>
-<table class="table table-hover table-responsive">
+@if($user->orders->count()==0) NO Hay Pedidos
+@else
+<table class="table table-hover text">
   <thead class="thead-dark">
     <tr>
-      @foreach($user->orders as $order)
-      <th scope="col">order</th>
-      <th scope="col">totalPrice</th>
-      @endforeach
+      
+        @foreach($user->orders as $order)
+        <th scope="col">order</th>
+        <th scope="col">totalPrice</th>
+        <th scope="col">Order lines count</th>
+        @endforeach
+      
     </tr>
   </thead>
   <tbody>
@@ -43,27 +49,32 @@
     @foreach($user->orders as $order)
       <td scope="row"><a href="{{action('OrderController@get',$order->id)}}">{{$order->id}}</a></td>
       <td scope="row">{{$order->totalPrice}}</td>
+      <td scope="row">{{$order->numberOfLines($user->id)}}</td>
     @endforeach
       </tr>
   </tbody>
 </table>
-
+@endif
 
 <h4>Información de las listas de favoritos de {{$user->name}}</h1>
-<table class="table table-hover table-responsive">
+@if($user->favLists->count()==0) NO hay listas de favoritos
+@else
+<table class="table table-hover text">
   <thead class="thead-dark">
-    <tr>
+      <tr>
+        @foreach($user->favLists as $favList)
+          <th scope="col">Nombre</th>
+        @endforeach
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
     @foreach($user->favLists as $favList)
-      <th scope="col">Nombre</th>
-      @endforeach
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-  @foreach($user->favLists as $favList)
-      <td scope="row"><a href="{{action('FavoriteListController@get',$favList->id)}}">{{$favList->name}}</a></td>
+        <td scope="row"><a href="{{action('FavoriteListController@get',$favList->id)}}">{{$favList->name}}</a></td>
     @endforeach
       </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+  @endif
+</div>  
 @endsection

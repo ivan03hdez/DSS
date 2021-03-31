@@ -41,9 +41,6 @@ body {
 .align-header{
   display: inline-flex;
 }
-.add{
-
-}
 .admin-outer-container{
   display: inline-flex;
 }
@@ -108,3 +105,33 @@ body {
    .sidenav a {font-size: 18px;}
  }
 /* SIDEBAR ************ */
+table td.icon-trash{/*todos los elementos <td> que esten dentro de un <table> y tengan la clase icon-trash --> para centrar el icono */
+  padding-left: 33px;
+}
+.icon-trash {
+  fill: red;
+}
+.text td{ /*para centrar el texto de las filas de listados/obtener*/
+  text-align: center;
+}
+.text th{ /*para centrar el texto de las filas de listados/obtener*/
+  text-align: center;
+}
+svg{
+  cursor: pointer;
+}
+svg:hover{
+  transform: scale(1.2);
+}
+svg:active{
+  filter: grayscale(25%) opacity(10);
+}
+.add h1{
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 11px;
+}
+.add svg{
+  margin-left: 10px;
+  margin-top: 5px;
+}
