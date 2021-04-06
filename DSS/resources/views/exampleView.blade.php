@@ -3,9 +3,5 @@
 
 @section('sidebar')
    @parent   
-   @section('sidebar-element')
-      @parent
-      @section('sidebar-yield', 'ELEMENTO 1')
-   @endsection
    
 @endsection
