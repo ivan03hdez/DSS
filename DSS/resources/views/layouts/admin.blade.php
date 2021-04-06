@@ -9,7 +9,7 @@
 
 
     <link rel="stylesheet" type="text/css" href="{{ url('/CSS/style.css') }}" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 
     <title>@yield('title')</title>
@@ -27,17 +27,19 @@
               <div class="logo rounded mx-auto d-block" >
                 <img src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title="">
               </div>
+
+              <!-- 
               <div class="col-2 admin-outer-container" style="background-color:yellow;"> 
                 @section('add')
                 <div class="col-4 admin-container add" style="background-color:yellow;">
                   <button type="button" class="btn btn-success btn-add"> Add + </button>
                 </div>  
                 @show
-                <div class="col-4 admin-container admin-image" style="background-color:red;">
-                </div>
-                <div class="col-4 admin-container admin-name" style="background-color:green;">
-                </div>
+                <div class="col-4 admin-container admin-image" style="background-color:red;"></div>
+                <div class="col-4 admin-container admin-name" style="background-color:green;"></div>
               </div>
+              -->
+
             </div>
         </div>
         
@@ -54,9 +56,15 @@
 
               <div id="mySidenav" class="sidenav">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
-              @section('sidebar-element')
-              <a href="#">@yield('sidebar-yield')</a>
-              @show
+              <a href="{{action('ProductController@list')}}">Productos</a>
+              <a href="{{action('UserController@list')}}">Usuarios</a>
+              <a href="{{action('FavoriteListController@list')}}">Lista de Favoritos</a>
+              <a href="{{action('OrderController@list')}}">Pedidos</a>
+              <a href="{{action('OrderLineController@list')}}">Linea de Pedido</a>
+              <a href="{{action('PromotionController@list')}}">Promotion</a>
+              <a href="{{action('ShoppingCartController@list')}}">Carrito</a>
+              <a class="fixed-bottom col-sm-4" href="#">Cerrar sesion</a>
+              
               </div>
 
               <!-- Use any element to open the sidenav -->
@@ -67,7 +75,21 @@
         @show
       </div>
       <div class="row">
-        <div class="col-lg" style="background-color:red;" id="footer01">Footer</div>
+        
+        <div class="col-lg footer"  id="footer01" >
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 justify-content-end align-items-end"  style="background-color:white;">
+              
+              Redes sociales:
+                <a class="fa fa-instagram" href="https://www.instagram.com/ua_universidad/"></a>
+                <a class="fa fa-facebook" href="https://www.facebook.com/campusUA"></a>
+                <a class="fa fa-twitter" href="https://twitter.com/UA_Universidad"></a>
+                <a class="fa fa-linkedin" href="https://www.linkedin.com/school/universidad-alicante/"></a>
+                <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCVZCJVs8j4oTRmnHC31pwpQ"></a>
+            </div>
+        </div>
+      
       </div>
       
     </div>
