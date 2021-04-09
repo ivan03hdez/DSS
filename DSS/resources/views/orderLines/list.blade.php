@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title','Lista con todos las lineas de todos los pedidos')
 @section('content')
-<h1>Products</h1>
+<h1>Order Lines</h1>
 <div class="table-responsive">
 <table class="table table-hover text">
   <thead class="thead-dark">

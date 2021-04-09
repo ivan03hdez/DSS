@@ -34,5 +34,9 @@ class UserController extends Controller{
         }
     }
         
-    
+    public function searchU(){
+        $search = \Request::input('search-query'); 
+        $users = User::where('name', 'like', '%'.$search.'%')->paginate(10);
+        return view('users.list')->with('users',$users);
+    }
 }

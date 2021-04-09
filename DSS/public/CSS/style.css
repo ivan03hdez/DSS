@@ -56,11 +56,22 @@ body {
 
 }
 
+.search-combo{
+  
+}
+
 .footer{
   position: absolute;
   bottom: 0;
   height: 100px;
   display: inline-flex;
+}
+
+.cerrar-sesion{
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
 }
 
 /* SIDEBAR ************ */
@@ -194,78 +205,157 @@ svg:active{
   color: white;
 }
 
-.fa-pinterest {
-  background: #cb2027;
-  color: white;
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+.body-log {
+  height: 100%;
 }
 
-.fa-snapchat-ghost {
-  background: #fffc00;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+.body-log {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
 }
 
-.fa-skype {
-  background: #00aff0;
-  color: white;
+.form-signin {
+  width: 100%;
+  /*max-width: 330px;*/
+  max-width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 25px;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 25px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
-.fa-android {
-  background: #a4c639;
-  color: white;
+.login-btn-sing-in {
+  font-size: 25px;
 }
 
-.fa-dribbble {
-  background: #ea4c89;
-  color: white;
+/*
+GOOGLE
+*/
+
+
+
+.goog-te-banner-frame {display:none;}
+#goog-gt-tt {display:none!important;visibility:hidden!important;}
+
+#google_translate_element {
+  position: absolute;
+  bottom: calc(53px + 16px);
+  right: 16px!important;
+  border-radius: 7%;
+  text-align: center;
+}
+.goog-te-gadget {
+  font-family: Roboto, 'Open Sans', sans-serif!important;
+  text-transform: uppercase;
+}
+.goog-te-gadget-simple  {
+  background-color: rgba(255,255,255,0.20)!important;
+  border: 1px solid rgba(255,255,255,0.50) !important;
+  padding: 8px!important;
+  border-radius: 4px!important;
+  font-size: 1rem!important;
+  line-height:2rem!important;
+  display: inline-block;
+  cursor: pointer;
+  zoom: 1;
+}
+.goog-te-menu2 {
+  max-width: 100%;
+}
+.goog-te-menu-value {
+  color: #fff !important;
+}
+.goog-te-menu-value span:nth-child(5) {
+  display:none;
+}
+.goog-te-menu-value span:nth-child(3) {
+  border:none!important;
+  font-family: 'Material Icons';
+  
 }
 
-.fa-vimeo {
-  background: #45bbff;
-  color: white;
+.goog-te-gadget-icon {
+    background-image: url(https://placehold.it/32)!important;
+    background-position: 0px 0px;
+    height: 32px!important;
+    width: 32px!important;
+    margin-right: 8px!important;
 }
 
-.fa-tumblr {
-  background: #2c4762;
-  color: white;
+
+.goog-te-banner-frame.skiptranslate {display: none!important;} 
+body {top: 0px!important;}
+
+/* ================================== *\
+    Mediaqueries
+\* ================================== */
+@media (max-width: 667px) {
+	#google_translate_element {
+		bottom: calc(100% - 50% - 53px);
+		left: 16px!important;
+		width: 100%!important;
 }
 
-.fa-vine {
-  background: #00b489;
-  color: white;
-}
 
-.fa-foursquare {
-  background: #45bbff;
-  color: white;
-}
-
-.fa-stumbleupon {
-  background: #eb4924;
-  color: white;
-}
-
-.fa-flickr {
-  background: #f40083;
-  color: white;
-}
-
-.fa-yahoo {
-  background: #430297;
-  color: white;
-}
-
-.fa-soundcloud {
-  background: #ff5500;
-  color: white;
-}
-
-.fa-reddit {
-  background: #ff5700;
-  color: white;
-}
-
-.fa-rss {
-  background: #ff6600;
-  color: white;
-}
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+} 
