@@ -31,8 +31,8 @@
       <td>{{$user->email}}</td>
       <td>{{$user->address}}</td>
       <td>{{$user->phone}}</td>
-      <td class="text"><a href="{{action('FavoriteListController@filter',$user->id)}}">{{$user->numberofLists($user->id)}}</a></td>
-      <td class="text"><a href="{{action('OrderController@filter',$user->id)}}">{{$user->numberofOrders($user->id)}}</a></td>
+      <td ><a href="{{action('FavoriteListController@filter',$user->id)}}">{{$user->numberofLists($user->id)}}</a></td>
+      <td ><a href="{{action('OrderController@filter',$user->id)}}">{{$user->numberofOrders($user->id)}}</a></td>
       <td class="icon-trash">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">

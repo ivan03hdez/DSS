@@ -23,7 +23,7 @@ Route::get('/users', 'UserController@list');
 Route::get('/users/create', function () {
     return view('/users/create');
 });
-Route::POST('/users/create', function () {
+Route::post('/users/create', function () {
     return view('/users/create');
 });
 Route::get('/users/{id}', 'UserController@get');

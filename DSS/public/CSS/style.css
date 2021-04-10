@@ -61,7 +61,7 @@ body {
 }
 
 .footer{
-  position: absolute;
+  position: relative;
   bottom: 0;
   height: 100px;
   display: inline-flex;
@@ -130,12 +130,17 @@ table td.icon-trash{/*todos los elementos <td> que esten dentro de un <table> y 
 .icon-trash {
   fill: red;
 }
+.text thead tr th{ /*para centrar el texto de las filas de listados/obtener*/
+  vertical-align: middle;
+}
 .text td{ /*para centrar el texto de las filas de listados/obtener*/
   text-align: center;
 }
 .text th{ /*para centrar el texto de las filas de listados/obtener*/
   text-align: center;
+  
 }
+
 svg{
   cursor: pointer;
 }
@@ -231,7 +236,6 @@ svg:active{
 
 
 */
-
 .body-log {
   height: 100%;
 }
@@ -358,4 +362,5 @@ body {top: 0px!important;}
 
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
-} 
+}
+}

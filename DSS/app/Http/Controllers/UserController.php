@@ -33,7 +33,6 @@ class UserController extends Controller{
         $user->save();
         }
     }
-        
     public function searchU(){
         $search = \Request::input('search-query'); 
         $users = User::where('name', 'like', '%'.$search.'%')->paginate(10);
