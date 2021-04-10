@@ -45,7 +45,7 @@
       </div>
       <div class="row">
         <div class="col-12" style="background-color:white;" id="body01">
-        @section('content') 
+        @section('content')
         @show 
         </div>
         @section('sidebar')
