@@ -47,9 +47,15 @@ Route::get('/favoriteLists/{id}', 'FavoriteListController@get');
 
 Route::get('/shoppingCarts', 'ShoppingCartController@list');
 Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
+
+Route::get('/searchP', 'ProductController@searchP');
+Route::get('/searchU', 'UserController@searchU');
+Route::get('/searchFL', 'FavoriteListController@searchFL');
 ///////////////////////cada metodo del controlador tiene que tener definida una ruta//////////////
 
 Route::get('/e', 'exampleController@get');
 
 Route::get('/e', function () {return view('/exampleView');});
+Route::get('/login', function () {return view('/login');});
+Route::get('/signin', function () {return view('/signin');});
 

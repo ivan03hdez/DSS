@@ -18,5 +18,9 @@ class FavoriteListController extends Controller{
         $favoriteList = FavoriteList::where('id',$id)->get()[0];//->get() devuelve una array asociativo de tipo name:producto1 con las columnas de la tabla producto 
         return view('favoriteLists.details')->with('favoriteList',$favoriteList);
     }
-    
+    public function searchFL(){
+        $search = \Request::input('search-query'); 
+        $favoriteLists = FavoriteList::where('name', 'like', '%'.$search.'%')->paginate(10);
+        return view('favoriteLists.list')->with('favoriteLists',$favoriteLists);
+    }
 }

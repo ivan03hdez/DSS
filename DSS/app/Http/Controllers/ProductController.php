@@ -17,4 +17,9 @@ class ProductController extends Controller{
     public function create(){
         $product = new Product();
     }
+    public function searchP(){
+        $search = \Request::input('search-query'); 
+        $products = Product::where('name', 'like', '%'.$search.'%')->paginate(10);
+        return view('products.list')->with('products',$products);
+    }
 }
