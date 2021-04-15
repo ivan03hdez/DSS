@@ -72,6 +72,7 @@
           <!-- SIDEBAR **************************** -->
         </div>
         @show
+       
       </div>
       <div class="row">
         
