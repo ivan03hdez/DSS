@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Promotion;
 
 class ProductController extends Controller{
     public function list(){
@@ -17,9 +18,20 @@ class ProductController extends Controller{
     public function create(){
         $product = new Product();
     }
-    public function searchP(){
-        $search = \Request::input('search-query'); 
-        $products = Product::where('name', 'like', '%'.$search.'%')->paginate(10);
+    public function searchP(Request $request){
+        $searchId = \Request::input('searchP-id'); 
+        $searchName = \Request::input('searchP-name'); 
+        $searchModel = \Request::input('searchP-model'); 
+        $searchDescription = \Request::input('searchP-description'); 
+        $searchDiscount = \Request::input('searchP-discount'); 
+        
+        $products = Product::where('id', 'like', '%'.$searchId.'%')
+                            ->where('name', 'like', '%'.$searchName.'%')
+                            ->where('model', 'like', '%'.$searchModel.'%')
+                            ->where('description', 'like', '%'.$searchDescription.'%')
+                            ->paginate(10);
+       //->where('{{product->promotion->discount}}', 'like', '%'.$searchDiscount.'%')
         return view('products.list')->with('products',$products);
+        //return $searchId . $searchName . $searchModel . $searchDiscount . $searchDescription;
     }
 }

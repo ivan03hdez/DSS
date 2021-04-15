@@ -15,6 +15,39 @@
     </tr>
   </thead>
   <tbody>
+  <form class="d-flex col my-auto" type="get" action="{{ url('/searchP') }}">
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+          <!-- <form class="d-flex col my-auto" type="get" action="{{ url('/search') }}"> </form> -->
+            <input class="form-control form-control-lg me-2" name="searchP-id" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchP-name" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchP-model" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchP-description" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchP-discount" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+          <button class="btn btn-outline-success button-search btn-lg" type="submit">Search</button>
+      </div>
+    </td>
+    </form>
     @foreach($products as $product)
     <tr>
       <th scope="row"><a href="{{action('ProductController@get',$product->id)}}">{{$product->id}}</a></th>
