@@ -18,13 +18,16 @@ class ProductController extends Controller{
     public function create(){
         $product = new Product();
     }
+    public function delete(){
+        $product = new Product();
+    }
     public function searchP(Request $request){
         $searchId = \Request::input('searchP-id'); 
         $searchName = \Request::input('searchP-name'); 
         $searchModel = \Request::input('searchP-model'); 
         $searchDescription = \Request::input('searchP-description'); 
         $searchDiscount = \Request::input('searchP-discount'); 
-        
+
         $products = Product::where('id', 'like', '%'.$searchId.'%')
                             ->where('name', 'like', '%'.$searchName.'%')
                             ->where('model', 'like', '%'.$searchModel.'%')

@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('color');
             $table->string('model');
             $table->bigInteger('promotion_id')->unsigned()->index()->nullable();
-            $table->foreign('promotion_id')->references('id')->on('promotions');//Cuando se borra una promocion, acaba la promocion pero no se destruye
+            $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('set null');//Cuando se borra una promocion, acaba la promocion pero no se destruye
             //objeto producto con lo cual tendremos que revisar manualmente que cada vez que se quiera destruir una promocion se ponga el campo promotion_id a NULL
             $table->string('image');
             $table->string('type')->nullable();

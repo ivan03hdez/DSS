@@ -14,6 +14,34 @@
     </tr>
   </thead>
   <tbody>
+  <form class="d-flex col my-auto" type="get" action="{{ url('/searchD') }}">
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+          <!-- <form class="d-flex col my-auto" type="get" action="{{ url('/search') }}"> </form> -->
+            <input class="form-control form-control-lg me-2" name="searchD-id" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchD-discount" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchD-begin" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchD-end" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+          <button class="btn btn-outline-success button-search btn-lg" type="submit">Search</button>
+      </div>
+    </td>
+  </form>
     @foreach($promotions as $promotion)
     <tr>
       <th scope="row"><a href="{{action('PromotionController@get',$promotion->id)}}">{{$promotion->id}}</a></th>
