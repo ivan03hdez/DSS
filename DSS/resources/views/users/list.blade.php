@@ -1,3 +1,5 @@
+@inject('providerFL', 'App\Http\Controllers\FavoriteListController')
+@inject('providerOrder', 'App\Http\Controllers\OrderController')
 @extends('layouts.admin')
 @section('title','Lista con todos los usuarios')
 @section('content')
@@ -24,6 +26,38 @@
     </tr>
   </thead>
   <tbody>
+  <form class="d-flex col my-auto" type="get" action="{{ url('/searchU') }}">
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchU-id" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchU-name" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchU-email" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchU-address" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+            <input class="form-control form-control-lg me-2" name="searchU-phone" type="text">
+      </div>
+    </td>
+    <td scope="col">
+      <div class="col-2-sm admin-outer-container" > 
+          <button class="btn btn-outline-success button-search btn-lg" type="submit">Search</button>
+      </div>
+    </td>
+  </form>
     @foreach($users as $user)
     <tr>
     <th scope="row"><a href="{{action('UserController@get',$user->id)}}">{{$user->id}}</a></th>
@@ -31,8 +65,8 @@
       <td>{{$user->email}}</td>
       <td>{{$user->address}}</td>
       <td>{{$user->phone}}</td>
-      <td ><a href="{{action('FavoriteListController@filter',$user->id)}}">{{$user->numberofLists($user->id)}}</a></td>
-      <td ><a href="{{action('OrderController@filter',$user->id)}}">{{$user->numberofOrders($user->id)}}</a></td>
+      <td ><a href="{{action('FavoriteListController@filter',$user->id)}}">{{ $providerFL::numberOfLists($user->id) }}</a></td>
+      <td ><a href="{{action('OrderController@filter',$user->id)}}">{{ $providerOrder::numberOfOrders($user->id) }}</a></td>
       <td class="icon-trash">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">

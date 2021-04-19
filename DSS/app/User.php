@@ -47,12 +47,4 @@ class User extends Authenticatable
     public function orders() {
         return $this->hasMany('App\Order');
     }
-    public function numberOfLists($userId){
-        $count = FavoriteList::where('user_id',$userId)->get('id')->count();
-        return $count;
-    }
-    public function numberOfOrders($userId){
-        $count = Order::where('user_id',$userId)->get('id')->count();
-        return $count;
-    }
 }

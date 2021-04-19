@@ -1,3 +1,4 @@
+@inject('providerOrder', 'App\Http\Controllers\OrderController')
 @extends('layouts.admin')
 @section('title','Información del pedido')
 @section('content')
@@ -18,7 +19,7 @@
         <th  scope="row">{{$order->id}}</th>
         <td >{{$order->totalPrice}}</td>
         <td>{{$order->paymentMethod}}</td>
-        <td>{{$order->numberOfLines($order->id)}}</td>
+        <td>{{ $providerOrder::numberOfLines($order->id) }}</td>
         <td class="icon-trash">
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
