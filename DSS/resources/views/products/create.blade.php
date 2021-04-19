@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Crear Usuario')
+@section('title','Crear producto')
 @section('content')
 <form method="POST">
   @csrf

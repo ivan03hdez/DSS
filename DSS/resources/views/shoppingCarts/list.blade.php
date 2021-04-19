@@ -1,13 +1,13 @@
 @extends('layouts.admin')
-@section('title','Lista con todas las cestas (una por usuario)')
+@section('title','Lista con todas las cestas')
 @section('content')
-<h1>Products</h1>
+<h1>Cestas</h1>
 <div class="table-responsive">
 <table class="table table-hover text">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">total acumulado</th>
+      <th scope="col">@sortablelink('id')</th>
+      <th scope="col">@sortablelink('total','total acumulado')</th>
       <th scope="col">Eliminar</th>
     </tr>
   </thead>

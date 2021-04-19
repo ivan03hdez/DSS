@@ -3,7 +3,7 @@
 @section('content')
 <h1>Products</h1>
 <div class="table-responsive">
-<table class="table table-hover table-responsive text">
+<table class="table table-hover text">
   <thead class="thead-dark">
     <tr>
       <th scope="col">@sortablelink('id')</th>
@@ -47,7 +47,7 @@
           <button class="btn btn-outline-success button-search btn-lg" type="submit">Search</button>
       </div>
     </td>
-    </form>
+  </form>
     @foreach($products as $product)
     <tr>
       <th scope="row"><a href="{{action('ProductController@get',$product->id)}}">{{$product->id}}</a></th>
@@ -71,13 +71,4 @@
 </table>
 </div>
 {{$products->appends(request()->except(['page','_token']))->links()}}
-@endsection
-@section('search')
-   @parent  
-   <div class="col-2-sm admin-outer-container" > 
-   <form class="d-flex col my-auto" type="get" action="{{ url('/searchP') }}">
-                      <input class="form-control form-control-lg me-2" name="search-query" type="search">
-                      <button class="btn btn-outline-success button-search btn-lg" type="submit">Search</button>
-                  </form>
-                  </div>
 @endsection

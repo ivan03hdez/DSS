@@ -17,7 +17,14 @@ Route::get('/', function () {
 
 /////////////Rutas que usara el administrador//////
 Route::get('/products', 'ProductController@list');
+//Route::get('/products{filtrar}', 'ProductController@searchP');
 Route::get('/products/{id}', 'ProductController@get');
+Route::get('/products/create', function () {
+    return view('/users/create');
+});
+Route::post('/products/create', function () {
+    return view('/products/create');
+});
 
 Route::get('/users', 'UserController@list');
 Route::get('/users/create', function () {
@@ -31,6 +38,12 @@ Route::get('/users/{id}', 'UserController@get');
 
 Route::get('/promotions', 'PromotionController@list');
 Route::get('/promotions/{id}', 'PromotionController@get');
+Route::get('/promotions/create', function () {
+    return view('/promotions/create');
+});
+Route::post('/promotions/create', function () {
+    return view('/promotions/create');
+});
 
 
 Route::get('/orders', 'OrderController@list');
@@ -51,6 +64,7 @@ Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
 Route::get('/searchP', 'ProductController@searchP');
 Route::get('/searchU', 'UserController@searchU');
 Route::get('/searchFL', 'FavoriteListController@searchFL');
+Route::get('/searchD', 'PromotionController@searchD');
 ///////////////////////cada metodo del controlador tiene que tener definida una ruta//////////////
 
 Route::get('/e', 'exampleController@get');

@@ -6,8 +6,8 @@
 <table class="table table-hover text">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">total acumulado</th>
+      <th scope="col">@sortablelink('id')</th>
+      <th scope="col">@sortablelink('total','total acumulado')</th>
       <th scope="col">productos</th>
       <th scope="col">Eliminar</th>
     </tr>
