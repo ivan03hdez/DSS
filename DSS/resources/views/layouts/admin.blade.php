@@ -67,7 +67,52 @@
         @show
        
       </div>
+      <!--
+      <footer class="footer">
+        <div class="container">
+              
+              <div class="col-sm footer text-right"  id="footer01" >
+                  <div class="col-sm-4" ></div>
+                  
+                  <div class="col-sm-4 justify-content-end align-items-end social-media" >
+                    
+                    Redes sociales:
+                      <a class="fa fa-instagram" href="https://www.instagram.com/ua_universidad/"></a>
+                      <a class="fa fa-facebook" href="https://www.facebook.com/campusUA"></a>
+                      <a class="fa fa-twitter" href="https://twitter.com/UA_Universidad"></a>
+                      <a class="fa fa-linkedin" href="https://www.linkedin.com/school/universidad-alicante/"></a>
+                      <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCVZCJVs8j4oTRmnHC31pwpQ"></a>
+                  </div>
+                  <div class="col-2-sm">
+                    <div id="google_translate_element" style="background-color:grey;"></div>
+                  </div>
+              </div>
+            
+            </div>
+        </footer>
+-->
+    <footer class="bg-light text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+      Redes sociales:
+                      <a class="fa fa-instagram" href="https://www.instagram.com/ua_universidad/"></a>
+                      <a class="fa fa-facebook" href="https://www.facebook.com/campusUA"></a>
+                      <a class="fa fa-twitter" href="https://twitter.com/UA_Universidad"></a>
+                      <a class="fa fa-linkedin" href="https://www.linkedin.com/school/universidad-alicante/"></a>
+                      <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCVZCJVs8j4oTRmnHC31pwpQ"></a>
+                      <div id="google_translate_element" style="background-color:grey;"></div>
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
       
+      
+      <!-- Copyright -->
+    </footer>
       
     </div>
 
@@ -77,26 +122,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
   </body>
-  <footer>
-  <div class="row">
-        
-        <div class="col-sm footer text-right"  id="footer01" >
-            <div class="col-sm-4" ></div>
-            
-            <div class="col-sm-4 justify-content-end align-items-end social-media" >
-              
-              Redes sociales:
-                <a class="fa fa-instagram" href="https://www.instagram.com/ua_universidad/"></a>
-                <a class="fa fa-facebook" href="https://www.facebook.com/campusUA"></a>
-                <a class="fa fa-twitter" href="https://twitter.com/UA_Universidad"></a>
-                <a class="fa fa-linkedin" href="https://www.linkedin.com/school/universidad-alicante/"></a>
-                <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCVZCJVs8j4oTRmnHC31pwpQ"></a>
-            </div>
-            <div class="col-2-sm">
-              <div id="google_translate_element" style="background-color:grey;"></div>
-            </div>
-        </div>
-      
-      </div>
-  </footer>
+  
 </html>
