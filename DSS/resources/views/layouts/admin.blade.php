@@ -31,14 +31,7 @@
               <span style="font-size:30px;cursor:pointer" onclick="openNav()"  ><div class="menu">&#9776; Dashboard</div></span> 
               <div class="logo rounded mx-auto d-block" >
                 <img  src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title="">
-              </div>
-
-              @section('search')
-              
-              @show              
-              @section('filter')
-              @show
-              
+              </div>              
             </div>
         </div>
         
@@ -74,12 +67,23 @@
         @show
        
       </div>
-      <div class="row">
+      
+      
+    </div>
+
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="{{ URL::asset('JS/script.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </body>
+  <footer>
+  <div class="row">
         
         <div class="col-sm footer text-right"  id="footer01" >
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4" ></div>
             
-            <div class="col-sm-4 justify-content-end align-items-end"  style="background-color:white;">
+            <div class="col-sm-4 justify-content-end align-items-end social-media" >
               
               Redes sociales:
                 <a class="fa fa-instagram" href="https://www.instagram.com/ua_universidad/"></a>
@@ -94,13 +98,5 @@
         </div>
       
       </div>
-      
-    </div>
-
-
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script type="text/javascript" src="{{ URL::asset('JS/script.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-  </body>
+  </footer>
 </html>
