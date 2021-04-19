@@ -66,6 +66,7 @@ Route::get('/searchP', 'ProductController@searchP');
 Route::get('/searchU', 'UserController@searchU');
 Route::get('/searchFL', 'FavoriteListController@searchFL');
 Route::get('/searchD', 'PromotionController@searchD');
+Route::get('/searchO', 'OrderController@searchO');
 ///////////////////////cada metodo del controlador tiene que tener definida una ruta//////////////
 
 Route::get('/e', 'exampleController@get');

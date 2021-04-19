@@ -16,8 +16,4 @@ class Order extends Model
     public function lines() {
         return $this->hasMany('App\OrderLine');
     }
-    public function numberOfLines($id){
-        $count = OrderLine::where('order_id',$id)->get('id')->count();
-        return $count;
-    }
 }

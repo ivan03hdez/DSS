@@ -19,8 +19,17 @@ class FavoriteListController extends Controller{
         return view('favoriteLists.details')->with('favoriteList',$favoriteList);
     }
     public function searchFL(){
-        $search = \Request::input('search-query'); 
-        $favoriteLists = FavoriteList::where('name', 'like', '%'.$search.'%')->paginate(10);
+        $searchId = \Request::input('searchFL-id'); 
+        $searchName = \Request::input('searchFL-name'); 
+        $searchDescr = \Request::input('searchFL-description'); 
+        $favoriteLists = FavoriteList::where('id', 'like', '%'.$searchId.'%')->
+                        where('name', 'like', '%'.$searchName.'%')->
+                        where('description', 'like', '%'.$searchDescr.'%')->
+                        paginate(10);
         return view('favoriteLists.list')->with('favoriteLists',$favoriteLists);
+    }
+    public static function numberOfLists($userId){
+        $count = FavoriteList::where('user_id',$userId)->get('id')->count();
+        return $count;
     }
 }

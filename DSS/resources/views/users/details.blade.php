@@ -1,3 +1,5 @@
+@inject('providerFL', 'App\Http\Controllers\FavoriteListController')
+@inject('providerOrder', 'App\Http\Controllers\OrderController')
 @extends('layouts.admin')
 @section('title','Información del usuario')
 @section('content')
@@ -35,7 +37,6 @@
 <table class="table table-hover text">
   <thead class="thead-dark">
     <tr>
-      
         @foreach($user->orders as $order)
         <th scope="col">order</th>
         <th scope="col">totalPrice</th>
@@ -49,7 +50,7 @@
     @foreach($user->orders as $order)
       <td scope="row"><a href="{{action('OrderController@get',$order->id)}}">{{$order->id}}</a></td>
       <td scope="row">{{$order->totalPrice}}</td>
-      <td scope="row">{{$order->numberOfLines($user->id)}}</td>
+      <td scope="row">{{ $providerOrder::numberOfLines($order->id) }}</td>
     @endforeach
       </tr>
   </tbody>

@@ -1,8 +1,9 @@
+@inject('providerOrder', 'App\Http\Controllers\OrderController')
 @extends('layouts.admin')
 @section('title','Lista con todos los pedidos')
 @section('content')
 <h1>Pedidos</h1>
-@if($orders->count()==0) Este usuario no ha realizado ningun pedido.
+@if($orders->count()==0) NO se ha realizado ningun pedido.
 @else
 <div class="table-responsive">
   <table class="table table-hover text">
@@ -16,12 +17,33 @@
       </tr>
     </thead>
     <tbody>
+      <form class="d-flex col my-auto" type="get" action="{{ url('/searchO') }}">
+        <td scope="col">
+          <div class="col-2-sm admin-outer-container" > 
+                <input class="form-control form-control-lg me-2" name="searchO-id" type="text">
+          </div>
+        </td>
+        <td scope="col">
+          <div class="col-2-sm admin-outer-container" > 
+                <input class="form-control form-control-lg me-2" name="searchO-totalPrice" type="text">
+          </div>
+        </td>
+        <td scope="col">
+          <div class="col-2-sm admin-outer-container" > 
+                <input class="form-control form-control-lg me-2" name="searchO-paymentMethod" type="text">
+          </div>
+        <td scope="col">
+          <div class="col-2-sm admin-outer-container" > 
+              <button class="btn btn-outline-success button-search btn-lg" type="submit">Search</button>
+          </div>
+        </td>
+      </form>
       @foreach($orders as $order)
       <tr>
         <th scope="row"><a href="{{action('OrderController@get',$order->id)}}">{{$order->id}}</a></th>
         <td>{{$order->totalPrice}}</td>
         <td>{{$order->paymentMethod}}</td>
-        <td>{{$order->numberOfLines($order->id)}}</td>
+        <td>{{ $providerOrder::numberOfLines($order->id) }}</td>
         <td class="icon-trash">
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
