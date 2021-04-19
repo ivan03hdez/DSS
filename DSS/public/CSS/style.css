@@ -67,6 +67,14 @@ body {
   display: inline-flex;
 }
 
+.social-media{
+  position: relative;
+  bottom: 8px;
+  right: 0px;
+  font-size: 18px;
+  
+}
+
 .cerrar-sesion{
   position: absolute;
   bottom: 8px;

@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('title','Información del producto')
 @section('content')
+  @parent
 <div class="table-responsive">
 <table class="table table-hover text">
   <thead class="thead-dark">
