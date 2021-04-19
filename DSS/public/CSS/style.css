@@ -309,10 +309,7 @@ GOOGLE
 #goog-gt-tt {display:none!important;visibility:hidden!important;}
 
 #google_translate_element {
-  position: absolute;
-  bottom: calc(53px + 16px);
-  right: 16px!important;
-  border-radius: 7%;
+  
   text-align: center;
 }
 .goog-te-gadget {
@@ -360,15 +357,7 @@ body {top: 0px!important;}
 /* ================================== *\
     Mediaqueries
 \* ================================== */
-@media (max-width: 667px) {
-	#google_translate_element {
-		bottom: calc(100% - 50% - 53px);
-		left: 16px!important;
-		width: 100%!important;
-}
-
 
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
-}
 }
