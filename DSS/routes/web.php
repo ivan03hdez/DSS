@@ -18,13 +18,14 @@ Route::get('/', function () {
 /////////////Rutas que usara el administrador//////
 Route::get('/products', 'ProductController@list');
 //Route::get('/products{filtrar}', 'ProductController@searchP');
-Route::get('/products/{id}', 'ProductController@get');
 Route::get('/products/create', function () {
-    return view('/users/create');
+    return view('/products/create');
 });
 Route::post('/products/create', function () {
     return view('/products/create');
 });
+Route::get('/products/{id}', 'ProductController@get');
+
 
 Route::get('/users', 'UserController@list');
 Route::get('/users/create', function () {
@@ -37,13 +38,13 @@ Route::get('/users/{id}', 'UserController@get');
 
 
 Route::get('/promotions', 'PromotionController@list');
-Route::get('/promotions/{id}', 'PromotionController@get');
 Route::get('/promotions/create', function () {
     return view('/promotions/create');
 });
 Route::post('/promotions/create', function () {
     return view('/promotions/create');
 });
+Route::get('/promotions/{id}', 'PromotionController@get');
 
 
 Route::get('/orders', 'OrderController@list');
