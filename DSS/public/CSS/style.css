@@ -218,32 +218,6 @@ svg:active{
   color: white;
 }
 
-/*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
 .body-log {
   height: 100%;
 }
@@ -315,10 +289,12 @@ GOOGLE
 .goog-te-gadget {
   font-family: Roboto, 'Open Sans', sans-serif!important;
   text-transform: uppercase;
+  
 }
 .goog-te-gadget-simple  {
-  background-color: rgba(255,255,255,0.20)!important;
-  border: 1px solid rgba(255,255,255,0.50) !important;
+  background-color: black;
+  border: 1px solid black !important;
+  color: black;
   padding: 8px!important;
   border-radius: 4px!important;
   font-size: 1rem!important;
@@ -331,7 +307,7 @@ GOOGLE
   max-width: 100%;
 }
 .goog-te-menu-value {
-  color: #fff !important;
+  /*color: #fff !important;*/
 }
 .goog-te-menu-value span:nth-child(5) {
   display:none;
@@ -352,12 +328,13 @@ GOOGLE
 
 
 .goog-te-banner-frame.skiptranslate {display: none!important;} 
-body {top: 0px!important;}
+
 
 /* ================================== *\
     Mediaqueries
 \* ================================== */
 
 .goog-te-banner-frame.skiptranslate {
-  display: none !important;
+  display: none;
+  
 }

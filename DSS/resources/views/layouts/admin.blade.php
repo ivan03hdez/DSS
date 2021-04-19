@@ -94,13 +94,15 @@
     <footer class="bg-light text-center text-white fixed-bottom ">
       <!-- Grid container -->
       <div class="container p-4 pb-0">
-      Redes sociales:
+      
                       <a class="fa fa-instagram" href="https://www.instagram.com/ua_universidad/"></a>
                       <a class="fa fa-facebook" href="https://www.facebook.com/campusUA"></a>
                       <a class="fa fa-twitter" href="https://twitter.com/UA_Universidad"></a>
                       <a class="fa fa-linkedin" href="https://www.linkedin.com/school/universidad-alicante/"></a>
                       <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCVZCJVs8j4oTRmnHC31pwpQ"></a>
-                      <div id="google_translate_element" style="background-color:grey;"></div>
+                      
+                        <div class ="col-12" id="google_translate_element"></div>
+                      
       </div>
       <!-- Grid container -->
 
