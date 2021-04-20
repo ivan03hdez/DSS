@@ -299,10 +299,10 @@ GOOGLE
 }
 body {
   top: 0px !important;
-  margin-bottom: 210px; /* Margin bottom by footer height */
+  padding-bottom: 210px; /* Margin bottom by footer height */
 }
 
-footer {
+.footer {
      position: absolute;
      bottom: 0px; 
      width: 100%;

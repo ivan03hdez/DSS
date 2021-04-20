@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title','Lista con todos los productos')
 @section('content')
-<h1>Promociones</h1>
+<h1>Promotions</h1>
 <div class="table-responsive">
 <table class="table table-hover text">
   <thead class="thead-dark">
@@ -10,7 +10,7 @@
       <th scope="col">@sortablelink('discount')</th>
       <th scope="col">@sortablelink('beginDate')</th>
       <th scope="col">@sortablelink('endDate')</th>
-      <th scope="col">Eliminar</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
