@@ -1,4 +1,4 @@
-**IMPORTATE** composer require kyslik/column-sortable --> para descargarnos el servicio de ordenador de columnas
+**IMPORTATE** composer require kyslik/column-sortable --> para descargarnos el servicio de ordenacion de columnas
 
 
 <strong>Claves Ajenas y Borrados en Cascada</strong>
