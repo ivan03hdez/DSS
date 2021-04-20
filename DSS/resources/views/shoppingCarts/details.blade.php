@@ -9,7 +9,7 @@
       <th scope="col">@sortablelink('id')</th>
       <th scope="col">@sortablelink('total','total acumulado')</th>
       <th scope="col">productos</th>
-      <th scope="col">Eliminar</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>

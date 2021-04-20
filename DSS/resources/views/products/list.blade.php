@@ -11,7 +11,7 @@
       <th scope="col">@sortablelink('model')</th>
       <th scope="col">@sortablelink('description')</th>
       <th scope="col">Discount</th>
-      <th scope="col">Eliminar</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>

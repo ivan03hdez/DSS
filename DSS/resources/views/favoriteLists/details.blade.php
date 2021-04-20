@@ -2,8 +2,8 @@
 @section('title','Información de la lista de favoritos')
 @section('content')
 <div class="table-responsive">
-<table class="table table-borderless text">
-  <thead>
+<table class="table table-hover text">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">id</th>
       <th scope="col">name</th>
