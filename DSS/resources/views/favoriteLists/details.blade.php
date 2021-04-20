@@ -2,8 +2,8 @@
 @section('title','Información de la lista de favoritos')
 @section('content')
 <div class="table-responsive">
-<table class="table table-borderless text">
-  <thead>
+<table class="table table-hover text">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">id</th>
       <th scope="col">name</th>
@@ -16,7 +16,7 @@
     <tr class="icon-trash">
       <th scope="row">{{$favoriteList->id}}</th>
       <td>{{$favoriteList->name}}</td>
-      <td>{{$favoriteList->description}}</td>
+      <td>{{$favoriteList->description}}</span></td>
       <td><a href="{{action('UserController@get',$favoriteList->user->id)}}">{{$favoriteList->user->name}}</a></td>
       <td class="icon-trash">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

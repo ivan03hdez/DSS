@@ -22,7 +22,7 @@
       <th scope="col">@sortablelink('phone')</th>
       <th scope="col">Nº listas de favoritos</th>
       <th scope="col">Nº pedidos</th>
-      <th scope="col">Eliminar</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>

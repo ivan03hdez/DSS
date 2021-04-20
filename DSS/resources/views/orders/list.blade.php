@@ -2,7 +2,7 @@
 @extends('layouts.admin')
 @section('title','Lista con todos los pedidos')
 @section('content')
-<h1>Pedidos</h1>
+<h1>Orders</h1>
 @if($orders->count()==0) NO se ha realizado ningun pedido.
 @else
 <div class="table-responsive">
@@ -13,7 +13,7 @@
         <th scope="col">@sortablelink('totalPrice')</th>
         <th scope="col">@sortablelink('paymentMethod')</th>
         <th scope="col">Number of OrderLines</th>
-        <th scope="col">Eliminar</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>

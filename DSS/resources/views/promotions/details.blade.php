@@ -11,7 +11,7 @@
       <th scope="col">beginDate</th>
       <th scope="col">endDate</th>
       <th scope="col">affected Products</th>
-      <th scope="col">Eliminar</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>

@@ -7,10 +7,10 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">id</th>
-      <th scope="col">name</th>
-      <th scope="col">model</th>
+      <th scope="col">Name</th>
+      <th scope="col">Model</th>
       <th scope="col">Description</th>
-      <th scope="col">Eliminar</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>

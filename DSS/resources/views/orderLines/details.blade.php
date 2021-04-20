@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title','Información de la linea del pedido')
 @section('content')
-<h1>Lineas del pedido {{$orderLine->order->id}}</h1>
+<h1>Order Lines from Order {{$orderLine->order->id}}</h1>
 <div class="table-responsive">
 <table class="table table-hover text">
   <thead class="thead-dark">
@@ -11,7 +11,7 @@
       <th scope="col">Price</th>
       <th scope="col">Description</th>
       <th scope="col">Belongs To Order</th>
-      <th scope="col">Eliminar</th> 
+      <th scope="col">Delete</th> 
     </tr>
   </thead>
   <tbody>
