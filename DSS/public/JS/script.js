@@ -16,19 +16,26 @@ function openNav() {
   autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
 
+/*
+$(document).on('click', '.exampleModal', function() {
+    let id = $(this).attr('data-id');
+    var customer_id = $(this).data("id");
+         $('#id').val(id);
+ });
 
-function confirmar() {
-    var txt;
-    var r = confirm("Esta seguro de que desea eliminar este elemento");
-    if (r == true) {
 
-    } else {
-        txt = "No se ha eliminado el elemento";
-    }
+$('body').on('click', '#delete-customer', function () {
+    var customer_id = $(this).data("id");
     
-}
-/*$('#exampleModal').modal('toggle')*/
-
+    confirm("Are You sure want to delete !");
+  
+$.ajax({
+    type: "DELETE",
+    url: "http://localhost:8000/products/delete/"+customer_id,
+    data: {
+    "id": customer_id,
+    }});
+*/  
  $('document').ready(function () {
 
   

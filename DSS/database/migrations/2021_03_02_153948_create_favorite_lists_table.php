@@ -18,7 +18,7 @@ class CreateFavoriteListsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('description');
-            $table->bigInteger('user_id')->unsigned()->index()->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
