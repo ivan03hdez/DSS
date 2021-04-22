@@ -13,7 +13,7 @@ class ProductTableSeeder extends Seeder
     {
         DB::table('products')->delete();
         
-        for($i = 0; $i < 10; $i++){
+        for($i = 0; $i < 40; $i++){
             DB::table('products')->insert([
                 'name' => "producto$i",
                 'price' => (15 + $i),
@@ -23,7 +23,9 @@ class ProductTableSeeder extends Seeder
                 'color' => "color$i",
                 'model' => "model$i",
                 'promotion_id' => $i +1, ///las ids empiezan por 1 y el bucle por 0
-                'image' => "image$i"
+                'image' => "image$i",
+                'type' => "altavoz$i",
+
             ]);
         }
     }

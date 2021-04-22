@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <strong>Claves Ajenas y Borrados en Cascada</strong>
 Cuando queremos borrar una fila de una tabla, solo podremos borrarla cuando no tengan claves ajenas que la referencien o cuando tengamos la política de borrar en cascada.
 Si esto no ocurre tendremos que borrar o modificar las claves ajenas que le referencien para poder borrar el objeto principal.**
@@ -105,3 +106,6 @@ SQL:
 
 
 
+=======
+Cambios01
+>>>>>>> e66a3622011472638c3f47f8cee3d15192b47bd6

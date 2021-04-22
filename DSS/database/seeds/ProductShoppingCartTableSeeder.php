@@ -10,7 +10,7 @@ class ProductShoppingCartTableSeeder extends Seeder{
      */
     public function run(){
         
-        DB::table('products_shopping_carts')->delete();
+        DB::table('product_shopping_cart')->delete();
         $products = DB::table('products')->get();
         $shopcarts = DB::table('shopping_carts')->get();
         $pr = array();
@@ -27,7 +27,7 @@ class ProductShoppingCartTableSeeder extends Seeder{
         $tam = min(count($pr), count($sc));
         for($i = 0; $i < $tam; $i++)
         {
-            DB::table('products_shopping_carts')->insert([
+            DB::table('product_shopping_cart')->insert([
                 'product_id' => ($pr[$i]->id),
                 'shopping_cart_id' => ($sc[$i]->id)
             ]);

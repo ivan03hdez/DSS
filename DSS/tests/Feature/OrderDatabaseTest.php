@@ -36,7 +36,7 @@ class OrderDatabaseTest extends TestCase
             $orderlineB->save();
             $order->user()->associate($user->id);
             $order->save();
-            $order->lineas()->saveMany([$orderlineA, $orderlineB]);
+            $order->lines()->saveMany([$orderlineA, $orderlineB]);
 
 
             array_push($oid, $order->id);
