@@ -19,12 +19,15 @@ class OrderController extends Controller{
         $order = Order::where('id',$id)->get()[0];//->get() devuelve una array asociativo de tipo name:producto1 con las columnas de la tabla producto 
         return view('orders.details')->with('order',$order);
     }
+    public function delete($id){
+        $res=Order::where('id',$id)->delete();
+        $res->delete();
+        return redirect('orders.list');
+    }
     public function searchO(){
         $searchId = \Request::input('searchO-id'); 
         $searchOPay = \Request::input('searchO-paymentMethod'); 
         $searchOTot = \Request::input('searchO-totalPrice');
- 
-
         $orders = Order::where('id', 'like', '%'.$searchId.'%')->
         where('paymentMethod', 'like', '%'.$searchOPay.'%')->
         where('totalPrice', 'like', '%'.$searchOTot.'%')->     
