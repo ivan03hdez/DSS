@@ -17,6 +17,17 @@ function openNav() {
 }
 
 
+function confirmar() {
+    var txt;
+    var r = confirm("Esta seguro de que desea eliminar este elemento");
+    if (r == true) {
+
+    } else {
+        txt = "No se ha eliminado el elemento";
+    }
+    
+}
+/*$('#exampleModal').modal('toggle')*/
 
  $('document').ready(function () {
 
