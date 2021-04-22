@@ -19,9 +19,10 @@ class ProductController extends Controller{
         $product = new Product();
     }
     public function delete($id){
-        $res=Product::where('id',$id)->delete();
-        $res->delete();
-        return redirect('products.list');
+        $res=Product::where('id', '=' ,$id)->get()[0]->delete();
+        //$res->delete();
+        //return redirect('products.list');
+        return redirect()->action('ProductController@list');
     }
     public function searchP(Request $request){
         $searchId = \Request::input('searchP-id'); 

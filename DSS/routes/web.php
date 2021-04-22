@@ -75,3 +75,4 @@ Route::get('/e', function () {return view('/exampleView');});
 Route::get('/login', function () {return view('/login');});
 Route::get('/signin', function () {return view('/signin');});
 Route::post('/e', function () {return view('/exampleView');});
+Route::get('/products/delete/{id}', 'ProductController@delete');
