@@ -55,8 +55,9 @@
       <td>{{$product->model}}</td>
       <td>{{$product->description}}</td>
       <td><a href="{{action('PromotionController@get',$product->promotion->id)}}">{{$product->promotion->discount}}%</a></td>
-      <td class="icon-trash">
-        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      
+      <td class="icon-trash" >
+        <svg version="1.1" data-toggle="modal" data-target="#exampleModal" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
           <g class="icon-trash">
             <rect x="67.224" width="350.535" height="71.81"/>
@@ -65,7 +66,30 @@
           </g>
         </svg>
       </td>
+      
     </tr>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              Desea eliminar este elemento
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <form class="d-flex col my-auto" type="get" action="{{ url('/users') }}">
+              <button type="submit" class="btn btn-primary">Confirmar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     @endforeach
   </tbody>
 </table>
