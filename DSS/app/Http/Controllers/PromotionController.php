@@ -14,6 +14,11 @@ class PromotionController extends Controller{
         $promotion = Promotion::where('id',$id)->get()[0];//->get() devuelve una array asociativo de tipo name:producto1 con las columnas de la tabla producto 
         return view('promotions.details')->with('promotion',$promotion);
     }
+    public function delete($id){
+        $res=Promotion::where('id',$id)->delete();
+        $res->delete();
+        return redirect('promotions.list');
+    }
     public function searchD(Request $request){
         $searchId = \Request::input('searchD-id'); 
         $searchDiscount = \Request::input('searchD-discount');
