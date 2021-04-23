@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <form class="d-flex col my-auto" type="get" action="{{ url('/searchO') }}">
+      <form class="d-flex col my-auto" type="get" action="{{ url('/orders/search') }}">
         <td scope="col">
           <div class="col-2-sm admin-outer-container" > 
                 <input class="form-control form-control-lg me-2" name="searchO-id" type="text">

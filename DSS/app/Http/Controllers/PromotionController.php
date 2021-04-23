@@ -25,6 +25,22 @@ class PromotionController extends Controller{
         $promotion->save();
         return redirect()->action('PromotionController@list');
     }
+    public function update($id){
+        return view('promotions.update')->with('id',$id);
+    }
+    public function updateData(Request $request){
+        $id = $request->input('idUpdate');
+        $discount = $request->input('exampleInputDiscount1');
+        $beginDate = $request->input('exampleInputBeginDate1');
+        $endDate = $request->input('exampleInputEndDate1');
+        $promotion = Promotion::find($id);
+        $promotion->id = $id;
+        $promotion->discount = $discount;
+        $promotion->beginDate = $beginDate;
+        $promotion->endDate = $endDate;
+        $promotion->save();
+        return redirect()->action('PromotionController@list');
+    }
     public function delete($id){
         Promotion::destroy($id);
         return redirect()->action('PromotionController@list');

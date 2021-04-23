@@ -20,7 +20,9 @@ class UserController extends Controller{
         $password = $request->input('exampleInputPassword1');
         $address = $request->input('exampleInputAddress1');
         $phone = $request->input('exampleInputPhone1');
-        $role = $request->input('exampleInputRole1');
+        if($request->input('exampleInputRole1'))
+            $role = 'admin';
+        else $role = 'user';
         $image = $request->input('exampleInputImage1');
         $user = new User();//$name,$addres,$phone,$email,$password,$role,$image);
         $user->name = $name;
@@ -33,12 +35,30 @@ class UserController extends Controller{
         $user->save();
         return redirect()->action('UserController@list');
     }
-    public function edit(Request $request, $id) {
-        $user = User::findOrFail( $id );
-        if( $request->has('name') ) {
-        $user->name = $request->input('name');
-        $user->save();
-        }
+    public function update($id){
+        return view('users/update')->with('id',$id);
+    }
+    public function updateData($id){
+        $name = $request->input('exampleInputName1');
+        $email = $request->input('exampleInputEmail1');
+        $password = $request->input('exampleInputPassword1');
+        $address = $request->input('exampleInputAddress1');
+        $phone = $request->input('exampleInputPhone1');
+        if($request->input('exampleInputRole1'))
+            $role = 'admin';
+        else $role = 'user';
+        $image = $request->input('exampleInputImage1');
+        $user = User::find($id);
+        $user->id = $id;
+        $user->name = $name;
+        $user->email = $email;
+        $user->password = $password;
+        $user->address = $address;
+        $user->phone = $phone;
+        $user->role = $role;
+        $user->image = $image;
+        $user->update();
+        return redirect()->action('UserController@list');
     }
     public function delete($id){
         User::destroy($id);
