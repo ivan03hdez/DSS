@@ -19,9 +19,8 @@ class FavoriteListController extends Controller{
         return view('favoriteLists.details')->with('favoriteList',$favoriteList);
     }
     public function delete($id){
-        $res=FavoriteList::where('id',$id)->delete();
-        $res->delete();
-        return redirect('favoriteLists.list');
+        FavoriteList::destroy($id);
+        return redirect()->action('FavoriteListController@list');
     }
     public function searchFL(){
         $searchId = \Request::input('searchFL-id'); 

@@ -15,9 +15,8 @@ class PromotionController extends Controller{
         return view('promotions.details')->with('promotion',$promotion);
     }
     public function delete($id){
-        $res=Promotion::where('id',$id)->delete();
-        $res->delete();
-        return redirect('promotions.list');
+        Promotion::destroy($id);
+        return redirect()->action('PromotionController@list');
     }
     public function searchD(Request $request){
         $searchId = \Request::input('searchD-id'); 

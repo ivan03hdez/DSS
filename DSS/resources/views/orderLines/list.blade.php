@@ -16,14 +16,14 @@
   </thead>
   <tbody>
     @foreach($orderLines as $orderLine)
-    <tr>
+    <tr data-id="{{$orderLine->id}}">
       <th scope="row"><a href="{{action('OrderLineController@get',$orderLine->id)}}">{{$orderLine->id}}</a></th>
       <td>{{$orderLine->quantity}}</td>
       <td>{{$orderLine->price}}</td>
       <td>{{$orderLine->description}}</td>
       <td><a href="{{action('OrderController@get',$orderLine->order->id)}}">{{$orderLine->order}}</a></td>
       <td class="icon-trash">
-        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg id="trash" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
           <g class="icon-trash">
             <rect x="67.224" width="350.535" height="71.81"/>

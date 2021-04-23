@@ -59,7 +59,7 @@
     </td>
   </form>
     @foreach($users as $user)
-    <tr>
+    <tr data-id="{{$user->id}}">
     <th scope="row"><a href="{{action('UserController@get',$user->id)}}">{{$user->id}}</a></th>
       <td>{{$user->name}}</td>
       <td>{{$user->email}}</td>
@@ -68,7 +68,7 @@
       <td ><a href="{{action('FavoriteListController@filter',$user->id)}}">{{ $providerFL::numberOfLists($user->id) }}</a></td>
       <td ><a href="{{action('OrderController@filter',$user->id)}}">{{ $providerOrder::numberOfOrders($user->id) }}</a></td>
       <td class="icon-trash">
-        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg id="trash" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
           <g class="icon-trash">
             <rect x="67.224" width="350.535" height="71.81"/>

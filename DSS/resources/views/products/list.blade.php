@@ -11,7 +11,7 @@
       <th scope="col">@sortablelink('model')</th>
       <th scope="col">@sortablelink('description')</th>
       <th scope="col">Discount</th>
-      <th scope="col">Delete</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -49,15 +49,14 @@
     </td>
   </form>
     @foreach($products as $product)
-    <tr>
+    <tr data-id="{{$product->id}}">
       <th scope="row"><a href="{{action('ProductController@get',$product->id)}}">{{$product->id}}</a></th>
       <td>{{$product->name}}</td>
       <td>{{$product->model}}</td>
       <td>{{$product->description}}</td>
       <td><a href="{{action('PromotionController@get',$product->promotion->id)}}">{{$product->promotion->discount}}%</a></td>
-      
       <td class="icon-trash" >
-        <svg version="1.1"  data-toggle="modal" data-target="#exampleModal" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg id="trash"  version="1.1" data-toggle="modal" data-target="#exampleModal" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
           <g class="icon-trash">
             <rect x="67.224" width="350.535" height="71.81"/>
@@ -66,17 +65,17 @@
           </g>
         </svg>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                  Desea eliminar este elemento
+                  ¿are you sure you want to delete this object?
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -86,12 +85,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
       </td>  
     </tr>
-    
     @endforeach
-    
   </tbody>
 </table>
 </div>

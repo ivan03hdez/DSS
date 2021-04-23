@@ -24,6 +24,7 @@ Route::get('/products/create', function () {
 Route::post('/products/create', function () {
     return view('/products/create');
 });
+Route::get('/products/delete/{id}', 'ProductController@delete');
 Route::get('/products/{id}', 'ProductController@get');
 
 
@@ -34,6 +35,7 @@ Route::get('/users/create', function () {
 Route::post('/users/create', function () {
     return view('/users/create');
 });
+Route::get('/users/delete/{id}', 'UserController@delete');
 Route::get('/users/{id}', 'UserController@get');
 
 
@@ -44,22 +46,27 @@ Route::get('/promotions/create', function () {
 Route::post('/promotions/create', function () {
     return view('/promotions/create');
 });
+Route::get('/promotions/delete/{id}', 'PromotionController@delete');
 Route::get('/promotions/{id}', 'PromotionController@get');
 
 
 Route::get('/orders', 'OrderController@list');
 Route::get('/orders/user/{id}', 'OrderController@filter');
+Route::get('/orders/delete/{id}', 'OrderController@delete');
 Route::get('/orders/{id}', 'OrderController@get');
 
 Route::get('/orderLines', 'OrderLineController@list');
+Route::get('/orderLines/delete/{id}', 'OrderLineController@delete');
 Route::get('/orderLines/{id}', 'OrderLineController@get');
 
 
 Route::get('/favoriteLists', 'FavoriteListController@list');
 Route::get('/favoriteLists/user/{userId}', 'FavoriteListController@filter');
+Route::get('/favoriteLists/delete/{id}', 'FavoriteListController@delete');
 Route::get('/favoriteLists/{id}', 'FavoriteListController@get');
 
 Route::get('/shoppingCarts', 'ShoppingCartController@list');
+Route::get('/shoppingCarts/delete/{id}', 'ShoppingCartController@delete');
 Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
 
 Route::get('/searchP', 'ProductController@searchP');
@@ -75,4 +82,3 @@ Route::get('/e', function () {return view('/exampleView');});
 Route::get('/login', function () {return view('/login');});
 Route::get('/signin', function () {return view('/signin');});
 Route::post('/e', function () {return view('/exampleView');});
-Route::get('/products/delete/{id}', 'ProductController@delete');
