@@ -11,9 +11,8 @@ class OrderLineController extends Controller{
         return view('orderLines.list')->with('orderLines',$orderLines);///si estuviera en una carpeta views/products/list.blade.php seria view('product.list')
     }
     public function delete($id){
-        $res=OrderLine::where('id',$id)->delete();
-        $res->delete();
-        return redirect('orderLines.list');
+        OrderLine::destroy($id);
+        return redirect()->action('OrderLineController@list');
     }
     public function get($id){
         $orderLine = OrderLine::where('id',$id)->get()[0];//->get() devuelve una array asociativo de tipo name:producto1 con las columnas de la tabla producto 

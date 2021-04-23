@@ -33,9 +33,8 @@ class UserController extends Controller{
         }
     }
     public function delete($id){
-        $res=user::where('id',$id)->delete();
-        $res->delete();
-        return redirect('users.list');
+        User::destroy($id);
+        return redirect()->action('UserController@list');
     }
     public function searchU(){
         $searchId = \Request::input('searchU-id'); 

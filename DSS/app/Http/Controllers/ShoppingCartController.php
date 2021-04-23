@@ -15,9 +15,8 @@ class ShoppingCartController extends Controller{
         return view('shoppingCarts.details')->with('shoppingCart',$shoppingCart);
     }
     public function delete($id){
-        $res=ShoppingCart::where('id',$id)->delete();
-        $res->delete();
-        return redirect('shoppingCarts.list');
+        ShoppingCart::destroy($id);
+        return redirect()->action('ShoppingCartController@list');
     }
     
 }

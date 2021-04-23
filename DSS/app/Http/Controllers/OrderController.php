@@ -20,9 +20,8 @@ class OrderController extends Controller{
         return view('orders.details')->with('order',$order);
     }
     public function delete($id){
-        $res=Order::where('id',$id)->delete();
-        $res->delete();
-        return redirect('orders.list');
+        Order::destroy($id);
+        return redirect()->action('OrderController@list');
     }
     public function searchO(){
         $searchId = \Request::input('searchO-id'); 
