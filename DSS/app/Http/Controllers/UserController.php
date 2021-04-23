@@ -15,15 +15,23 @@ class UserController extends Controller{
         return view('users.details')->with('user',$user);
     }
     public function create(Request $request){ //////SE USA PARA EL FORMULARIO DE CREAR//////
-        $name = $request->input('name');
-        $addres = $request->input('addres');
-        $phone = $request->input('phone');
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $role = $request->input('role');
-        $image = $request->input('image');
-        $user = new User($name,$addres,$phone,$email,$password,$role,$image);
+        $name = $request->input('exampleInputName1');
+        $email = $request->input('exampleInputEmail1');
+        $password = $request->input('exampleInputPassword1');
+        $address = $request->input('exampleInputAddress1');
+        $phone = $request->input('exampleInputPhone1');
+        $role = $request->input('exampleInputRole1');
+        $image = $request->input('exampleInputImage1');
+        $user = new User();//$name,$addres,$phone,$email,$password,$role,$image);
+        $user->name = $name;
+        $user->email = $email;
+        $user->password = $password;
+        $user->address = $address;
+        $user->phone = $phone;
+        $user->role = $role;
+        $user->image = $image;
         $user->save();
+        return redirect()->action('UserController@list');
     }
     public function edit(Request $request, $id) {
         $user = User::findOrFail( $id );

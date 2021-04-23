@@ -21,9 +21,12 @@ Route::get('/products', 'ProductController@list');
 Route::get('/products/create', function () {
     return view('/products/create');
 });
-Route::post('/products/create', function () {
+Route::get('/products/create', function () {
     return view('/products/create');
 });
+
+Route::get('/productCreated', 'ProductController@create');
+
 Route::get('/products/delete/{id}', 'ProductController@delete');
 Route::get('/products/{id}', 'ProductController@get');
 
@@ -38,6 +41,7 @@ Route::post('/users/create', function () {
 Route::get('/users/delete/{id}', 'UserController@delete');
 Route::get('/users/{id}', 'UserController@get');
 
+Route::get('/userCreated', 'UserController@create');
 
 Route::get('/promotions', 'PromotionController@list');
 Route::get('/promotions/create', function () {
@@ -49,6 +53,7 @@ Route::post('/promotions/create', function () {
 Route::get('/promotions/delete/{id}', 'PromotionController@delete');
 Route::get('/promotions/{id}', 'PromotionController@get');
 
+Route::get('/promotionCreated', 'PromotionController@create');
 
 Route::get('/orders', 'OrderController@list');
 Route::get('/orders/user/{id}', 'OrderController@filter');
