@@ -1,0 +1,38 @@
+@extends('layouts.admin')
+@section('title','Updating User')
+@section('content')
+<h1>You are editing User {{$id}}  </h1>
+  <form method="post" action="{{action('UserController@updateData',$id)}}">
+  @csrf 
+  <div class="form-group">
+    <label for="exampleInputName1">Name</label>
+    <input type="text" class="form-control" name="exampleInputName1" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPhone1">Phone</label>
+    <input type="text" class="form-control" name="exampleInputPhone1" placeholder="Phone">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputAddress1">Address</label>
+    <input type="text" class="form-control" name="exampleInputAddress1" placeholder="Address">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputImage1">Image</label>
+    <input type="text" class="form-control" name="exampleInputImage1" placeholder="Image">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" value="true" name="exampleInputRole1">
+    <label class="form-check-label" for="exampleCheck1">&nbsp;¿Create Admin User?</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+@endsection

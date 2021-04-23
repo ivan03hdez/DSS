@@ -5,11 +5,13 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Kyslik\ColumnSortable\Sortable;
 
 class User extends Authenticatable
 {
+    use Sortable;
+    protected $sortable = ['id','name', 'email', 'password','role','phone','address','image'];
     use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -40,7 +42,7 @@ class User extends Authenticatable
         return $this->hasOne('App\ShoppingCart');
     }
     public function favLists() {
-        return $this->hasMany('App\favoriteList');
+        return $this->hasMany('App\FavoriteList');
     }
     public function orders() {
         return $this->hasMany('App\Order');

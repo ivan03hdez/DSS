@@ -1,0 +1,312 @@
+ .logo {
+  width: 100px;
+  height: 106px;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+} 
+.logo img {
+  
+  width: 90%;
+  height: auto;
+  border-radius: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:hidden;
+  vertical-align: middle;
+}
+.span {
+  vertical-align: bottom;
+}
+.menu{
+  padding-top: 15%;
+  padding-bottom: 10%;
+  font-size: 120%;
+  font-weight: bold;
+}
+.align-header{
+  display: inline-flex;
+}
+.admin-outer-container{
+  display: inline-flex;
+}
+.admin-container{
+  width: 100%;
+  height: 100%;
+}
+/*
+.footer{
+  z-index: -1;
+  background-color: #F3F3F3;
+  padding-top: 10px;
+  padding-bottom: 0px;  
+}
+*/
+
+
+.social-media{
+  position: relative;
+  bottom: 8px;
+  right: 0px;
+  font-size: 18px;
+  
+}
+
+.cerrar-sesion{
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+/* SIDEBAR ************ */
+.sidenav {
+   height: 100%; /* 100% Full-height */
+   width: 0; /* 0 width - change this with JavaScript */
+   position: fixed; /* Stay in place */
+   z-index: 2000; /* Stay on top */
+   top: 0; /* Stay at the top */
+   left: 0;
+   background-color: #f1f1f1 ; /* Black*/
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-top: 60px; /* Place content 60px from the top */
+   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+ }
+ 
+ /* The navigation menu links */
+ .sidenav a {
+   padding: 8px 8px 8px 32px;
+   text-decoration: none;
+   font-size: 25px;
+   color: #818181;
+   display: block;
+   transition: 0.3s;
+ }
+ 
+ /* When you mouse over the navigation links, change their color */
+ .sidenav a:hover {
+   color: #000000;
+ }
+ 
+ /* Position and style the close button (top right corner) */
+ .sidenav .closebtn {
+   position: absolute;
+   top: 0;
+   right: 25px;
+   font-size: 36px;
+   margin-left: 50px;
+ }
+ 
+ /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+ #main {
+   transition: margin-left .5s;
+   padding: 20px;
+ }
+ 
+ /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+ @media screen and (max-height: 450px) {
+   .sidenav {padding-top: 15px;}
+   .sidenav a {font-size: 18px;}
+ }
+/* SIDEBAR ************ */
+table td.icon-trash{/*todos los elementos <td> que esten dentro de un <table> y tengan la clase icon-trash --> para centrar el icono */
+  padding-left: 33px;
+}
+.icon-trash {
+  fill: red;
+}
+.text thead tr th{ /*para centrar el texto de las filas de listados/obtener*/
+  vertical-align: middle;
+}
+.text td{ /*para centrar el texto de las filas de listados/obtener*/
+  text-align: center;
+}
+.text th{ /*para centrar el texto de las filas de listados/obtener*/
+  text-align: center;
+  
+}
+
+svg{
+  cursor: pointer;
+}
+svg:hover{
+  transform: scale(1.2);
+}
+svg:active{
+  filter: grayscale(25%) opacity(10);
+}
+.add h1{
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 11px;
+}
+.add svg{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+/*
+
+
+
+
+*/
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+
+
+.form-signin {
+  width: 100%;
+  /*max-width: 330px;*/
+  max-width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 25px;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 25px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.login-btn-sing-in {
+  font-size: 25px;
+}
+
+/*
+GOOGLE
+*/
+
+
+
+.goog-te-banner-frame {display:none;}
+#goog-gt-tt {display:none!important;visibility:hidden!important;}
+
+#google_translate_element {
+  
+  text-align: center;
+}
+.goog-te-gadget {
+  font-family: Roboto, 'Open Sans', sans-serif!important;
+  text-transform: uppercase;
+  
+}
+.goog-te-gadget-simple  {
+  background-color: black;
+  border: 1px solid black !important;
+  color: black;
+  padding: 8px!important;
+  border-radius: 4px!important;
+  font-size: 1rem!important;
+  line-height:2rem!important;
+  display: inline-block;
+  cursor: pointer;
+  zoom: 1;
+}
+.goog-te-menu2 {
+  max-width: 100%;
+}
+.goog-te-menu-value {
+  /*color: #fff !important;*/
+}
+.goog-te-menu-value span:nth-child(5) {
+  display:none;
+}
+.goog-te-menu-value span:nth-child(3) {
+  border:none!important;
+  font-family: 'Material Icons';
+  
+}
+
+.goog-te-gadget-icon {
+    background-image: url(https://placehold.it/32)!important;
+    background-position: 0px 0px;
+    height: 32px!important;
+    width: 32px!important;
+    margin-right: 8px!important;
+}
+
+
+.goog-te-banner-frame.skiptranslate {display: none!important;} 
+
+
+/* ================================== *\
+    Mediaqueries
+\* ================================== */
+
+.goog-te-banner-frame.skiptranslate {
+  display: none!important;
+  
+}
+body {
+  top: 0px !important;
+  padding-bottom: 210px; /* Margin bottom by footer height */
+}
+
+.footer {
+     position: absolute;
+     bottom: 0px; 
+     width: 100%;
+     line-height: 0.5; /* aligns type in footer-container */
+     background-color: #f5f5f5;
+}
+  

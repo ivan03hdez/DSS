@@ -17,6 +17,8 @@ class CreatePromotionsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('discount');
+            $table->String('beginDate');
+            $table->String('endDate');
         });
     }
 

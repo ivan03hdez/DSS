@@ -35,6 +35,6 @@ class CreateFavoriteListsProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('favorite_lists_products');
+        Schema::dropIfExists('favorite_list_product');
     }
 }

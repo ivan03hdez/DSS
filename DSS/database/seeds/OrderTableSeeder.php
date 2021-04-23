@@ -17,14 +17,18 @@ class OrderTableSeeder extends Seeder
         $i = 1;
         foreach($users as $user)
         {
-            if($user->role == 'user')
-            {
-                DB::table('orders')->insert([
-                    'totalPrice' => ($i),
-                    'user_id' => ($user->id)
-                ]);
-                $i++;
+            for($j =0; $j<3; $j++){
+                if($user->role == 'user')
+                {
+                    DB::table('orders')->insert([
+                        'totalPrice' => (40 + $i + $j),
+                        'user_id' => ($user->id),
+                        'paymentMethod' => 'paypal'
+                    ]);
+                    
+                }
             }
+            $i++;
         }
     }
 }

@@ -17,17 +17,20 @@ class FavoriteListTableSeeder extends Seeder
         $i = 1;
         foreach($users as $user)
         {
-            if($user->role == 'user')
-            {
-                $name = "FavList$i";
-                $description = "Description$i";
-                DB::table('favorite_lists')->insert([
-                    'name' => ($name),
-                    'description' => ($description),
-                    'user_id' => ($user->id)
-                ]);
-                $i++;
+            for($j =0; $j<3; $j++){
+                if($user->role == 'user')
+                {
+                    $name = "FavList$i$j";
+                    $description = "Description$i$j";
+                    DB::table('favorite_lists')->insert([
+                        'name' => ($name),
+                        'description' => ($description),
+                        'user_id' => ($user->id)
+                    ]);
+                    
+                }
             }
+            $i++;
         }
         
     }
