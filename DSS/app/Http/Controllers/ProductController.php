@@ -40,6 +40,35 @@ class ProductController extends Controller{
         $product->save();
         return redirect()->action('ProductController@list');
     }
+    public function update($id){
+        return view('products/update')->with('id',$id);
+    }
+    public function updateData(Request $request,$id){
+        $name = $request->input('exampleInputName1');
+        $price = $request->input('exampleInputPrice1');
+        $promotionPrice = $request->input('exampleInputPromotionPrice1');
+        $description = $request->input('exampleInputDescription1');
+        $stock = $request->input('exampleInputStock1');
+        $color = $request->input('exampleInputColor1');
+        $model = $request->input('exampleInputModel1');
+        $image = $request->input('exampleInputImage1');
+        $type = $request->input('exampleInputType1');
+        $promotion_id = $request->input('exampleInputPromId1');
+        $product = Product::find($id);
+        $product->id= $id;
+        $product->name = $name;
+        $product->price = $price;
+        $product->promotionPrice = $promotionPrice;
+        $product->description = $description;
+        $product->stock = $stock;
+        $product->color = $color;
+        $product->model = $model;
+        $product->image = $image;
+        $product->type = $type;
+        $product->promotion_id = $promotion_id;
+        $product->save();
+        return redirect()->action('ProductController@list');
+    }
     public function delete($id){
         $res=Product::where('id', '=' ,$id)->get()[0]->delete(); //Product::destroy($id); tb funciona
         return redirect()->action('ProductController@list');
