@@ -95,8 +95,8 @@ Route::middleware(['admin'])->group(function(){
     Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
 });
 
-//Auth::routes();
-//Route::get('/home', 'HomeController@index' )->name('home');
+Auth::routes();
+Route::get('/home', 'HomeController@index' )->name('home');
 
 
 ///////////////////////cada metodo del controlador tiene que tener definida una ruta//////////////
