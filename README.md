@@ -1,3 +1,4 @@
+**IMPORTATE** para actualizar composer --> sudo composer self-update --2
 **IMPORTATE** composer require kyslik/column-sortable --> para descargarnos el servicio de ordenacion de columnas
 
 
