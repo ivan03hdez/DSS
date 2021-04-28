@@ -1,3 +1,4 @@
+@inject('Auth', 'Auth')
 <!doctype html>
 <html lang="en">
   <head>
@@ -51,14 +52,16 @@
 
               <div id="mySidenav" class="sidenav">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
-              <a href="{{action('ProductController@list')}}">SSSProductos</a>
+              <a href="{{action('ProductController@list')}}">Productos</a>
               <a href="{{action('UserController@list')}}">Usuarios</a>
               <a href="{{action('FavoriteListController@list')}}">Lista de Favoritos</a>
               <a href="{{action('OrderController@list')}}">Pedidos</a>
               <a href="{{action('OrderLineController@list')}}">Linea de Pedido</a>
               <a href="{{action('PromotionController@list')}}">Promotion</a>
               <a href="{{action('ShoppingCartController@list')}}">Carrito</a>
-              <a class="cerrar-sesion" href="#">Cerrar sesion</a>
+              @if($Auth::check()) <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
+              @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
+              @endif
               
               </div>
 

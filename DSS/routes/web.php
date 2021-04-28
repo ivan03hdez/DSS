@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/layouts/admin');
-});
+
 
 //////////////////////////////////////////////////Rutas que usara el administrador/////////////////////////////////////////////////////////
 Route::middleware(['admin'])->group(function(){
@@ -30,12 +28,12 @@ Route::middleware(['admin'])->group(function(){
     Route::post('/products/update/{id}', 'ProductController@updateData');
     Route::get('/products/search', 'ProductController@searchP');
     Route::get('/products/update/{id}', 'ProductController@update');
-    Route::get('/products/update{}', function () {
+    /*Route::get('/products/update{}', function () {
         return view('/products/update{}');
     });
     Route::post('/products/update', function () {
         return view('/products/update');
-    });
+    });*/
     Route::get('/products/{id}', 'ProductController@get');
     /////////////////////////
     Route::get('/users', 'UserController@list');
@@ -94,28 +92,16 @@ Route::middleware(['admin'])->group(function(){
     Route::get('/shoppingCarts/delete/{id}', 'ShoppingCartController@delete');
     Route::get('/shoppingCarts/{id}', 'ShoppingCartController@get');
 });
-
-Auth::routes();
-Route::get('/home', 'HomeController@index' )->name('home');
-
-
 ///////////////////////cada metodo del controlador tiene que tener definida una ruta//////////////
 //////////////////////////////////////////////////Rutas que usara el usuario normal de la aplicación/////////////////////////////////////////////////////////
 
 Route::get('/e', 'exampleController@get');
-
 Route::get('/e', function () {return view('/exampleView');});
+Route::post('/e', function () {return view('/exampleView');});
+
+Route::get('/','HomeController@index');
 Route::get('/login', function () {return view('/login');});
 Route::get('/signin', function () {return view('/signin');});
-Route::post('/e', function () {return view('/exampleView');});
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/closeSession', 'UserController@closeSession');

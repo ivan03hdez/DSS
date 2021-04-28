@@ -12,11 +12,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url('/CSS/style.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-
-    
-
-
-
     <title>@yield('title')</title>
   </head>   
   <body>
@@ -55,8 +50,7 @@
                   <a href="{{action('OrderLineController@list')}}">Linea de Pedido</a>
                   <a href="{{action('PromotionController@list')}}">Promotion</a>
                   <a href="{{action('ShoppingCartController@list')}}">Carrito</a>
-                  <a class=" cerrar-sesion" href="#">Cerrar sesion</a>
-              
+                  <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
               </div>
 
               <!-- Use any element to open the sidenav -->

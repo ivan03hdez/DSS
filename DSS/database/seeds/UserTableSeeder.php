@@ -29,7 +29,7 @@ class UserTableSeeder extends Seeder
             DB::table('users')->insert([
                 'name' => "Username$i",
                 'email' => "email$i@domain.com",
-                'password' => "pass$i", 
+                'password' => Hash::make("pass$i"), 
                 'address' => "address$i",
                 'phone' => $phone,
                 'role' => $role,
