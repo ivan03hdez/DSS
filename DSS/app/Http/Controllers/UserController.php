@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Controllers\HomeController;
+use Auth;
 
 class UserController extends Controller{
     public function list(){
@@ -27,7 +29,7 @@ class UserController extends Controller{
         $user = new User();//$name,$addres,$phone,$email,$password,$role,$image);
         $user->name = $name;
         $user->email = $email;
-        $user->password = $password;
+        $user->password = Hash::make($password);
         $user->address = $address;
         $user->phone = $phone;
         $user->role = $role;
@@ -52,7 +54,7 @@ class UserController extends Controller{
         $user->id = $id;
         $user->name = $name;
         $user->email = $email;
-        $user->password = $password;
+        $user->password = Hash::make($password);
         $user->address = $address;
         $user->phone = $phone;
         $user->role = $role;
@@ -85,5 +87,15 @@ class UserController extends Controller{
         paginate(10);
 
         return view('users.list')->with('users',$users);
+    }
+    public function closeSession(){
+        Auth::logout();
+        // Session::flush();  removes all session data
+        //Session::forget('yourKeyGoesHere') Removes a specific variable
+        //Auth::logout() logs out the user 
+        return redirect()->route('home');
+    }
+    public function isLogged(){
+        return Auth::check();
     }
 }
