@@ -1,3 +1,4 @@
+**IMPORTATE* Usuario con el que haremos las pruebas de admin: email0@☺domain.com pass0 Usuario con el que ahremos pruebas con rol user: email1@☺domain.com pass1
 **IMPORTATE** para actualizar composer --> sudo composer self-update --2
 **IMPORTATE** composer require kyslik/column-sortable --> para descargarnos el servicio de ordenacion de columnas
 
