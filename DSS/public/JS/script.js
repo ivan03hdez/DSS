@@ -16,8 +16,6 @@ function openNav() {
   autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
 
-
-
  $('document').ready(function () {
 
   

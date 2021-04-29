@@ -1,8 +1,9 @@
 @extends('layouts.admin')
-@section('title','Crear producto')
+@section('title','Update Products')
 @section('content')
-<form method="get" action="{{action('ProductController@create')}}">
-  @csrf
+<h1>You are editing product {{$id}}  </h1>
+  <form method="post" action="{{action('ProductController@updateData',$id)}}">
+  @csrf 
   <div class="form-group">
     <label for="exampleInputName1">Name</label>
     <input type="text" class="form-control" name="exampleInputName1" placeholder="Name">

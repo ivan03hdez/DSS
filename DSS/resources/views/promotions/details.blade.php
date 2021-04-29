@@ -15,14 +15,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr data-id="{{$promotion->id}}">
       <th scope="row">{{$promotion->id}}</th>
       <td>{{$promotion->discount}}</td>
       <td>{{$promotion->beginDate}}</td>
       <td>{{$promotion->endDate}}</td>
       <td>{{$promotion->products}}</td>
       <td class="icon-trash">
-        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg id="trash" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
           <g class="icon-trash">
             <rect x="67.224" width="350.535" height="71.81"/>

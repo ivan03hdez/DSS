@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr data-id="{{$user->id}}">
       <th scope="row">{{$user->id}}</th>
       <td>{{$user->name}}</td>
       <td>{{$user->password}}</td>

@@ -14,6 +14,37 @@ class PromotionController extends Controller{
         $promotion = Promotion::where('id',$id)->get()[0];//->get() devuelve una array asociativo de tipo name:producto1 con las columnas de la tabla producto 
         return view('promotions.details')->with('promotion',$promotion);
     }
+    public function create(Request $request){
+        $discount = $request->input('exampleInputDiscount1');
+        $beginDate = $request->input('exampleInputBeginDate1');
+        $endDate = $request->input('exampleInputEndDate1');
+        $promotion = new Promotion();
+        $promotion->discount = $discount;
+        $promotion->beginDate = $beginDate;
+        $promotion->endDate = $endDate;
+        $promotion->save();
+        return redirect()->action('PromotionController@list');
+    }
+    public function update($id){
+        return view('promotions.update')->with('id',$id);
+    }
+    public function updateData(Request $request){
+        $id = $request->input('idUpdate');
+        $discount = $request->input('exampleInputDiscount1');
+        $beginDate = $request->input('exampleInputBeginDate1');
+        $endDate = $request->input('exampleInputEndDate1');
+        $promotion = Promotion::find($id);
+        $promotion->id = $id;
+        $promotion->discount = $discount;
+        $promotion->beginDate = $beginDate;
+        $promotion->endDate = $endDate;
+        $promotion->save();
+        return redirect()->action('PromotionController@list');
+    }
+    public function delete($id){
+        Promotion::destroy($id);
+        return redirect()->action('PromotionController@list');
+    }
     public function searchD(Request $request){
         $searchId = \Request::input('searchD-id'); 
         $searchDiscount = \Request::input('searchD-discount');

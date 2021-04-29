@@ -18,6 +18,10 @@ class FavoriteListController extends Controller{
         $favoriteList = FavoriteList::where('id',$id)->get()[0];//->get() devuelve una array asociativo de tipo name:producto1 con las columnas de la tabla producto 
         return view('favoriteLists.details')->with('favoriteList',$favoriteList);
     }
+    public function delete($id){
+        FavoriteList::destroy($id);
+        return redirect()->action('FavoriteListController@list');
+    }
     public function searchFL(){
         $searchId = \Request::input('searchFL-id'); 
         $searchName = \Request::input('searchFL-name'); 

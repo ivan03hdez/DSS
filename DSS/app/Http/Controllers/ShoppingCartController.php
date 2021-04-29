@@ -14,5 +14,9 @@ class ShoppingCartController extends Controller{
         $shoppingCart = ShoppingCart::where('id',$id)->get()[0];//->get() devuelve una array asociativo de tipo name:producto1 con las columnas de la tabla producto 
         return view('shoppingCarts.details')->with('shoppingCart',$shoppingCart);
     }
+    public function delete($id){
+        ShoppingCart::destroy($id);
+        return redirect()->action('ShoppingCartController@list');
+    }
     
 }

@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <form class="d-flex col my-auto" type="get" action="{{ url('/searchO') }}">
+      <form class="d-flex col my-auto" type="get" action="{{ url('/orders/search') }}">
         <td scope="col">
           <div class="col-2-sm admin-outer-container" > 
                 <input class="form-control form-control-lg me-2" name="searchO-id" type="text">
@@ -39,13 +39,13 @@
         </td>
       </form>
       @foreach($orders as $order)
-      <tr>
+      <tr data-id="{{$order->id}}">
         <th scope="row"><a href="{{action('OrderController@get',$order->id)}}">{{$order->id}}</a></th>
         <td>{{$order->totalPrice}}</td>
         <td>{{$order->paymentMethod}}</td>
         <td>{{ $providerOrder::numberOfLines($order->id) }}</td>
         <td class="icon-trash">
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          <svg id="trash"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
             <g class="icon-trash">
               <rect x="67.224" width="350.535" height="71.81"/>
