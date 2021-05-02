@@ -105,3 +105,7 @@ Route::get('/signin', function () {return view('/signin');});
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/closeSession', 'UserController@closeSession');
+
+Route::get('/search', function(){
+    return view('search');
+});
