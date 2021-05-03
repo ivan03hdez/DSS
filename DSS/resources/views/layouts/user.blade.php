@@ -21,20 +21,14 @@
             <div class="col-12 align-header"> 
               <span style="font-size:30px;cursor:pointer" onclick="openNav()"  ><div class="menu">&#9776; Dashboard</div></span> 
               <div class="logo rounded mx-auto d-block" >
-                <img src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title="">
-              </div>
-
-              <!-- 
-              <div class="col-2 admin-outer-container" style="background-color:yellow;"> 
-                @section('add')
-                <div class="col-4 admin-container add" style="background-color:yellow;">
-                  <button type="button" class="btn btn-success btn-add"> Add + </button>
-                </div>  
-                @show
-                <div class="col-4 admin-container admin-image" style="background-color:red;"></div>
-                <div class="col-4 admin-container admin-name" style="background-color:green;"></div>
-              </div>
-              -->
+                <img  src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title="">
+              </div>     
+              <form class="form-inline my-2 my-lg-0 ml-auto">
+      <input class="form-control input-filter" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+      
+    </form>
+              
 
             </div>
         </div>
@@ -51,17 +45,11 @@
           <!-- SIDEBAR **************************** -->
 
               <div id="mySidenav" class="sidenav">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
-              <a href="{{action('ProductController@list')}}">Productos</a>
-              <a href="{{action('UserController@list')}}">Usuarios</a>
-              <a href="{{action('FavoriteListController@list')}}">Lista de Favoritos</a>
-              <a href="{{action('OrderController@list')}}">Pedidos</a>
-              <a href="{{action('OrderLineController@list')}}">Linea de Pedido</a>
-              <a href="{{action('PromotionController@list')}}">Promotion</a>
-              <a href="{{action('ShoppingCartController@list')}}">Carrito</a>
-              @if($Auth::check()) <a class="cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
-              @else <a class="cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
-              @endif
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
+                  <a href="">Pollas</a>
+                  @if($Auth::check()) <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
+                  @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
+                  @endif
               </div>
 
               <!-- Use any element to open the sidenav -->
