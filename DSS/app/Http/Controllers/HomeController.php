@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Product;
+use App\Promotion;
 
 class HomeController extends Controller
 {
@@ -26,7 +28,9 @@ class HomeController extends Controller
     {
         if(Auth::check() && Auth::user()->role=='admin')
             return view('layouts.admin');
-        else
-            return view('layouts.user');
+        else{
+            $products = Product::sortable(['id'=> 'asc']);
+            return view('home')->with('products',$products);;
+        }
     }
 }
