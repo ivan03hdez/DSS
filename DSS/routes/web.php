@@ -105,3 +105,8 @@ Route::get('/signin', function () {return view('/signin');});
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/closeSession', 'UserController@closeSession');
+
+/// Controlador para subir imágenes
+
+Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
+Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
