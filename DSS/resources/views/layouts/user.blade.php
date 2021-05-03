@@ -1,3 +1,4 @@
+@inject('Auth', 'Auth')
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,7 +27,14 @@
               <span style="font-size:30px;cursor:pointer" onclick="openNav()"  ><div class="menu">&#9776; Dashboard</div></span> 
               <div class="logo rounded mx-auto d-block" >
                 <img  src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title="">
-              </div>              
+              </div>     
+              <form class="form-inline my-2 my-lg-0 ml-auto">
+      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+      
+    </form>
+              
+
             </div>
         </div>
         
@@ -44,7 +52,9 @@
               <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
                   <a href="{{action('ProductController@list')}}">Pollas</a>
-                  <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
+                  @if($Auth::check()) <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
+                @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
+                @endif
               </div>
 
               <!-- Use any element to open the sidenav -->
