@@ -55,31 +55,7 @@
         @show
        
       </div>
-      <!--
-      <footer class="footer">
-        <div class="container">
-              
-              <div class="col-sm footer text-right"  id="footer01" >
-                  <div class="col-sm-4" ></div>
-                  
-                  <div class="col-sm-4 justify-content-end align-items-end social-media" >
-                    
-                    Redes sociales:
-                      <a class="fa fa-instagram" href="https://www.instagram.com/ua_universidad/"></a>
-                      <a class="fa fa-facebook" href="https://www.facebook.com/campusUA"></a>
-                      <a class="fa fa-twitter" href="https://twitter.com/UA_Universidad"></a>
-                      <a class="fa fa-linkedin" href="https://www.linkedin.com/school/universidad-alicante/"></a>
-                      <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCVZCJVs8j4oTRmnHC31pwpQ"></a>
-                  </div>
-                  <div class="col-2-sm">
-                    <div id="google_translate_element" style="background-color:grey;"></div>
-                  </div>
-              </div>
-            
-            </div>
-        </footer>
--->
-   
+
       
     </div>
 
