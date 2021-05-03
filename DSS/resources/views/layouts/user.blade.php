@@ -51,10 +51,10 @@
 
               <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
-                  <a href="{{action('ProductController@list')}}">Pollas</a>
+                  <a href="">Pollas</a>
                   @if($Auth::check()) <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
-                @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
-                @endif
+                  @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
+                  @endif
               </div>
 
               <!-- Use any element to open the sidenav -->
