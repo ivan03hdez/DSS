@@ -29,7 +29,7 @@
                 <img  src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title="">
               </div>     
               <form class="form-inline my-2 my-lg-0 ml-auto">
-      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control input-filter" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
       
     </form>
