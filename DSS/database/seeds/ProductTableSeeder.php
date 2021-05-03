@@ -23,7 +23,7 @@ class ProductTableSeeder extends Seeder
                 'color' => "color$i",
                 'model' => "model$i",
                 'promotion_id' => $i +1, ///las ids empiezan por 1 y el bucle por 0
-                'image' => "image$i",
+                'image' => "images/producto$i.jpg",
                 'type' => "altavoz$i",
 
             ]);
