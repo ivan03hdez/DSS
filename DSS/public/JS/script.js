@@ -84,7 +84,7 @@ $(document).ready(function () {
   $(document).ready(function(){
     $(".input-filter").on("keyup", function() {///input con el que filtramos
       var value = $(this).val().toLowerCase();
-      $("table tbody tr[data-id]").filter(function() {
+      $("div.product").filter(function() {
         //console.log($(this).val());
         return $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
       });
