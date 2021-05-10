@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\HomeController;
 use Auth;
+Use Hash;
 
 class UserController extends Controller{
     public function list(){
