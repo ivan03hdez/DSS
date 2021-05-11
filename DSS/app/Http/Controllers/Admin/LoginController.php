@@ -34,4 +34,24 @@ class LoginController extends Controller
     {
         return view('admin.auth.login');
     }
+
+    /**
+ * @param Request $request
+ * @return \Illuminate\Http\RedirectResponse
+ * @throws \Illuminate\Validation\ValidationException
+ */
+public function login(Request $request)
+{
+    $this->validate($request, [
+        'email'   => 'required|email',
+        'password' => 'required|min:6'
+    ]);
+    if (Auth::guard('admin')->attempt([
+        'email' => $request->email,
+        'password' => $request->password
+    ], $request->get('remember'))) {
+        return redirect()->intended(route('admin.dashboard'));
+    }
+    return back()->withInput($request->only('email', 'remember'));
+}
 }
