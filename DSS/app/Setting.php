@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Config;
+use UploadAble;
 
 class Setting extends Model
 {
