@@ -27,41 +27,41 @@
     </tr>
   </thead>
   <tbody>
-  <form class="d-flex col my-auto" type="get" action="{{ url('/users/search') }}">
-    <td scope="col">
-      <div class="col-2-sm admin-outer-container" > 
-            <input class="form-control form-control-lg me-2" name="searchU-id" type="text">
-      </div>
-    </td>
-    <td scope="col">
-      <div class="col-2-sm admin-outer-container" > 
-            <input class="form-control form-control-lg me-2" name="searchU-name" type="text">
-      </div>
-    </td>
-    <td scope="col">
-      <div class="col-2-sm admin-outer-container" > 
-            <input class="form-control form-control-lg me-2" name="searchU-email" type="text">
-      </div>
-    </td>
-    <td scope="col">
-      <div class="col-2-sm admin-outer-container" > 
-            <input class="form-control form-control-lg me-2" name="searchU-address" type="text">
-      </div>
-    </td>
-    <td scope="col">
-      <div class="col-2-sm admin-outer-container" > 
-            <input class="form-control form-control-lg me-2" name="searchU-phone" type="text">
-      </div>
-    </td>
-    <td scope="col">
-      <div class="col-2-sm admin-outer-container" > 
-          <button class="btn btn-outline-success button-search btn-lg" type="submit">Search</button>
-      </div>
-    </td>
-  </form>
+    <form class="d-flex col my-auto" type="get" action="{{ url('/users/search') }}">
+      <td scope="col">
+        <div class="col-2-sm admin-outer-container" > 
+              <input class="input-filter form-control form-control-lg me-2" name="searchU-id" type="text">
+        </div>
+      </td>
+      <td scope="col">
+        <div class="col-2-sm admin-outer-container" > 
+              <input class="input-filter form-control form-control-lg me-2" name="searchU-name" type="text">
+        </div>
+      </td>
+      <td scope="col">
+        <div class="col-2-sm admin-outer-container" > 
+              <input class="form-control form-control-lg me-2" name="searchU-email" type="text">
+        </div>
+      </td>
+      <td scope="col">
+        <div class="col-2-sm admin-outer-container" > 
+              <input class="form-control form-control-lg me-2" name="searchU-address" type="text">
+        </div>
+      </td>
+      <td scope="col">
+        <div class="col-2-sm admin-outer-container" > 
+              <input class="form-control form-control-lg me-2" name="searchU-phone" type="text">
+        </div>
+      </td>
+      <td scope="col">
+        <div class="col-2-sm admin-outer-container" > 
+            <button class="btn btn-outline-success button-search btn-lg" type="submit">Search</button>
+        </div>
+      </td>
+    </form>
     @foreach($users as $user)
     <tr data-id="{{$user->id}}">
-    <th scope="row"><a href="{{action('UserController@get',$user->id)}}">{{$user->id}}</a></th>
+      <th scope="row"><a href="{{action('UserController@get',$user->id)}}">{{$user->id}}</a></th>
       <td>{{$user->name}}</td>
       <td>{{$user->email}}</td>
       <td>{{$user->address}}</td>
@@ -86,7 +86,7 @@
           </svg>
         </a>
       </td>
-    </tr>
+  </tr>
     @endforeach
   </tbody>
 </table>
