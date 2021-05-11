@@ -110,3 +110,9 @@ Route::get('/closeSession', 'UserController@closeSession');
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
+
+/// Rutas para manejar el ShoppingCart
+
+Route::get('/cart', 'Site\CartController@getCart')->name('checkout.cart');
+Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('checkout.cart.remove');
+Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
