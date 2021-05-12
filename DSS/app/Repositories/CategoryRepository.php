@@ -115,4 +115,21 @@ class CategoryRepository extends BaseRepository implements CategoryContract
 
         return $category;
     }
+
+    /**
+    * @param $id
+    * @return bool|mixed
+    */
+    public function deleteCategory($id)
+    {
+        $category = $this->findCategoryById($id);
+
+        if ($category->image != null) {
+            $this->deleteOne($category->image);
+        }
+
+        $category->delete();
+
+        return $category;
+    }
 }
