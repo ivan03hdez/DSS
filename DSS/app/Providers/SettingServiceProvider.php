@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Config;
+use App\Setting;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
