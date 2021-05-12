@@ -39,4 +39,20 @@ class CategoryRepository extends BaseRepository implements CategoryContract
     {
         return $this->all($columns, $order, $sort);
     }
+
+    /**
+     * @param int $id
+     * @return mixed
+     * @throws ModelNotFoundException
+    */
+    public function findCategoryById(int $id)
+    {
+        try {
+            return $this->findOneOrFail($id);
+
+        } catch (ModelNotFoundException $e) {
+
+            throw new ModelNotFoundException($e);
+        }
+    }
 }
