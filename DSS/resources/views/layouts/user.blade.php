@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url('/CSS/style.css') }}" />
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
@@ -62,30 +63,36 @@
         @show
       </div>
         </div>
-        <div class="row"> <!-- BODY -->
-        
-        </div>
-        <div class="row"> <!-- FOOTER -->
-        <div class="col-lg footer"  id="footer01" >
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4 justify-content-end align-items-end"  style="background-color:white;">
-              
-              Redes sociales:
-                <a class="fa fa-instagram" href="https://www.instagram.com/ua_universidad/"></a>
-                <a class="fa fa-facebook" href="https://www.facebook.com/campusUA"></a>
-                <a class="fa fa-twitter" href="https://twitter.com/UA_Universidad"></a>
-                <a class="fa fa-linkedin" href="https://www.linkedin.com/school/universidad-alicante/"></a>
-                <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCVZCJVs8j4oTRmnHC31pwpQ"></a>
-            </div>
-          </div>
-        </div>
-
 
     </div>
     @yield('scripts')
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ URL::asset('JS/script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
   </body>
+  <footer class="bg-light text-center text-white fixed-bottom" id="footer01">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+      
+                      <a class="fa fa-instagram" href="https://www.instagram.com/ua_universidad/"></a>
+                      <a class="fa fa-facebook" href="https://www.facebook.com/campusUA"></a>
+                      <a class="fa fa-twitter" href="https://twitter.com/UA_Universidad"></a>
+                      <a class="fa fa-linkedin" href="https://www.linkedin.com/school/universidad-alicante/"></a>
+                      <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCVZCJVs8j4oTRmnHC31pwpQ"></a>
+                      
+                        <div class ="col-12" id="google_translate_element"></div>
+                      
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">DEAF SL</a>
+      </div>
+      
+      
+      <!-- Copyright -->
+    </footer>
 </html>
