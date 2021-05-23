@@ -413,3 +413,19 @@ body {
 {
     margin-right: 10px;
 }
+
+/*
+Login style
+*/
+
+#check-label-login{
+  font-size: small;
+  font-weight: bold;
+}
+
+#check-login-group{
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  align-items: center;
+}
