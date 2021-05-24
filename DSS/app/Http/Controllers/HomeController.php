@@ -29,8 +29,8 @@ class HomeController extends Controller
         if(Auth::check() && Auth::user()->role=='admin')
             return view('layouts.admin');
         else{
-            $products = Product::sortable(['id'=> 'asc']);
-            return view('home')->with('products',$products);;
+            $products = Product::All();
+            return view('home')->with('products',$products);
         }
     }
 }

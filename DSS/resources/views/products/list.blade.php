@@ -72,28 +72,6 @@
               h-28.363V146.383h28.363V431.447z M347.97,431.447h-28.361V146.383h28.361V431.447z"/>
           </g>
         </svg>
-        <!-- Modal -->
-        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                  ¿are you sure you want to delete this object?
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <form class="d-flex col my-auto" type="get" action="{{action('ProductController@delete', $product->id)}}">
-                  <button type="submit" class="btn btn-primary">Confirmar</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>-->
       </td>
       <td>
           <a href="{{action('ProductController@update',$product->id)}}">

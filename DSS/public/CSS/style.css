@@ -429,3 +429,19 @@ Login style
   padding-bottom: 20px;
   align-items: center;
 }
+/*
+Search Style
+*/
+.flex-container {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: inherit;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+.flex-container div {
+  margin-left: 20px;
+  margin-right: 20px;
+}

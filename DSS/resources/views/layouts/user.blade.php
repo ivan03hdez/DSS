@@ -50,6 +50,7 @@
               <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
                   <a href="">Caregorias por poner</a>
+                  <a href="http://127.0.0.1:8000/search">Searcher</a>
                   @if($Auth::check()) <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
                   @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
                   @endif
