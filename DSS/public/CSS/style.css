@@ -429,3 +429,23 @@ Login style
   padding-bottom: 20px;
   align-items: center;
 }
+
+/*
+
+carousel
+
+*/
+.item {
+  height: 550px;
+  width: 100%;
+}
+
+.img-carousel-home{
+  padding-top: 2%;
+  max-width: 70%;
+  max-height: 70%;
+  display: block; /* remove extra space below image */
+}
+#btn-home-buy{
+  width: 8%;
+}
