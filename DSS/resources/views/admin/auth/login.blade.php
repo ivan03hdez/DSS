@@ -14,7 +14,7 @@
 </section>
 <section class="login-content">
     <div class="logo">
-        <h1>{{ config('app.name') }}</h1>
+        <h1>DEAF SL</h1>
     </div>
     <div class="login-box">
         <form class="login-form" action="{{ route('admin.login.post') }}" method="POST" role="form">
