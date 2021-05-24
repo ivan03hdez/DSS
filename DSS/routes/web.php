@@ -118,7 +118,10 @@ Route::get('/cart', 'Site\CartController@getCart')->name('checkout.cart');
 Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('checkout.cart.remove');
 Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0fe7cc89ff8e86460bca2b9982a16274f5881e10
 Route::get('/search', function(){
     return view('search');
 });

@@ -1,4 +1,4 @@
-div class="tile">
+<div class="tile">
     <form action="{{ route('admin.settings.update') }}" method="POST" role="form">
         @csrf
         <h3 class="tile-title">Footer &amp; SEO</h3>
