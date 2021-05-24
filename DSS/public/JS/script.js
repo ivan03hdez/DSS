@@ -70,3 +70,46 @@ function openNav() {
       });
   });
 });
+////METODO QUE PERMITE MOSTRAR POP-UP DE CONFIRMACION AL BORRAR UN REGISTRO EN EL ADMIN
+$(document).ready(function () {
+    $('#trash').click(function() {
+      var row=$(this).parents('tr');
+      var id=row.data('id');
+      var urlClass = window.location.pathname.split('/')[1];/////funciona en admin porque cojo la clase dinamicamente
+      if(confirm("¿Are you sure you want to delete this object?"))
+        window.location.replace("http://localhost:8000/" + urlClass +"/delete/"+id);
+    })
+  });
+  ////pra filtrar los resultados en un buscador
+  $(document).ready(function(){
+    $(".input-filter").on("keyup", function() {///input con el que filtramos
+      var value = $(this).val().toLowerCase();
+      $("div .product").filter(function() {
+        //console.log($(this).val());
+        return $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  ///////Filter with multiple criteria
+  /*$(document).ready(function(){
+    $("#type","#price").on("keyup", function(){select()})
+    $(".input-filter").on("keyup", function() {///input con el que filtramos
+      var value = $(this).val().toLowerCase();
+      $("table tbody tr[data-id]").filter(function() {
+        return $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+    var select = function() {
+      var selectorFilters = {
+        service: $("#service").val(),
+        status: $("#status").val()
+      };
+    }
+    var selector= function(){
+      
+    }
+    $(selector).filter(function (){
+      var searchValue = $("#search").val().toLowerCase();
+      return (searchValue === "" || $(this).data("name").toLowerCase().indexOf(searchValue) > -1);
+    }).show();
+  });*/

@@ -5,22 +5,20 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-
     <link rel="stylesheet" type="text/css" href="{{ url('/CSS/style.css') }}" />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
     <title>@yield('title')</title>
-  </head>   
+  </head>
   <body>
-    
-   
     <div class="container-fluid">
-      <div class="row">
-      
+        <div class="row"> <!-- HEADER -->
         <div id="header01" class="col-12" style="background-color:grey;">  <!-- HEADER -->
             
             <div class="col-12 align-header"> 
@@ -41,7 +39,7 @@
       </div>
       <div class="row">
         <div class="col-12" style="background-color:white;" id="body01">
-        @section('content')
+        @section('content') 
         @show 
         </div>
         @section('sidebar')
@@ -63,30 +61,15 @@
           <!-- SIDEBAR **************************** -->
         </div>
         @show
-       
       </div>
+        </div>
 
-      
     </div>
-
-
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script type="text/javascript" src="{{ URL::asset('JS/script.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     @yield('scripts')
-     <!-- Script que borra por ID -->
-    <script>
-    $(document).ready(function () {
-      $('tr').on('click', '#trash', function() {
-        var row=$(this).parents('tr');
-        var id=row.data('id');
-        var urlClass = window.location.pathname.split('/')[1];/////funciona en admin porque cojo la clase dinamicamente
-        if(confirm("¿Are you sure you want to delete this object?"))
-          window.location.replace("http://localhost:8000/" + urlClass +"/delete/"+id);
-      })
-    });
-    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ URL::asset('JS/script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
   </body>
   <footer class="bg-light text-center text-white fixed-bottom" id="footer01">
       <!-- Grid container -->
@@ -112,5 +95,4 @@
       
       <!-- Copyright -->
     </footer>
-    
 </html>
