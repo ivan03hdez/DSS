@@ -23,5 +23,16 @@ class Product extends Model
     public function promotion() {
         return $this->belongsTo('App\Promotion');
     }
-       
+
+    /**
+ * @return \Illuminate\Database\Eloquent\Relations\HasMany
+ */
+
+ // El método images devolverá una relación hasMany para que podamos tener más de una imagen por producto
+
+public function images()
+{
+    return $this->hasMany(ProductImage::class);
+}
+                                                             
 }
