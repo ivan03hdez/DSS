@@ -1,206 +1,236 @@
 @extends('layouts.user')
+
+
 @section('title','Home Page')
 @section('content')
+<<<<<<< HEAD
 <!--AÑADIDO-->
   <!--Carousel Wrapper-->
   <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-
-    <!--Controls-->
-    <div class="controls-top text-center">
-      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+=======
+@if(false)
+<div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel"> <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="caroussel-item active">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="col-item">
+                        <div class="photo">
+                            <img src="{{ URL::asset('images/deaf.jpeg') }}" class="img-responsive" alt="a" />
+                        </div>
+                        <div class="info">
+                            <div class="row">
+                                <div class="price col-md-6">
+                                    <h5>
+                                        Sample Product</h5>
+                                    <h5 class="price-text-color">
+                                        $199.99</h5>
+                                </div>
+                            </div>
+                            
+                            <div class="separator clear-left">
+                                <p class="btn-add">
+                                    <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                <p class="btn-details">
+                                    <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--/.Controls-->
 
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-      <li data-target="#multi-item-example" data-slide-to="1"></li>
-      <li data-target="#multi-item-example" data-slide-to="2"></li>
-    </ol>
-    <!--/.Indicators-->
 
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
+</div>
+@endif
 
-      <!--First slide-->
-      <div class="carousel-item active">
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
-                   alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card mb-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                   alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card mb-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
-                   alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!--/.First slide-->
-
-      <!--Second slide-->
-      <div class="carousel-item">
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
-                   alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card mb-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
-                   alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card mb-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
-                   alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!--/.Second slide-->
-
-      <!--Third slide-->
-      <div class="carousel-item">
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
-                   alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card mb-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
-                   alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card mb-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
-                   alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a class="btn btn-primary">Button</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!--/.Third slide-->
-
-    </div>
-    <!--/.Slides-->
-
-  </div>
-  <!--/.Carousel Wrapper-->
-<!--FIN AÑADIDO-->
-
-<!--AÑADIDO 2-->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<!-- AÑADIDO 2 -->
+<h4 class="card-title">Auriculares</h4>
+<div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
+>>>>>>> ca3c78116e3bb0e06d0bcd0045b3528c60e0f392
 
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                    @foreach( $products as $product )
-                        <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                    @foreach( $products as $p )
+                      @if (strcmp($p->type, 'auriculares') == 0)
+                        <li style="background-color:red;" data-target="#carousel-example-generic1" data-slide-to="{{ $loop->index }}" class="active"></li>
+                        @endif
                     @endforeach
                 </ol>
 
                 <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    @foreach( $products as $product )
-                        <div class="item {{ $loop->first ? ' active' : '' }}" >
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" class="img-responsive" alt="{{ $product->name }}" />       
+                <div class="carousel-inner text-center" role="listbox">
+                    @foreach( $products as $p )
+                    @if (strcmp($p->type, 'auriculares') == 0)
+                        <div class="item {{ $loop->index == 20 ? ' active' : '' }}" style="background-color:grey;"  >
+                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <div class="card-body" >
+                                  <h4 class="card-title">{{ $p->name }}</h4>
+                                  <p class="card-text">{{ $p->description }}</p>
+                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <br>
+                                  <br>
+                                  <br>
+                                  
+                                </div>
                         </div>
+                        @endif
                     @endforeach
                 </div>
 
                 <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <a class="left carousel-control" href="#carousel-example-generic1" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <a class="right carousel-control" href="#carousel-example-generic1" role="button" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-</div>
-<!--FIN AÑADIDO 2-->
+            </div>
+<!-- AÑADIDO 2 -->
+
+<!-- AÑADIDO 3 -->
+<h4 class="card-title">Cascos</h4>
+<div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    @foreach( $products as $p )
+                      @if (strcmp($p->type, 'cascos') == 0)
+                        <li style="background-color:red;" data-target="#carousel-example-generic2" data-slide-to="{{ $loop->index  }}" class="active"></li>
+                        @endif
+                    @endforeach
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner text-center" role="listbox">
+                    @foreach( $products as $p )
+                    @if (strcmp($p->type, 'cascos') == 0)
+                        <div class="item {{ $loop->index == 10 ? ' active' : '' }}" style="background-color:grey;"  >
+                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home" >
+                            <div class="card-body" >
+                                  <h4 class="card-title">{{ $p->name }}</h4>
+                                  <p class="card-text">{{ $p->description }}</p>
+                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <br>
+                                  <br>
+                                  <br>
+                                  
+                                </div>
+                        </div>
+                        @endif
+                    @endforeach
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+<!-- AÑADIDO 3 -->
+
+<!-- AÑADIDO 4 -->
+<h4 class="card-title">Altavoz</h4>
+<div id="carousel-example-generic3" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    @foreach( $products as $p )
+                      @if (strcmp($p->type, 'altavoz') == 0)
+                        <li style="background-color:red;" data-target="#carousel-example-generic3" data-slide-to="{{ $loop->index }}" class="active"></li>
+                        @endif
+                    @endforeach
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner text-center" role="listbox">
+                    @foreach( $products as $p )
+                    @if (strcmp($p->type, 'altavoz') == 0)
+                        <div class="item {{ $loop->index == 0 ? ' active' : '' }}" style="background-color:grey;"  >
+                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <div class="card-body" >
+                                  <h4 class="card-title">{{ $p->name }}</h4>
+                                  <p class="card-text">{{ $p->description }}</p>
+                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <br>
+                                  <br>
+                                  <br>
+                                  
+                                </div>
+                        </div>
+                        @endif
+                    @endforeach
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic3" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic3" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+<!-- AÑADIDO 4 -->
+
+
+<!-- AÑADIDO 4 -->
+<h4 class="card-title">Microfonos</h4>
+<div id="carousel-example-generic4" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    @foreach( $products as $p )
+                      @if (strcmp($p->type, 'microfono') == 0)
+                        <li style="background-color:red;" data-target="#carousel-example-generic4" data-slide-to="{{ $loop->index }}" class="active"></li>
+                        @endif
+                    @endforeach
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner text-center" role="listbox">
+                    @foreach( $products as $p )
+                    @if (strcmp($p->type, 'microfono') == 0)
+                        <div class="item {{ $loop->index == 30 ? ' active' : '' }}" style="background-color:grey;"  >
+                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <div class="card-body" >
+                                  <h4 class="card-title">{{ $p->name }}</h4>
+                                  <p class="card-text">{{ $p->description }}</p>
+                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <br>
+                                  <br>
+                                  <br>
+                                  
+                                </div>
+                        </div>
+                        @endif
+                    @endforeach
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic4" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic4" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+<!-- AÑADIDO 4 -->
+
+
 @endsection
 @section('scripts')
 @endsection
