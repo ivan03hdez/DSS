@@ -3,11 +3,6 @@
 
 @section('title','Home Page')
 @section('content')
-<<<<<<< HEAD
-<!--AÑADIDO-->
-  <!--Carousel Wrapper-->
-  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-=======
 @if(false)
 <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel"> <!-- Wrapper for slides -->
     <div class="carousel-inner">
@@ -51,7 +46,6 @@
 <!-- AÑADIDO 2 -->
 <h4 class="card-title">Auriculares</h4>
 <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
->>>>>>> ca3c78116e3bb0e06d0bcd0045b3528c60e0f392
 
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
