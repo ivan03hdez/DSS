@@ -117,7 +117,7 @@ $(document).ready(function () {
       var typeFilter = () => select()['type'] == undefined || $(element).data('type')===select()['type'];
       var priceFilter = () => $(element).data('price') <= select()['price'];
 
-      //console.log("name:" +name + nameFilter() + " type:" + select()['type'] + typeFilter() +" price:" + select()['price'] + priceFilter());
+      console.log("name:" +name + nameFilter() + " type:" + select()['type'] + typeFilter() +" price:" + select()['price'] + priceFilter());
       return nameFilter() && typeFilter() && priceFilter(); 
     };
     var select = function() {
@@ -129,7 +129,7 @@ $(document).ready(function () {
     var selector= function(){
       var sel;
       select()['price'] == null ?  (select['price']= 10000.0) : false;
-      sel = "div.col-sm-3";
+      sel = "div.center";
       return sel;
     }
   });

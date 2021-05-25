@@ -1,6 +1,4 @@
 @extends('layouts.user')
-
-
 @section('title','Home Page')
 @section('content')
 <!-- AÑADIDO 2 -->

@@ -12,10 +12,10 @@
         <div >
             <p>Poduct type</p>
             <select id="type">
-                <option value="cascos">cascos</option>
-                <option value="auriculares">auriculares</option>
-                <option value="altavoz">Altavoces</option>
-                <option value="microfono">microfonos</option>
+                <option value="Cascos">cascos</option>
+                <option value="Auriculares">auriculares</option>
+                <option value="Altavoz">Altavoces</option>
+                <option value="Microfono">microfonos</option>
             </select>
         </div>
 
@@ -27,41 +27,33 @@
                 <option value="200">+100</option>
             </select>
         </div>
-
-       
     </div>
-
-    <div  id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel"> <!-- Wrapper for slides -->
-        <div  class="carousel-inner">
-            <div class="caroussel-item active">
-                <div class="row">
-                    @foreach($products as $product)
-                        <div1 data-price="{{$product->price}}" data-name="{{$product->name}}" class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                    <img src="{{ URL::asset($product->image) }}" class="img-responsive" alt="a" />
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5> {{$product->name}} </h5>
-                                            <h5 class="price-text-color"> ${{$product->price}} </h5>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
+    <div class="flex">
+        @foreach($products as $product)
+        <div data-type="{{$product->type}}" data-price="{{$product->price}}" data-name="{{$product->name}}" class="center">
+            <div class="property-card">
+                <a href="#">
+                    <div class="property-image">
+                        <img src="{{ URL::asset($product->image) }}">
+                        <div class="property-image-title">
+                <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
                         </div>
-                    @endforeach
+                    </div>
+                </a>
+                <div class="property-description">
+                    <h1> {{$product->name}}</h5>
+                    <h2>{{$product->price}}$</h3>
+                    <h3>{{$product->description}}</h3>
                 </div>
+                <!-- <a href="action('ProductController@addToCart','$product->id')">-->
+                <a href="#">
+                    <div class="property-social-icons">
+                        <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+                    </div>
+                </a>
             </div>
         </div>
+        @endforeach
     </div>
+
 @endsection
