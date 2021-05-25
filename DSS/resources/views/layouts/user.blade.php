@@ -45,12 +45,14 @@
 
               <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
+
                   <a href="http://127.0.0.1:8000/search">Searcher</a>
                   <a id="category" style="cursor:pointer">&rarr;Categorias</a>
                     <a id="categories" href="http://127.0.0.1:8000/listType/Auriculares">Auriculares</a>
                     <a id="categories" href="http://127.0.0.1:8000/listType/Altavoz">Altavoces</a>
                     <a id="categories" href="http://127.0.0.1:8000/listType/Cascos">Cascos</a>
                     <a id="categories" href="http://127.0.0.1:8000/listType/Microfono">Micrófonos</a>
+
                   @if($Auth::check()) 
                         <a class=" fav-list" href="{{action('UserController@closeSession')}}">Lista de favotitos</a>
                         <a class=" my-account" href="{{action('UserController@myAccount')}}">Mi cuenta</a>
