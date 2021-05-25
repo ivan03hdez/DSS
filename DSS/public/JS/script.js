@@ -81,35 +81,45 @@ $(document).ready(function () {
     })
   });
   ////pra filtrar los resultados en un buscador
-  $(document).ready(function(){
-    $(".input-filter").on("keyup", function() {///input con el que filtramos
-      var value = $(this).val().toLowerCase();
-      $("div .product").filter(function() {
-        //console.log($(this).val());
-        return $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-      });
-    });
-  });
-  ///////Filter with multiple criteria
   /*$(document).ready(function(){
-    $("#type","#price").on("keyup", function(){select()})
-    $(".input-filter").on("keyup", function() {///input con el que filtramos
+    $("#search").on("keyup", function() {///input con el que filtramos
       var value = $(this).val().toLowerCase();
-      $("table tbody tr[data-id]").filter(function() {
-        return $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      $("div.col-sm-3").filter(function() {
+        console.log($(this).data('name'));
+        return $(this).toggle($(this).data('name').toLowerCase().indexOf(value) > -1)
       });
     });
+  });*/
+  ///////Filter with multiple criteria
+  $(document).ready(function(){
+    $("select").change(function(){filtroMultiple();});
+    $("#search").on("keyup", function() {///input con el que filtramos
+      filtroMultiple();
+    });
+    var filtroMultiple = function () {
+      var value = $("#search").val().toLowerCase(); 
+      $(selector()).each(function() {
+        return $(this).toggle(condiciones(value,this));
+      })
+    }
+    var condiciones = function(name,element){
+      var nameFilter = () => name === undefined || name === "" || $(element).data('name').toLowerCase().indexOf(name) > -1;
+      var typeFilter = () => select()['type'] == undefined || $(element).data('type')===select()['type'];
+      var priceFilter = () => $(element).data('price') <= select()['price'];
+
+      console.log("name:" +name + nameFilter() + " type:" + select()['type'] + typeFilter() +" price:" + select()['price'] + priceFilter());
+      return nameFilter() && typeFilter() && priceFilter(); 
+    };
     var select = function() {
-      var selectorFilters = {
-        service: $("#service").val(),
-        status: $("#status").val()
+      return  {
+        type: $("#type").val(),
+        price: $("#price").val()
       };
     }
     var selector= function(){
-      
+      var sel;
+      select()['price'] == null ?  (select['price']= 10000.0) : false;
+      sel = "div.col-sm-3";
+      return sel;
     }
-    $(selector).filter(function (){
-      var searchValue = $("#search").val().toLowerCase();
-      return (searchValue === "" || $(this).data("name").toLowerCase().indexOf(searchValue) > -1);
-    }).show();
-  });*/
+  });
