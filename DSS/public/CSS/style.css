@@ -265,9 +265,11 @@ GOOGLE
 .goog-te-menu2 {
   max-width: 100%;
 }
+/*
 .goog-te-menu-value {
-  /*color: #fff !important;*/
+ 
 }
+*/
 .goog-te-menu-value span:nth-child(5) {
   display:none;
 }
@@ -448,4 +450,21 @@ carousel
 }
 #btn-home-buy{
   width: 8%;
+}
+
+/*
+sidebar bottom css
+*/
+
+.fav-list{
+  position: absolute;
+  bottom: 76px;
+  left: 16px;
+  font-size: 18px;
+}
+.my-account{
+  position: absolute;
+  bottom: 40px;
+  left: 16px;
+  font-size: 18px;
 }

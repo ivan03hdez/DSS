@@ -49,8 +49,14 @@
 
               <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
-                  <a href="">Caregorias por poner</a>
-                  @if($Auth::check()) <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
+                  <a href="">Auriculares</a>
+                  <a href="">Altavoces</a>
+                  <a href="">Cascos</a>
+                  <a href="">Micrófonos</a>
+                  @if($Auth::check()) 
+                        <a class=" fav-list" href="{{action('UserController@closeSession')}}">Lista de favotitos</a>
+                        <a class=" my-account" href="{{action('UserController@closeSession')}}">Mi cuenta</a>
+                        <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
                   @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
                   @endif
               </div>
