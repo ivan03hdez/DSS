@@ -3,46 +3,6 @@
 
 @section('title','Home Page')
 @section('content')
-@if(false)
-<div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel"> <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-        <div class="caroussel-item active">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="col-item">
-                        <div class="photo">
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" class="img-responsive" alt="a" />
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price col-md-6">
-                                    <h5>
-                                        Sample Product</h5>
-                                    <h5 class="price-text-color">
-                                        $199.99</h5>
-                                </div>
-                            </div>
-                            
-                            <div class="separator clear-left">
-                                <p class="btn-add">
-                                    <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                <p class="btn-details">
-                                    <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                            </div>
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</div>
-@endif
-
 <!-- AÑADIDO 2 -->
 <h4 class="card-title">Auriculares</h4>
 <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
@@ -61,7 +21,7 @@
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'auriculares') == 0)
                         <div class="item {{ $loop->index == 20 ? ' active' : '' }} item-home" style="background-color:grey;"  >
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
@@ -106,7 +66,7 @@
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'cascos') == 0)
                         <div class="item {{ $loop->index == 10 ? ' active' : '' }} item-home" style="background-color:grey;"  >
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home" >
+                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home" >
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
@@ -151,7 +111,7 @@
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'altavoz') == 0)
                         <div class="item {{ $loop->index == 0 ? ' active' : '' }} item-home" style="background-color:grey;"  >
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
@@ -197,7 +157,7 @@
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'microfono') == 0)
                         <div class="item {{ $loop->index == 30 ? ' active' : '' }} item-home" style="background-color:grey;"  >
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
