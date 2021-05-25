@@ -119,3 +119,10 @@ Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('ch
 Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
 
 Route::get('/search', 'ProductController@search');
+
+//My Account
+Route::get('/myAccount', 'UserController@myAccount');
+Route::get('/addData', 'UserController@addData');
+Route::post('/addData', 'UserController@addData');
+Route::get('/edit', 'UserController@editData');
+Route::post('/edit/Data', 'UserController@updateDataMyaccount');

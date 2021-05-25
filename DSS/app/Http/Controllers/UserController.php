@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\FavoriteList;
 use App\Http\Controllers\HomeController;
 use Auth;
 Use Hash;
@@ -98,5 +99,63 @@ class UserController extends Controller{
     }
     public function isLogged(){
         return Auth::check();
+    }
+    public function myAccount(){
+        $user = auth()->user();
+        return view('myAccount')->with('user',$user);
+    }
+    public function addData(Request $request){
+        $add = $request->input('address-myaccount');
+        $phone = $request->input('phone-myaccount');
+        $img = $request->input('image-myaccount');
+
+        $user = auth()->user();
+        $user->address = $add;
+        $user->phone = $phone;
+        $user->image = $img;
+        $user->save();
+        return view('myAccount')->with('user', $user);
+    }
+    public function editData(){
+        $user = auth()->user();
+        return view('myAccountEdit')->with('user',$user);
+    }
+    
+    public function updateDataMyaccount(Request $request){
+        $name = $request->input('exampleInputName1');
+        $email = $request->input('exampleInputEmail1');
+        $password = $request->input('exampleInputPassword1');
+        $address = $request->input('exampleInputAddress1');
+        $phone = $request->input('exampleInputPhone1');
+        $image = $request->input('exampleInputImage1');
+        $user = auth()->user();
+
+        if(strcmp($name, '') == 0){
+            $name = $user->name;
+        }
+        if(strcmp($email, '') == 0){
+            $email = $user->email;
+        }
+        if(strcmp($password, '') == 0){
+            $password = $user->password;
+        }
+        if(strcmp($address, '') == 0){
+            $address = $user->address;
+        }
+        if(strcmp($phone, '') == 0){
+            $phone = $user->phone;
+        }
+        if(strcmp($image, '') == 0){
+            $image = $user->image;
+        }
+        
+        $user->name = $name;
+        $user->email = $email;
+        $user->password = Hash::make($password);
+        $user->address = $address;
+        $user->phone = $phone;
+        $user->image = $image;
+        $user->update();
+        return view('myAccountEdit')->with('user',$user);
     }
 }
