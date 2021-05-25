@@ -51,6 +51,8 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         </div>
 
+                        <input id="role" type="role" class="form-control d-none" name="role" value="user">
+
                         <div class="form-floating align-items-center">
                             
                                 <button type="submit" class="btn btn-outline-primary btn-block btn-lg">

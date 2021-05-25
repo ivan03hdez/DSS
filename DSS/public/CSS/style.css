@@ -460,10 +460,11 @@ Search Style
 carousel
 
 */
-.item {
+.item-home {
   height: 550px;
   width: 100%;
 }
+
 .img-carousel-home{
   padding-top: 2%;
   max-width: 70%;
@@ -490,3 +491,8 @@ sidebar bottom css
   left: 16px;
   font-size: 18px;
 }
+
+/*
+my account size
+*/
+

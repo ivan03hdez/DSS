@@ -26,11 +26,7 @@
               <div class="logo rounded mx-auto d-block" >
                 <img  src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title="">
               </div>     
-              <form class="form-inline my-2 my-lg-0 ml-auto">
-      <input class="form-control input-filter" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
-      
-    </form>
+              
               
 
             </div>
@@ -57,7 +53,7 @@
                     <a id="categories" href="http://127.0.0.1:8000/listType/Microfono">Micrófonos</a>
                   @if($Auth::check()) 
                         <a class=" fav-list" href="{{action('UserController@closeSession')}}">Lista de favotitos</a>
-                        <a class=" my-account" href="{{action('UserController@closeSession')}}">Mi cuenta</a>
+                        <a class=" my-account" href="{{action('UserController@myAccount')}}">Mi cuenta</a>
                         <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
                   @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
                   @endif
