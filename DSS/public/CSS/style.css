@@ -451,10 +451,11 @@ Search Style
 carousel
 
 */
-.item {
+.item-home {
   height: 550px;
   width: 100%;
 }
+
 .img-carousel-home{
   padding-top: 2%;
   max-width: 70%;

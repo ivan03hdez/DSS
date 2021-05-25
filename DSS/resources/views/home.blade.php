@@ -60,7 +60,7 @@
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'auriculares') == 0)
-                        <div class="item {{ $loop->index == 20 ? ' active' : '' }}" style="background-color:grey;"  >
+                        <div class="item {{ $loop->index == 20 ? ' active' : '' }} item-home" style="background-color:grey;"  >
                             <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
@@ -105,7 +105,7 @@
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'cascos') == 0)
-                        <div class="item {{ $loop->index == 10 ? ' active' : '' }}" style="background-color:grey;"  >
+                        <div class="item {{ $loop->index == 10 ? ' active' : '' }} item-home" style="background-color:grey;"  >
                             <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home" >
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
@@ -150,7 +150,7 @@
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'altavoz') == 0)
-                        <div class="item {{ $loop->index == 0 ? ' active' : '' }}" style="background-color:grey;"  >
+                        <div class="item {{ $loop->index == 0 ? ' active' : '' }} item-home" style="background-color:grey;"  >
                             <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
@@ -196,7 +196,7 @@
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'microfono') == 0)
-                        <div class="item {{ $loop->index == 30 ? ' active' : '' }}" style="background-color:grey;"  >
+                        <div class="item {{ $loop->index == 30 ? ' active' : '' }} item-home" style="background-color:grey;"  >
                             <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
