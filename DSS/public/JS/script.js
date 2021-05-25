@@ -114,10 +114,8 @@ $(document).ready(function () {
     }
     var condiciones = function(name,element){
       var nameFilter = () => name === undefined || name === "" || $(element).data('name').toLowerCase().indexOf(name) > -1;
-      var typeFilter = () => select()['type'] == undefined || $(element).data('type')===select()['type'];
+      var typeFilter = () => select()['type'] == undefined || select()['type'] === "Todos"  || $(element).data('type')===select()['type'];
       var priceFilter = () => $(element).data('price') <= select()['price'];
-
-      console.log("name:" +name + nameFilter() + " type:" + select()['type'] + typeFilter() +" price:" + select()['price'] + priceFilter());
       return nameFilter() && typeFilter() && priceFilter(); 
     };
     var select = function() {

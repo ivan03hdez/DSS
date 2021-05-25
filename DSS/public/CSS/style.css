@@ -82,7 +82,7 @@
    transition: 0.3s;
  }
  .sidenav #categories{
-   margin-left: 35px;
+   margin-left: 30px;
    display: none;
  }
  .sidenav #category:hover{
@@ -320,7 +320,7 @@ body {
      background-color: #f5f5f5;
 }
 /*
-Cards from carousel in search
+Cards from carousel in categories
 */
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
 .col-item
@@ -328,11 +328,14 @@ Cards from carousel in search
     border: 1px solid #E1E1E1;
     border-radius: 5px;
     background: #FFF;
+    margin:25px;
 }
 .col-item .photo img
 {
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
+    max-width: fit-content;
+    max-height: 27em;
 }
 
 .col-item .info
@@ -559,6 +562,7 @@ div.flex {
   overflow:hidden;
   -webkit-box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
   box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  flex-wrap: wrap;
 }
 /* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
 

@@ -1,20 +1,27 @@
 @extends('layouts.user')
 @section('title','Productos por categoria')
 @section('content')
-<h1>{{$products->first()->type}}</h1>
+<h1 style="text-align:center;">Listado de {{$products->first()->type}}</h1>
     <div class="flex-container">
         <div style="margin-left: 0px;">
-            <p>name</p>
-            <input id="search" placeholder="Search name">
+            <h3>Name</h3>
+            <input id="searchCategory" placeholder="Search name">
         </div>
 
         <div >
-            <p>price</p>
-            <select id="price">
+            <h3>Price</h3>
+            <select id="priceCategory">
+                <option value="10">Sin limite</option>
+                <option value="60">0-60</option>
                 <option value="30">0-30</option>
-                <option value="100">30-100</option>
-                <option value="200">+100</option>
+               
+                
             </select>
+        </div>
+        <div >
+            <h3>Sort Descendent By</h3>
+            <label><input id="sortByPrice" type="checkbox" value="price">Price</label><br>
+            <label><input id="sortByName" type="checkbox" value="name">Name</label>
         </div>
     </div>
     <div  id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel"> <!-- Wrapper for slides -->
@@ -22,7 +29,7 @@
             <div class="caroussel-item active">
                 <div class="row">
                 @foreach($products as $product)
-                        <div data-type ="{{$product->type}}" data-price="{{$product->price}}" data-name="{{$product->name}}" class="col-sm-3">
+                        <div data-price="{{$product->price}}" data-name="{{$product->name}}" class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
                                     <img src="{{ URL::asset($product->image) }}" class="img-responsive" alt="a" />
@@ -55,11 +62,12 @@
 <script>
 $(document).ready(function(){
     $("select").change(function(){filtroMultiple();});
-    $("#search").on("keyup", function() {///input con el que filtramos
+    $("#searchCategory").on("keyup", function() {///input con el que filtramos
       filtroMultiple();
     });
     var filtroMultiple = function () {
-      var value = $("#search").val().toLowerCase(); 
+      var value = $("#searchCategory").val().toLowerCase();
+      console.log($(selector)); 
       $(selector()).each(function() {
         return $(this).toggle(condiciones(value,this));
       })
@@ -67,19 +75,58 @@ $(document).ready(function(){
     var condiciones = function(name,element){
       var nameFilter = () => name === undefined || name === "" || $(element).data('name').toLowerCase().indexOf(name) > -1;
       var priceFilter = () => $(element).data('price') <= select()['price'];
-      return nameFilter() && typeFilter() && priceFilter(); 
+      console.log(element);
+      console.log("name:" +name + nameFilter() + " price:" + select()['price'] + priceFilter());
+      return nameFilter() && priceFilter(); 
     };
     var select = function() {
       return  {
-        price: $("#price").val()
+        price: $("#priceCategory").val()
       };
     }
     var selector= function(){
       var sel;
       select()['price'] == null ?  (select['price']= 10000.0) : false;
-      sel = "div.col-sm-3";
+      sel = "[data-price]";
       return sel;
     }
   });
+  //SortBy with Jquery
+  /*$(document).ready(function(){
+    $("input#sortByPrice[type='checkbox']").change(function(){
+        var select = {
+            price : $("input[type='checkbox']").val(),
+            name : $("input[type='checkbox']").val()
+        };
+        var divsSorted;
+        var divs = $("[data-price]");
+        if(select['price'] === 'price'){
+            divsSorted = $("[data-price]").sort(function(a,b){
+                if($(a).data('price') < $(b).data('price')){
+                    return 1
+                }
+                else {
+                    return -1;
+                }
+            });
+        }
+        else{
+            divsSorted = $("[data-price]").sort(function(a,b){
+                if($(a).data('price') > $(b).data('price')){
+                    return 1
+                }
+                else {
+                    return -1;
+                }
+            });
+        }
+        console.log(divsSorted);
+        divs.each(function(elem){
+            elem.remove;
+        });
+        $(".row").appendTo(divsSorted);
+
+    });
+  });*/
 </script>
 @endsection

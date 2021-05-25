@@ -1,17 +1,16 @@
 @extends('layouts.user')
 @section('title','Información de la cesta')
 @section('content')
-    <h1>Searcher</h1>
-
-    <div class="flex-container">
+<div class="flex-container">
         <div style="margin-left: 0px;">
-            <p>name</p>
+            <h3>Name</h3>
             <input id="search" placeholder="Search name">
         </div>
 
         <div >
-            <p>Poduct type</p>
+            <h3>Product type</h3>
             <select id="type">
+                <option value="Todos">Todos</option>
                 <option value="Cascos">cascos</option>
                 <option value="Auriculares">auriculares</option>
                 <option value="Altavoz">Altavoces</option>
@@ -20,11 +19,11 @@
         </div>
 
         <div >
-            <p>price</p>
+            <h3>Price</h3>
             <select id="price">
+                <option value="210">Sin limite</option>
+                <option value="60">0-60</option>
                 <option value="30">0-30</option>
-                <option value="100">30-100</option>
-                <option value="200">+100</option>
             </select>
         </div>
     </div>

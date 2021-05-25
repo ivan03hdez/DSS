@@ -12,7 +12,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
     <title>@yield('title')</title>
   </head>
@@ -46,15 +46,15 @@
               <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
 
-                  <a href="http://127.0.0.1:8000/search">Searcher</a>
-                  <a id="category" style="cursor:pointer">&rarr;Categorias</a>
+                  <a href="http://127.0.0.1:8000/search">Buscador</a>
+                  <a id="category" style="cursor:pointer">Categorias</a>
                     <a id="categories" href="http://127.0.0.1:8000/listType/Auriculares">Auriculares</a>
                     <a id="categories" href="http://127.0.0.1:8000/listType/Altavoz">Altavoces</a>
                     <a id="categories" href="http://127.0.0.1:8000/listType/Cascos">Cascos</a>
                     <a id="categories" href="http://127.0.0.1:8000/listType/Microfono">Micrófonos</a>
 
                   @if($Auth::check()) 
-                        <a class=" fav-list" href="{{action('UserController@closeSession')}}">Lista de favotitos</a>
+                        <a class=" fav-list" href="">Lista de favoritos</a>
                         <a class=" my-account" href="{{action('UserController@myAccount')}}">Mi cuenta</a>
                         <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
                   @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
