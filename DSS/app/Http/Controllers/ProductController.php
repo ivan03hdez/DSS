@@ -102,4 +102,9 @@ class ProductController extends Controller{
         $products = Product::All();
         return view('search')->with('products',$products);
     }
+    public function listType($type){
+        $products = Product::where('type' , $type);
+        return view('categorias')->with('products',$products);
+    }
+    
 }

@@ -10,6 +10,16 @@ function openNav() {
    document.getElementById("body01").style.paddingLeft = "0"; 
   document.getElementById("footer01").style.paddingLeft = "0"; 
  }
+ ///abrir y cerrar categorias del sidebar
+  $('document').ready(function () {
+    $("#category").unbind('hover');
+    $("#category").click(function(){
+      $("a#categories").each(function(){
+        $(this).toggle($(this).is(":hidden"));
+        $(this).paddingLeft = "10px";
+      }); 
+    });
+  });
 
  function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'none', includedLanguages: 'ar,en,es,jv,ko,pa,pt,ru,zh-CN', 
@@ -107,7 +117,7 @@ $(document).ready(function () {
       var typeFilter = () => select()['type'] == undefined || $(element).data('type')===select()['type'];
       var priceFilter = () => $(element).data('price') <= select()['price'];
 
-      console.log("name:" +name + nameFilter() + " type:" + select()['type'] + typeFilter() +" price:" + select()['price'] + priceFilter());
+      //console.log("name:" +name + nameFilter() + " type:" + select()['type'] + typeFilter() +" price:" + select()['price'] + priceFilter());
       return nameFilter() && typeFilter() && priceFilter(); 
     };
     var select = function() {

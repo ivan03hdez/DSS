@@ -119,3 +119,5 @@ Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('ch
 Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
 
 Route::get('/search', 'ProductController@search');
+Route::get('/listType/{type}', 'ProductController@listType');
+

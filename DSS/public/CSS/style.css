@@ -81,6 +81,14 @@
    display: block;
    transition: 0.3s;
  }
+ .sidenav #categories{
+   margin-left: 35px;
+   display: none;
+ }
+ .sidenav #category:hover{
+  margin-left: 15px;
+  color: #818181;;
+}
  
  /* When you mouse over the navigation links, change their color */
  .sidenav a:hover {
@@ -440,6 +448,7 @@ Search Style
   display: flex;
   flex-direction: row;
   flex-grow: inherit;
+  justify-content: center;
   align-content: space-around;
   flex-wrap: wrap;
 }

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 @section('title','Información de la cesta')
 @section('content')
     <h1>Searcher</h1>
@@ -35,11 +35,11 @@
         <div  class="carousel-inner">
             <div class="caroussel-item active">
                 <div class="row">
-                @foreach($products as $product)
-                        <div data-type ="{{$product->type}}" data-price="{{$product->price}}" data-name="{{$product->name}}" class="col-sm-3">
+                    @foreach($products as $product)
+                        <div1 data-price="{{$product->price}}" data-name="{{$product->name}}" class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="{{ URL::asset('images/deaf.jpeg') }}" class="img-responsive" alt="a" />
+                                    <img src="{{ URL::asset($product->image) }}" class="img-responsive" alt="a" />
                                 </div>
                                 <div class="info">
                                     <div class="row">
