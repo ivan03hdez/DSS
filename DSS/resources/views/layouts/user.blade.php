@@ -24,7 +24,7 @@
             <div class="col-12 align-header"> 
               <span style="font-size:30px;cursor:pointer" onclick="openNav()"  ><div class="menu">&#9776; Dashboard</div></span> 
               <div class="logo rounded mx-auto d-block" >
-                <img  src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title="">
+                <a href="{{route('home')}}" ><img  src="{{ URL::asset('images/deaf.jpeg') }}"  alt="" title=""></a>
               </div>     
               
               
@@ -95,7 +95,7 @@
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2021 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">DEAF SL</a>
+        <a class="text-white" href="{{route('home')}}">DEAF SL</a>
       </div>
       
       
