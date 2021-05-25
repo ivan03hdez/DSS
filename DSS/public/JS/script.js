@@ -118,7 +118,7 @@ $(document).ready(function () {
     }
     var selector= function(){
       var sel;
-      select['price'] == null ?  (select['price']= 10000.0) : false;
+      select()['price'] == null ?  (select['price']= 10000.0) : false;
       sel = "div.col-sm-3";
       return sel;
     }
