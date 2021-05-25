@@ -49,7 +49,11 @@
 
               <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
+
                   @if(Request::url() === 'http://localhost:8000/home')
+
+                  <a href="http://127.0.0.1:8000/search">Searcher</a>
+
                   <a href="">Auriculares</a>
                   <a href="">Altavoces</a>
                   <a href="">Cascos</a>

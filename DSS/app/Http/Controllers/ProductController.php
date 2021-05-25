@@ -90,12 +90,16 @@ class ProductController extends Controller{
         //return $searchId . $searchName . $searchModel . $searchDiscount . $searchDescription;
     }
     public function addToCart(Request $request)
-{
-    $product = $this->products->searchId($request->input('id'));
-    $options = $request->except('_token', 'id', 'price', 'qty');
+    {
+        $product = $this->products->searchId($request->input('id'));
+        $options = $request->except('_token', 'id', 'price', 'qty');
 
-    Cart::add(uniqid(), $product->name, $request->input('price'), $request->input('qty'), $options);
+        Cart::add(uniqid(), $product->name, $request->input('price'), $request->input('qty'), $options);
 
-    return redirect()->back()->with('message', 'Articulo añadido satisfactoriamente a la cesta');
-}
+        return redirect()->back()->with('message', 'Articulo añadido satisfactoriamente a la cesta');
+    }
+    public function search(){
+        $products = Product::All();
+        return view('search')->with('products',$products);
+    }
 }
