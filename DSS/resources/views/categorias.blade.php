@@ -11,7 +11,7 @@
         <div >
             <h3>Price</h3>
             <select id="priceCategory">
-                <option value="10">Sin limite</option>
+                <option value="200">Sin limite</option>
                 <option value="60">0-60</option>
                 <option value="30">0-30</option>
                

@@ -259,7 +259,7 @@ GOOGLE
   
 }
 .goog-te-gadget-simple  {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid black !important;
   color: black;
   padding: 8px!important;
@@ -334,8 +334,9 @@ Cards from carousel in categories
 {
     margin: 0 auto;
     width: 80%;
-    max-width: fit-content;
-    max-height: 27em;
+    max-width: 25em;
+    max-height: 25em;
+    height: 80%;
 }
 
 .col-item .info

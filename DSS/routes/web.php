@@ -122,7 +122,8 @@ Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.
 Route::get('/search', 'ProductController@search');
 Route::get('/listType/{type}', 'ProductController@listType');
 
-
+//////
+Route::get('/addToCart/{id}', 'UserController@addToCart');
 //My Account
 Route::get('/myAccount', 'UserController@myAccount');
 Route::get('/addData', 'UserController@addData');

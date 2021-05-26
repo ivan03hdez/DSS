@@ -23,6 +23,9 @@ class CreateProductsShoppingCartsTable extends Migration
             $table->foreign('shopping_cart_id')->references('id')->on('shopping_carts')->onDelete('cascade');
 
             $table->primary(['product_id','shopping_cart_id']);
+
+            $table->integer('quantity')->nullable();
+
         });
     }
 

@@ -8,7 +8,7 @@
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     @foreach( $products as $p )
-                      @if (strcmp($p->type, 'auriculares') == 0)
+                      @if (strcmp($p->type, 'Auriculares') == 0)
                         <li style="background-color:red;" data-target="#carousel-example-generic1" data-slide-to="{{ $loop->index }}" class="active"></li>
                         @endif
                     @endforeach
@@ -17,13 +17,13 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
-                    @if (strcmp($p->type, 'auriculares') == 0)
+                    @if (strcmp($p->type, 'Auriculares') == 0)
                         <div class="item {{ $loop->index == 20 ? ' active' : '' }} item-home" style="background-color:grey;"  >
                             <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
-                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <a data-id="{{$p->id}}" class="btn btn-primary btn" id="btn-home-buy">Buy</a>
                                   <br>
                                   <br>
                                   <br>
@@ -53,7 +53,7 @@
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     @foreach( $products as $p )
-                      @if (strcmp($p->type, 'cascos') == 0)
+                      @if (strcmp($p->type, 'Cascos') == 0)
                         <li style="background-color:red;" data-target="#carousel-example-generic2" data-slide-to="{{ $loop->index  }}" class="active"></li>
                         @endif
                     @endforeach
@@ -62,13 +62,13 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
-                    @if (strcmp($p->type, 'cascos') == 0)
+                    @if (strcmp($p->type, 'Cascos') == 0)
                         <div class="item {{ $loop->index == 10 ? ' active' : '' }} item-home" style="background-color:grey;"  >
                             <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home" >
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
-                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <a data-id="{{$p->id}}" class="btn btn-primary btn" id="btn-home-buy">Buy</a>
                                   <br>
                                   <br>
                                   <br>
@@ -98,7 +98,7 @@
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     @foreach( $products as $p )
-                      @if (strcmp($p->type, 'altavoz') == 0)
+                      @if (strcmp($p->type, 'Altavoz') == 0)
                         <li style="background-color:red;" data-target="#carousel-example-generic3" data-slide-to="{{ $loop->index }}" class="active"></li>
                         @endif
                     @endforeach
@@ -107,13 +107,13 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
-                    @if (strcmp($p->type, 'altavoz') == 0)
+                    @if (strcmp($p->type, 'Altavoz') == 0)
                         <div class="item {{ $loop->index == 0 ? ' active' : '' }} item-home" style="background-color:grey;"  >
                             <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
-                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <a data-id="{{$p->id}}" class="btn btn-primary btn" id="btn-home-buy">Buy</a>
                                   <br>
                                   <br>
                                   <br>
@@ -144,7 +144,7 @@
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     @foreach( $products as $p )
-                      @if (strcmp($p->type, 'microfono') == 0)
+                      @if (strcmp($p->type, 'Microfono') == 0)
                         <li style="background-color:red;" data-target="#carousel-example-generic4" data-slide-to="{{ $loop->index }}" class="active"></li>
                         @endif
                     @endforeach
@@ -153,13 +153,13 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
-                    @if (strcmp($p->type, 'microfono') == 0)
+                    @if (strcmp($p->type, 'Microfono') == 0)
                         <div class="item {{ $loop->index == 30 ? ' active' : '' }} item-home" style="background-color:grey;"  >
                             <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
-                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <a data-id="{{$p->id}}" class="btn btn-primary btn" id="btn-home-buy">Buy</a>
                                   <br>
                                   <br>
                                   <br>
