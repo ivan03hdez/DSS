@@ -1,56 +1,14 @@
 @extends('layouts.user')
-
-
 @section('title','Home Page')
 @section('content')
-@if(false)
-<div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel"> <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-        <div class="caroussel-item active">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="col-item">
-                        <div class="photo">
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" class="img-responsive" alt="a" />
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price col-md-6">
-                                    <h5>
-                                        Sample Product</h5>
-                                    <h5 class="price-text-color">
-                                        $199.99</h5>
-                                </div>
-                            </div>
-                            
-                            <div class="separator clear-left">
-                                <p class="btn-add">
-                                    <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                <p class="btn-details">
-                                    <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                            </div>
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</div>
-@endif
-
 <!-- AÑADIDO 2 -->
-<h4 class="card-title">Auriculares</h4>
+<h1 class="card-title">Auriculares</h1>
 <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     @foreach( $products as $p )
-                      @if (strcmp($p->type, 'auriculares') == 0)
+                      @if (strcmp($p->type, 'Auriculares') == 0)
                         <li style="background-color:red;" data-target="#carousel-example-generic1" data-slide-to="{{ $loop->index }}" class="active"></li>
                         @endif
                     @endforeach
@@ -59,13 +17,13 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
-                    @if (strcmp($p->type, 'auriculares') == 0)
+                    @if (strcmp($p->type, 'Auriculares') == 0)
                         <div class="item {{ $loop->index == 20 ? ' active' : '' }} item-home" style="background-color:grey;"  >
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
-                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <a data-id="{{$p->id}}" class="btn btn-primary btn" id="btn-home-buy">Buy</a>
                                   <br>
                                   <br>
                                   <br>
@@ -89,13 +47,13 @@
 <!-- AÑADIDO 2 -->
 
 <!-- AÑADIDO 3 -->
-<h4 class="card-title">Cascos</h4>
+<h1 class="card-title">Cascos</h1>
 <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     @foreach( $products as $p )
-                      @if (strcmp($p->type, 'cascos') == 0)
+                      @if (strcmp($p->type, 'Cascos') == 0)
                         <li style="background-color:red;" data-target="#carousel-example-generic2" data-slide-to="{{ $loop->index  }}" class="active"></li>
                         @endif
                     @endforeach
@@ -104,13 +62,13 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
-                    @if (strcmp($p->type, 'cascos') == 0)
+                    @if (strcmp($p->type, 'Cascos') == 0)
                         <div class="item {{ $loop->index == 10 ? ' active' : '' }} item-home" style="background-color:grey;"  >
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home" >
+                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home" >
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
-                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <a data-id="{{$p->id}}" class="btn btn-primary btn" id="btn-home-buy">Buy</a>
                                   <br>
                                   <br>
                                   <br>
@@ -134,13 +92,13 @@
 <!-- AÑADIDO 3 -->
 
 <!-- AÑADIDO 4 -->
-<h4 class="card-title">Altavoz</h4>
+<h1 class="card-title">Altavoces</h1>
 <div id="carousel-example-generic3" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     @foreach( $products as $p )
-                      @if (strcmp($p->type, 'altavoz') == 0)
+                      @if (strcmp($p->type, 'Altavoz') == 0)
                         <li style="background-color:red;" data-target="#carousel-example-generic3" data-slide-to="{{ $loop->index }}" class="active"></li>
                         @endif
                     @endforeach
@@ -149,13 +107,13 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
-                    @if (strcmp($p->type, 'altavoz') == 0)
+                    @if (strcmp($p->type, 'Altavoz') == 0)
                         <div class="item {{ $loop->index == 0 ? ' active' : '' }} item-home" style="background-color:grey;"  >
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
-                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <a data-id="{{$p->id}}" class="btn btn-primary btn" id="btn-home-buy">Buy</a>
                                   <br>
                                   <br>
                                   <br>
@@ -180,13 +138,13 @@
 
 
 <!-- AÑADIDO 4 -->
-<h4 class="card-title">Microfonos</h4>
+<h1 class="card-title">Microfonos</h1>
 <div id="carousel-example-generic4" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     @foreach( $products as $p )
-                      @if (strcmp($p->type, 'microfono') == 0)
+                      @if (strcmp($p->type, 'Microfono') == 0)
                         <li style="background-color:red;" data-target="#carousel-example-generic4" data-slide-to="{{ $loop->index }}" class="active"></li>
                         @endif
                     @endforeach
@@ -195,13 +153,13 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner text-center" role="listbox">
                     @foreach( $products as $p )
-                    @if (strcmp($p->type, 'microfono') == 0)
+                    @if (strcmp($p->type, 'Microfono') == 0)
                         <div class="item {{ $loop->index == 30 ? ' active' : '' }} item-home" style="background-color:grey;"  >
-                            <img src="{{ URL::asset('images/deaf.jpeg') }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
-                                  <a class="btn btn-primary btn" id="btn-home-buy">Buy</a>
+                                  <a data-id="{{$p->id}}" class="btn btn-primary btn" id="btn-home-buy">Buy</a>
                                   <br>
                                   <br>
                                   <br>

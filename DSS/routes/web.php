@@ -118,8 +118,12 @@ Route::get('/cart', 'Site\CartController@getCart')->name('checkout.cart');
 Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('checkout.cart.remove');
 Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
 
+///////
 Route::get('/search', 'ProductController@search');
+Route::get('/listType/{type}', 'ProductController@listType');
 
+//////
+Route::get('/addToCart/{id}', 'UserController@addToCart');
 //My Account
 Route::get('/myAccount', 'UserController@myAccount');
 Route::get('/addData', 'UserController@addData');

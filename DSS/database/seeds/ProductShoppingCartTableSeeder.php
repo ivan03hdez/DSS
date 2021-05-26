@@ -29,7 +29,8 @@ class ProductShoppingCartTableSeeder extends Seeder{
         {
             DB::table('product_shopping_cart')->insert([
                 'product_id' => ($pr[$i]->id),
-                'shopping_cart_id' => ($sc[$i]->id)
+                'shopping_cart_id' => ($sc[$i]->id),
+                'quantity' => 1
             ]);
         }
     }

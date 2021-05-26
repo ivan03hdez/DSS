@@ -8,6 +8,7 @@ use App\FavoriteList;
 use App\Http\Controllers\HomeController;
 use Auth;
 Use Hash;
+use DB;
 
 class UserController extends Controller{
     public function list(){
@@ -157,5 +158,22 @@ class UserController extends Controller{
         $user->image = $image;
         $user->update();
         return view('myAccountEdit')->with('user',$user);
+    }
+    public function addToCart($id){
+        if(Auth::check() && Auth::user()->id >= 0){
+            $count = DB::table('product_shopping_cart')->where('shopping_cart_id','=',Auth::user()->cart->id)->where('product_id',$id)->get('quantity');
+            if($count == null || $count->isEmpty() || $count->max('quantity') === 0){
+                DB::table('product_shopping_cart')->insert([
+                    'product_id' => $id,
+                    'shopping_cart_id' => Auth::user()->cart->id,
+                    'quantity' => 1
+                ]);
+            }else{
+                DB::table('product_shopping_cart')->where('product_id',$id)->where('shopping_cart_id',Auth::user()->cart->id)->update(['quantity' => $count->max('quantity') + 1]);
+            }
+            return view('shoppingCart');
+        }
+        else return abort(403, 'Necesitas iniciar Sesion para poder comprar');
+        
     }
 }
