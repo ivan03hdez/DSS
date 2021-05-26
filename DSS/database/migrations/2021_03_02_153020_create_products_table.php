@@ -17,9 +17,9 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('name');
-            $table->float('price');
-            $table->float('promotionPrice');
-            $table->string('description');
+            $table->decimal('price', 8, 2)->nullable();
+            $table->decimal('promotionPrice', 8, 2)->nullable();
+            $table->text('description')->nullable();
             $table->integer('stock');
             $table->string('color');
             $table->string('model');
@@ -27,6 +27,9 @@ class CreateProductsTable extends Migration
             $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('set null');
             $table->string('image');
             $table->string('type')->nullable();
+            $table->boolean('status')->default(1);
+            $table->boolean('featured')->default(0);
+            
         });
     }
 
