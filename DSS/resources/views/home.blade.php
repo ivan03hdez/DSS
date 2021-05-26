@@ -2,7 +2,7 @@
 @section('title','Home Page')
 @section('content')
 <!-- AÑADIDO 2 -->
-<h4 class="card-title">Auriculares</h4>
+<h1 class="card-title">Auriculares</h1>
 <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
@@ -47,7 +47,7 @@
 <!-- AÑADIDO 2 -->
 
 <!-- AÑADIDO 3 -->
-<h4 class="card-title">Cascos</h4>
+<h1 class="card-title">Cascos</h1>
 <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
@@ -92,7 +92,7 @@
 <!-- AÑADIDO 3 -->
 
 <!-- AÑADIDO 4 -->
-<h4 class="card-title">Altavoz</h4>
+<h1 class="card-title">Altavoces</h1>
 <div id="carousel-example-generic3" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
@@ -138,7 +138,7 @@
 
 
 <!-- AÑADIDO 4 -->
-<h4 class="card-title">Microfonos</h4>
+<h1 class="card-title">Microfonos</h1>
 <div id="carousel-example-generic4" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->

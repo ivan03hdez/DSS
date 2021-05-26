@@ -4,6 +4,9 @@
   padding-top: 0.5%;
   padding-bottom: 0.5%;
 } 
+a{
+  cursor:pointer;
+}
 .logo img {
   
   width: 90%;
@@ -407,8 +410,10 @@ Cards from carousel in categories
 }
 .col-item .btn-add
 {
+    font-size: 20px;
     width: 50%;
     float: left;
+    padding-right: 20px;
 }
 
 .col-item .btn-add
@@ -418,9 +423,11 @@ Cards from carousel in categories
 
 .col-item .btn-details
 {
+    font-size: 20px;
     width: 50%;
     float: left;
-    padding-left: 10px;
+    padding-left: -10px;
+    padding-right: 20px;
 }
 .controls
 {
@@ -430,7 +437,9 @@ Cards from carousel in categories
 {
     margin-right: 10px;
 }
-
+.hidden-sm{
+  cursor: pointer;
+}
 /*
 Login style
 */
@@ -467,6 +476,9 @@ Search Style
 carousel
 
 */
+.card-title{
+  text-align: center;
+}
 .item-home {
   height: 550px;
   width: 100%;

@@ -37,15 +37,15 @@
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5> {{$product->name}} </h5>
-                                            <h5 class="price-text-color"> ${{$product->price}} </h5>
+                                            <h3> {{$product->name}} </h5>
+                                            <h2 class="price-text-color"> ${{$product->price}} </h5>
                                         </div>
                                     </div>
                                     <div class="separator clear-left">
                                         <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                            <i class="fa fa-shopping-cart"></i><a data-id="{{$product->id}}" class="hidden-sm">Add to cart</a></p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a class="hidden-sm">More details</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -60,6 +60,13 @@
 @endsection
 @section('scripts')
 <script>
+$(document).ready(function () {
+    $('.hidden-sm[data-id]').click(function() {
+        let id = $(this).data('id');
+        if(confirm("¿Are you sure you want to add to the cart?"))
+        window.location.replace("http://localhost:8000/addToCart/" +id);
+    })
+});
 $(document).ready(function(){
     $("select").change(function(){filtroMultiple();});
     $("#searchCategory").on("keyup", function() {///input con el que filtramos

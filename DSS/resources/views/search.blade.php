@@ -31,7 +31,7 @@
         @foreach($products as $product)
         <div data-type="{{$product->type}}" data-price="{{$product->price}}" data-name="{{$product->name}}" class="center">
             <div class="property-card">
-                <a href="#">
+                <a data-id="{{$product->id}}" >
                     <div class="property-image">
                         <img src="{{ URL::asset($product->image) }}">
                         <div class="property-image-title">
@@ -45,7 +45,7 @@
                     <h3>{{$product->description}}</h3>
                 </div>
                 <!-- <a href="action('ProductController@addToCart','$product->id')">-->
-                <a href="#">
+                <a data-id="{{$product->id}}" id="s">
                     <div class="property-social-icons">
                         <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
                     </div>
@@ -55,4 +55,15 @@
         @endforeach
     </div>
 
+@endsection
+@section('scripts')
+<script>
+$(document).ready(function () {
+    $('[data-id]').click(function() {
+        let id = $(this).data('id');
+        if(confirm("¿Are you sure you want to add to the cart?"))
+        window.location.replace("http://localhost:8000/addToCart/" +id);
+    })
+});
+</script>
 @endsection
