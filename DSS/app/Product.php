@@ -2,37 +2,48 @@
 
 namespace App;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
-use Kyslik\ColumnSortable\Sortable;
 
 class Product extends Model
 {
-    use Sortable;
-    protected $sortable = ['promotion_id','id','name', 'price', 'promotionPrice','color','model','stock','description','image'];
-    protected $fillable = ['name', 'price', 'promotionPrice','color','model','stock','description','image'];
-
-    public function lines() {
-        return $this->hasMany('App\OrderLine');
-    }
-    public function carts() {
-        return $this->belongsToMany('App\ShoppingCart');
-    }
-    public function favLists() {
-        return $this->belongsToMany('App\FavoriteList');
-    }
-    public function promotion() {
-        return $this->belongsTo('App\Promotion');
-    }
+    /**
+     * @var string
+     */
+    protected $table = 'products';
 
     /**
- * @return \Illuminate\Database\Eloquent\Relations\HasMany
- */
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'description', 'stock',
+        'price', 'promotionPrice', 'status', 'featured',
+    ];
 
- // El método images devolverá una relación hasMany para que podamos tener más de una imagen por producto
+    /**
+     * @var array
+     */
+    protected $casts = [
+        'stock'  =>  'integer',
+        'status'    =>  'boolean',
+        'featured'  =>  'boolean'
+    ];
 
-public function images()
-{
-    return $this->hasMany(ProductImage::class);
-}
-                                                             
+     /**
+     * @param $value
+     */
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = $value;
+        $this->attributes['slug'] = Str::slug($value);
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
 }
