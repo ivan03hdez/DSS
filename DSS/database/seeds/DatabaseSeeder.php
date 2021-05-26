@@ -44,5 +44,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriesTableSeeder::class);
         $this->command->info('Categories table seeded!');
 
+        $this->call(AttributesTableSeeder::class);
+        $this->command->info 
+        ('Attributes table seeded!');
+
     }
 }
