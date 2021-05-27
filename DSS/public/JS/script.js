@@ -131,16 +131,11 @@ $(document).ready(function () {
       return sel;
     }
   });
+  /////añade al carrito en home
   $(document).ready(function () {
     $('a#btn-home-buy').click(function() {
       let id = $(this).data('id');
       if(confirm("¿Are you sure you want to add to the cart?"))
-        window.location.replace("http://localhost:8000/addToCart/" +id);
+        window.location.replace("http://localhost:8000/addToCart/" +id + "/quantity/" + 1);
     })
-  });
-  $(document).ready(function () {
-    // MDB Lightbox Init
-    $(function () {
-      $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
-    });
   });

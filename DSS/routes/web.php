@@ -123,7 +123,7 @@ Route::get('/search', 'ProductController@search');
 Route::get('/listType/{type}', 'ProductController@listType');
 
 //////
-Route::get('/addToCart/{id}', 'UserController@addToCart');
+Route::get('/addToCart/{id}/quantity/{number}', 'UserController@addToCart');
 //My Account
 Route::get('/myAccount', 'UserController@myAccount');
 Route::get('/addData', 'UserController@addData');
@@ -140,5 +140,5 @@ Route::get('/user/deleteP2FL', 'UserController@deleteP2FL');
 Route::get('/user/updateFLUser', 'UserController@updateFLUser');
 
 //Product details
-Route::get('/productDetails', 'ProductController@details2buy');
+Route::get('/productDetails/{id}', 'ProductController@details2buy');
 

@@ -106,8 +106,9 @@ class ProductController extends Controller{
         $products = Product::All()->where('type' , $type);
         return view('categorias')->with('products',$products);
     }
-    public function details2buy(){
-        return view('productDetails');
+    public function details2buy($id){
+        $product = Product::where('id',$id)->get()[0];//->get() devuelve una array asociativo de tipo name:producto1 con las columnas de la tabla producto 
+        return view('productDetails')->with('product',$product);
     }
     
 }

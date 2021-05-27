@@ -61,8 +61,8 @@
 $(document).ready(function () {
     $('[data-id]').click(function() {
         let id = $(this).data('id');
-        if(confirm("¿Are you sure you want to add to the cart?"))
-        window.location.replace("http://localhost:8000/addToCart/" +id);
+        if(confirm("¿Are you sure you want to see the details of the product?"))
+        window.location.replace("http://localhost:8000/productDetails/" +id);
     })
 });
 </script>
