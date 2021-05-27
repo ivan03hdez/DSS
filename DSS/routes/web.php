@@ -135,6 +135,10 @@ Route::post('/edit/Data', 'UserController@updateDataMyaccount');
 Route::get('/user/favlist', 'UserController@favLists');
 Route::get('/user/createFL', 'UserController@createFL'); 
 Route::get('/user/addP2FL', 'UserController@addP2FL'); 
+Route::get('/user/deleteFL', 'UserController@deleteFL'); 
+Route::get('/user/deleteP2FL', 'UserController@deleteP2FL');
+Route::get('/user/updateFLUser', 'UserController@updateFLUser');
 
 //Product details
 Route::get('/productDetails', 'ProductController@details2buy');
+

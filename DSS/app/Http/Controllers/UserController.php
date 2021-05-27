@@ -209,4 +209,58 @@ class UserController extends Controller{
         
         return Redirect()->back();
     }
+    public function deleteFL(Request $request){
+        $user = auth()->user();
+        $flId = $request->input('id-fl');
+        
+        
+        /*$product1 = new Product();
+        $product = Product::where('name', $prodName)->get()->first();
+        $product1 = Product::findOrFail($product->id);
+*/
+        $favlist = new FavoriteList();
+        $favlist = FavoriteList::findOrFail($flId);
+
+        //$collP [] = new Product($favlist->products()->count());
+        
+        
+        foreach($favlist->products as $pr){
+            $favlist->products()->detach($pr->id);
+        }
+        $favlist->delete();
+  //      $favlist->products()->attach($product1->id);
+        
+        return Redirect()->back();
+    }
+    
+    public function deleteP2FL(Request $request){
+        $user = auth()->user();
+        $flId = $request->input('id-fl');
+        $pId = $request->input('idP-fl');
+        
+  
+        $favlist = new FavoriteList();
+        $favlist = FavoriteList::findOrFail($flId);
+
+        $favlist->products()->detach($pId);        
+        return Redirect()->back();
+    }
+    public function updateFLUser(Request $request){
+        
+        $name = $request->input('name-fl');
+        $description = $request->input('description-fl');
+        $id = $request->input('selectFL');
+        
+  
+        $favlist = new FavoriteList();
+        $favlist = FavoriteList::findOrFail($id);
+        if(strcmp($name, '') != 0){
+            $favlist->name = $name;
+        }
+        if(strcmp($description, '') != 0){
+            $favlist->description = $description;
+        }   
+        $favlist->save();
+        return Redirect()->back();
+    }
 }
