@@ -32,7 +32,7 @@
                         <div data-price="{{$product->price}}" data-name="{{$product->name}}" class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="{{ URL::asset($product->image) }}" class="img-responsive" alt="a" />
+                                <a href="{{ action('ProductController@details2buy',$product->id) }}"><img src="{{ URL::asset($product->image) }}" class="img-responsive" alt="a" /></a>
                                 </div>
                                 <div class="info">
                                     <div class="row">
@@ -64,7 +64,7 @@ $(document).ready(function () {
     $('.hidden-sm[data-id]').click(function() {
         let id = $(this).data('id');
         if(confirm("¿Are you sure you want to add to the cart?"))
-        window.location.replace("http://localhost:8000/addToCart/" +id);
+        window.location.replace("http://localhost:8000/addToCart/" +id + "/quantity/" + 1);
     })
 });
 $(document).ready(function(){

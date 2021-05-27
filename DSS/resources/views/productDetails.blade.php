@@ -29,9 +29,8 @@
 
           <div class="col-12 mb-0">
             <figure class="view overlay rounded z-depth-1 main-img">
-              <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
-                data-size="710x823">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
+              <a data-size="710x823">
+                <img src="{{ URL::asset($product->image) }}"
                   class="img-fluid z-depth-1"> <!--AQUI IRIA LA IMAGEN DEL PRODUCTO-->
               </a>
             </figure>
@@ -45,8 +44,8 @@
     </div>
     <div class="col-md-6">
 
-      <h5>***Nombre del producto***</h5>
-      <p class="mb-2 text-muted text-uppercase small">***Categoria de producto***</p>
+      <h5>{{$product->name}}</h5>
+      <p class="mb-2 text-muted text-uppercase small">{{$product->type}}</p>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
          <span class="fa fa-star checked"></span>
@@ -54,26 +53,30 @@
          <span class="fa fa-star checked"></span>
          <span class="fa fa-star checked"></span>
          <span class="fa fa-star checked"></span>
-      <p><span class="mr-1"><strong>***Precio del producto***</strong></span></p>
-      <p class="pt-1">***Descripcion del producto***</p>
+      <h3><span class="mr-1"><strong>{{$product->price}}$</strong></span></h3>
+      <p class="pt-1">{{$product->description}}</p>
       <div class="table-responsive">
         <table class="table table-sm table-borderless mb-0">
           <tbody>
             <tr>
               <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
-              <td>***Modelo del producto***</td>
+              <td>{{$product->model}}</td>
             </tr>
             <tr>
               <th class="pl-0 w-25" scope="row"><strong>Color</strong></th>
-              <td>***Color del producto***</td>
+              <td>{{$product->color}}</td>
             </tr>
             <tr>
               <th class="pl-0 w-25" scope="row"><strong>Stock</strong></th>
-              <td>***Stock del producto***</td>
+              <td>{{$product->stock}}</td>
             </tr>
             <tr>
               <th class="pl-0 w-25" scope="row"><strong>In promotion</strong></th>
-              <td>***Promocion del producto***</td>
+              <td>
+                @if($product->promotion != null) {{$product->promotion->discount}}%
+                @else ESTE PRODUCTO NO TIENE DESCUENTOS ACTUALMENTE
+                @endif
+              </td>
             </tr>
           </tbody>
         </table>
@@ -97,7 +100,7 @@
         </table>
       </div>
       <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-      <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+      <button data-id="{{$product->id}}"type="button" class="btn btn-light btn-md mr-1 mb-2"><i
           class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
     </div>
   </div>
@@ -108,4 +111,13 @@
 
 @endsection
 @section('scripts')
+<script>
+$(document).ready(function () {
+    $('button.btn-light').click(function() {
+        let id = $(this).data('id');
+        if(confirm("¿Are you sure you want to add to the cart?"))
+        window.location.replace("http://localhost:8000/addToCart/" +id + "/quantity/" + $("input[value]").val());
+    })
+});
+</script>
 @endsection

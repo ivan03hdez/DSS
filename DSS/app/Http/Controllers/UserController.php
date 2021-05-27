@@ -160,17 +160,18 @@ class UserController extends Controller{
         $user->update();
         return view('myAccountEdit')->with('user',$user);
     }
-    public function addToCart($id){
+    public function addToCart($id,$number){
         if(Auth::check() && Auth::user()->id >= 0){
             $count = DB::table('product_shopping_cart')->where('shopping_cart_id','=',Auth::user()->cart->id)->where('product_id',$id)->get('quantity');
-            if($count == null || $count->isEmpty() || $count->max('quantity') === 0){
+            if($count == null || $count->isEmpty() || $count->max('quantity') < 0){
                 DB::table('product_shopping_cart')->insert([
                     'product_id' => $id,
                     'shopping_cart_id' => Auth::user()->cart->id,
-                    'quantity' => 1
+                    'quantity' => intval($number)
                 ]);
             }else{
-                DB::table('product_shopping_cart')->where('product_id',$id)->where('shopping_cart_id',Auth::user()->cart->id)->update(['quantity' => $count->max('quantity') + 1]);
+                $amount = ($count->max('quantity') + intval($number));
+                DB::table('product_shopping_cart')->where('product_id',$id)->where('shopping_cart_id',Auth::user()->cart->id)->update(['quantity' => $amount]);
             }
             return view('shoppingCart');
         }

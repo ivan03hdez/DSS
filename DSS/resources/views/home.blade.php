@@ -19,7 +19,7 @@
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'Auriculares') == 0)
                         <div class="item {{ $loop->index == 20 ? ' active' : '' }} item-home" style="background-color:#393f4d;"  >
-                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                            <a href="{{ action('ProductController@details2buy',$p->id) }}"><img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home"></a>
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
@@ -64,7 +64,7 @@
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'Cascos') == 0)
                         <div class="item {{ $loop->index == 10 ? ' active' : '' }} item-home" style="background-color:#393f4d;"  >
-                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home" >
+                        <a href="{{ action('ProductController@details2buy',$p->id) }}"><img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home"></a>
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
@@ -109,7 +109,7 @@
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'Altavoz') == 0)
                         <div class="item {{ $loop->index == 0 ? ' active' : '' }} item-home" style="background-color:#393f4d;"  >
-                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                        <a href="{{ action('ProductController@details2buy',$p->id) }}"><img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home"></a>
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
@@ -155,7 +155,7 @@
                     @foreach( $products as $p )
                     @if (strcmp($p->type, 'Microfono') == 0)
                         <div class="item {{ $loop->index == 30 ? ' active' : '' }} item-home" style="background-color:#393f4d;"  >
-                            <img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home">
+                        <a href="{{ action('ProductController@details2buy',$p->id) }}"><img src="{{ URL::asset($p->image) }}" alt="{{ $p->name }}" class="rounded mx-auto d-block img-carousel-home"></a>
                             <div class="card-body" >
                                   <h4 class="card-title">{{ $p->name }}</h4>
                                   <p class="card-text">{{ $p->description }}</p>
