@@ -130,3 +130,11 @@ Route::get('/addData', 'UserController@addData');
 Route::post('/addData', 'UserController@addData');
 Route::get('/edit', 'UserController@editData');
 Route::post('/edit/Data', 'UserController@updateDataMyaccount');
+
+//Favorite List
+Route::get('/user/favlist', 'UserController@favLists');
+Route::get('/user/createFL', 'UserController@createFL'); 
+Route::get('/user/addP2FL', 'UserController@addP2FL'); 
+
+//Product details
+Route::get('/productDetails', 'ProductController@details2buy');

@@ -138,3 +138,9 @@ $(document).ready(function () {
         window.location.replace("http://localhost:8000/addToCart/" +id);
     })
   });
+  $(document).ready(function () {
+    // MDB Lightbox Init
+    $(function () {
+      $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+    });
+  });
