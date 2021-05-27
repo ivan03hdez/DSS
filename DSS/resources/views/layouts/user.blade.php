@@ -19,7 +19,7 @@
   <body>
     <div class="container-fluid">
         <div class="row"> <!-- HEADER -->
-        <div id="header01" class="col-12" style="background-color:grey;">  <!-- HEADER -->
+        <div id="header01" class="col-12" style="background-color: ffde22;">  <!-- HEADER -->
             
             <div class="col-12 align-header"> 
               <span style="font-size:30px;cursor:pointer" onclick="openNav()"  ><div class="menu">&#9776; Dashboard</div></span> 
@@ -54,7 +54,7 @@
                     <a id="categories" href="http://127.0.0.1:8000/listType/Microfono">Micrófonos</a>
 
                   @if($Auth::check()) 
-                        <a class=" fav-list" href="">Lista de favoritos</a>
+                        <a class=" fav-list" href="{{action('UserController@favLists')}}">Lista de favoritos</a>
                         <a class=" my-account" href="{{action('UserController@myAccount')}}">Mi cuenta</a>
                         <a class=" cerrar-sesion" href="{{action('UserController@closeSession')}}">Cerrar sesion</a>
                   @else <a class=" cerrar-sesion" href="{{route('login')}}">Iniciar sesion</a>
@@ -77,7 +77,7 @@
     <script type="text/javascript" src="{{ URL::asset('JS/script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
   </body>
-  <footer class="bg-light text-center text-white fixed-bottom" id="footer01">
+  <footer class="bg-light text-center text-black fixed-bottom" id="footer01">
       <!-- Grid container -->
       <div class="container p-4 pb-0">
       
@@ -93,9 +93,9 @@
       <!-- Grid container -->
 
       <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <div class="text-center p-3" style="background-color: #ffffff;">
         © 2021 Copyright:
-        <a class="text-white" href="{{route('home')}}">DEAF SL</a>
+        <a class="text-black" href="{{route('home')}}">DEAF SL</a>
       </div>
       
       

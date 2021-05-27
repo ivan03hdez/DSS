@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Product;
 use App\FavoriteList;
 use App\Http\Controllers\HomeController;
 use Auth;
@@ -175,5 +176,37 @@ class UserController extends Controller{
         }
         else return abort(403, 'Necesitas iniciar Sesion para poder comprar');
         
+    }
+    public function favlists(){
+        $user = auth()->user();
+        $favlist =  FavoriteList::where('user_id', $user->id)->get();
+        return view('favoriteList')->with('favlist', $favlist)->with('user', $user);
+    }
+    public function createFL(Request $request){
+        $user = auth()->user();
+        $fl = new FavoriteList();
+        $fl->name = $request->input('name-fl');
+        $fl->description = $request->input('description-fl');
+        $fl->user_id = $user->id;
+        $fl->save();
+        $favlist =  FavoriteList::where('user_id', $user->id)->get();
+        return Redirect()->back();
+    }
+    
+    public function addP2FL(Request $request){
+        $user = auth()->user();
+        $flId = $request->input('id-fl');
+        $prodName = $request->input('prod-fl');
+        
+        $product1 = new Product();
+        $product = Product::where('name', $prodName)->get()->first();
+        $product1 = Product::findOrFail($product->id);
+        $favlist = new FavoriteList();
+        $favlist = FavoriteList::findOrFail($flId);
+
+        
+        $favlist->products()->attach($product1->id);
+        
+        return Redirect()->back();
     }
 }

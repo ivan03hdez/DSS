@@ -106,5 +106,8 @@ class ProductController extends Controller{
         $products = Product::All()->where('type' , $type);
         return view('categorias')->with('products',$products);
     }
+    public function details2buy(){
+        return view('productDetails');
+    }
     
 }
