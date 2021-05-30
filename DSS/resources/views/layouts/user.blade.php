@@ -46,6 +46,7 @@
               <div id="mySidenav" class="sidenav">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size:30px;cursor:pointer">&times; Menu</a>
 
+                  <a href="{{route('home')}}">Home</a>
                   <a href="http://127.0.0.1:8000/search">Buscador</a>
                   <a id="category" style="cursor:pointer">Categorias</a>
                     <a id="categories" href="http://127.0.0.1:8000/listType/Auriculares">Auriculares</a>

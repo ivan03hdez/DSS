@@ -82,7 +82,7 @@ function openNav() {
 });
 ////METODO QUE PERMITE MOSTRAR POP-UP DE CONFIRMACION AL BORRAR UN REGISTRO EN EL ADMIN
 $(document).ready(function () {
-    $('#trash').click(function() {
+    $('div #trash').click(function() {
       var row=$(this).parents('tr');
       var id=row.data('id');
       var urlClass = window.location.pathname.split('/')[1];/////funciona en admin porque cojo la clase dinamicamente

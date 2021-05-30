@@ -132,7 +132,6 @@ $(document).ready(function(){
             elem.remove;
         });
         $(".row").appendTo(divsSorted);
-
     });
   });*/
 </script>
