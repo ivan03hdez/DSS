@@ -487,6 +487,9 @@ carousel
 .card-title{
   text-align: center;
 }
+.card-body h4, .card-body p{
+  color: white;
+}
 .item-home {
   height: 550px;
   width: 100%;

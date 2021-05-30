@@ -10,10 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-require 'admin.php';
-
-
 //////////////////////////////////////////////////Rutas que usara el administrador/////////////////////////////////////////////////////////
 Route::middleware(['admin'])->group(function(){
     Route::get('/products', 'ProductController@list');

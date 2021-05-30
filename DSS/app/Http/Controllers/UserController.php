@@ -161,7 +161,7 @@ class UserController extends Controller{
         return view('myAccountEdit')->with('user',$user);
     }
     public function addToCart($id,$number){
-        if(Auth::check() && Auth::user()->id >= 0){
+        if(Auth::check()){
             $count = DB::table('product_shopping_cart')->where('shopping_cart_id','=',Auth::user()->cart->id)->where('product_id',$id)->get('quantity');
             if($count == null || $count->isEmpty() || $count->max('quantity') < 0){
                 DB::table('product_shopping_cart')->insert([

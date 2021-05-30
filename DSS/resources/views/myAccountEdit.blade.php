@@ -15,7 +15,7 @@
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Current password: {{ $user->password }}</label>
+    <label for="exampleInputPassword1">Cannot show your password due to privacy terms</label>
     <input type="password" class="form-control" name="exampleInputPassword1" placeholder="Password">
   </div>
   <div class="form-group">
