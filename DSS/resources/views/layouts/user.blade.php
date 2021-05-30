@@ -19,7 +19,7 @@
   <body>
     <div class="container-fluid">
         <div class="row"> <!-- HEADER -->
-        <div id="header01" class="col-12" style="background-color: ffde22;">  <!-- HEADER -->
+        <div id="header01" class="col-12" style="background-color: #ffffff;">  <!-- HEADER -->
             
             <div class="col-12 align-header"> 
               <span style="font-size:30px;cursor:pointer" onclick="openNav()"  ><div class="menu">&#9776; Dashboard</div></span> 
