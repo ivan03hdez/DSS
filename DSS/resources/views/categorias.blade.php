@@ -19,7 +19,7 @@
             </select>
         </div>
         <div >
-            <h3>Sort Descendent By</h3>
+            <h3>Sort By</h3>
             <label><input id="sortByPrice" type="checkbox" value="price">Price</label><br>
             <label><input id="sortByName" type="checkbox" value="name">Name</label>
         </div>
