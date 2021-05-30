@@ -45,7 +45,7 @@
                                         <p class="btn-add">
                                             <i class="fa fa-shopping-cart"></i><a data-id="{{$product->id}}" class="hidden-sm">Add to cart</a></p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="{{ action('ProductController@details2buy',$product->id) }}" class="hidden-sm">More details</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
