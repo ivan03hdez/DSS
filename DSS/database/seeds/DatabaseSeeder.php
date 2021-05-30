@@ -37,6 +37,5 @@ class DatabaseSeeder extends Seeder
 
         $this->call( ProductFavoriteListTableSeeder ::class );
         $this->command->info('ProductFavoriteList table seeded!' );
-
     }
 }

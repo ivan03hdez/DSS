@@ -89,4 +89,26 @@ class ProductController extends Controller{
         return view('products.list')->with('products',$products);
         //return $searchId . $searchName . $searchModel . $searchDiscount . $searchDescription;
     }
+    public function addToCart(Request $request)
+    {
+        $product = $this->products->searchId($request->input('id'));
+        $options = $request->except('_token', 'id', 'price', 'qty');
+
+        Cart::add(uniqid(), $product->name, $request->input('price'), $request->input('qty'), $options);
+
+        return redirect()->back()->with('message', 'Articulo añadido satisfactoriamente a la cesta');
+    }
+    public function search(){
+        $products = Product::All();
+        return view('search')->with('products',$products);
+    }
+    public function listType($type){
+        $products = Product::All()->where('type' , $type);
+        return view('categorias')->with('products',$products);
+    }
+    public function details2buy($id){
+        $product = Product::where('id',$id)->get()[0];//->get() devuelve una array asociativo de tipo name:producto1 con las columnas de la tabla producto 
+        return view('productDetails')->with('product',$product);
+    }
+    
 }

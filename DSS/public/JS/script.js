@@ -10,6 +10,16 @@ function openNav() {
    document.getElementById("body01").style.paddingLeft = "0"; 
   document.getElementById("footer01").style.paddingLeft = "0"; 
  }
+ ///abrir y cerrar categorias del sidebar
+  $('document').ready(function () {
+    $("#category").unbind('hover');
+    $("#category").click(function(){
+      $("a#categories").each(function(){
+        $(this).toggle($(this).is(":hidden"));
+        $(this).paddingLeft = "10px";
+      }); 
+    });
+  });
 
  function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'none', includedLanguages: 'ar,en,es,jv,ko,pa,pt,ru,zh-CN', 
@@ -70,3 +80,62 @@ function openNav() {
       });
   });
 });
+////METODO QUE PERMITE MOSTRAR POP-UP DE CONFIRMACION AL BORRAR UN REGISTRO EN EL ADMIN
+$(document).ready(function () {
+    $('div #trash').click(function() {
+      var row=$(this).parents('tr');
+      var id=row.data('id');
+      var urlClass = window.location.pathname.split('/')[1];/////funciona en admin porque cojo la clase dinamicamente
+      if(confirm("¿Are you sure you want to delete this object?"))
+        window.location.replace("http://localhost:8000/" + urlClass +"/delete/"+id);
+    })
+  });
+  ////pra filtrar los resultados en un buscador
+  /*$(document).ready(function(){
+    $("#search").on("keyup", function() {///input con el que filtramos
+      var value = $(this).val().toLowerCase();
+      $("div.col-sm-3").filter(function() {
+        console.log($(this).data('name'));
+        return $(this).toggle($(this).data('name').toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });*/
+  ///////Filter with multiple criteria
+  $(document).ready(function(){
+    $("select").change(function(){filtroMultiple();});
+    $("#search").on("keyup", function() {///input con el que filtramos
+      filtroMultiple();
+    });
+    var filtroMultiple = function () {
+      var value = $("#search").val().toLowerCase(); 
+      $(selector()).each(function() {
+        return $(this).toggle(condiciones(value,this));
+      })
+    }
+    var condiciones = function(name,element){
+      var nameFilter = () => name === undefined || name === "" || $(element).data('name').toLowerCase().indexOf(name) > -1;
+      var typeFilter = () => select()['type'] == undefined || select()['type'] === "Todos"  || $(element).data('type')===select()['type'];
+      var priceFilter = () => $(element).data('price') <= select()['price'];
+      return nameFilter() && typeFilter() && priceFilter(); 
+    };
+    var select = function() {
+      return  {
+        type: $("#type").val(),
+        price: $("#price").val()
+      };
+    }
+    var selector= function(){
+      var sel;
+      select()['price'] == null ?  (select['price']= 10000.0) : false;
+      sel = "div.center";
+      return sel;
+    }
+  });
+  /////añade al carrito en home
+  $(document).ready(function () {
+    $('a#btn-home-buy').click(function() {
+      let id = $(this).data('id');
+      if(confirm("¿Are you sure you want to add to the cart?"))
+        window.location.replace("http://localhost:8000/addToCart/" +id + "/quantity/" + 1);
+    })
+  });
